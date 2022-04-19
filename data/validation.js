@@ -65,10 +65,10 @@ module.exports = {
   checkComment(comment, varName) {
     if (!comment) throw `Error: You must provide a ${varName}`;
     if (typeof comment !== "string") throw `Error:${varName} must be a string`;
-    id = id.trim();
-    if (id.length === 0)
+    comment = comment.trim();
+    if (comment.length === 0)
       throw `Error: ${varName} cannot be an empty string or just spaces`;
 
-    return id;
+    return comment;
   },
 };

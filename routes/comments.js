@@ -10,14 +10,15 @@ router.get("/", async (req, res) => {
   res.sendFile(path.resolve("static/comments.html"));
   //}
 
-  router.post("/comments", async (req, res) => {
+  router.post("/", async (req, res) => {
     try {
-      req.body.comment = validation.checkComment(comment, "Comment");
+      req.body.comment = validation.checkComment(req.body.comment, "Comment");
     } catch (e) {
       res.status(404).json({ error: e });
     }
     try {
-      req.body.comment = commentData.postComment(req.body.comment); // req.session.user to be passed as well
+      let insertComment = await commentData.postComment(req.body.comment); // req.session.user to be passed as well
+      if (insertComment) res.json(insertComment);
     } catch (e) {
       res.status(404).json({ error: e });
     }
