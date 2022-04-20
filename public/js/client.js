@@ -36,8 +36,6 @@ $(function () {
           $commentList.append(p);
         }
         $commentList.show();
-        // $showDiv.hide();
-        // $homeLink.show();
         $commentForm.trigger("reset");
       });
     } catch (e) {

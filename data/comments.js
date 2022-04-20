@@ -43,7 +43,22 @@ async function get(id) {
   return comment;
 }
 
+async function getUsersComments(inputUserId) {
+  inputUserId = validation.checkId(inputUserId, "User ID");
+  const commentsCollection = await comments();
+  let commentList = await commentsCollection
+    .find({ userId: inputUserId })
+    .toArray();
+
+  if (!commentList) throw "Could not get all comments";
+
+  for (let index = 0; index < commentList.length; index++) {
+    commentList[index]._id = commentList[index]._id.toString();
+  }
+  return commentList;
+}
 module.exports = {
   postComment,
   get,
+  getUsersComments,
 };
