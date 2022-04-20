@@ -57,8 +57,33 @@ async function getUsersComments(inputUserId) {
   }
   return commentList;
 }
+
+async function getCommentsByIds(inputCommentIds) {
+  for (let index = 0; index < inputCommentIds.length; index++) {
+    inputCommentIds[index] = validation.checkId(
+      inputCommentIds[index],
+      "Comment ID"
+    );
+    inputCommentIds[index] = ObjectId(inputCommentIds[index]);
+  }
+
+  const commentsCollection = await comments();
+
+  let commentList = await commentsCollection
+    .find({ _id: { $in: inputCommentIds } })
+    .toArray();
+
+  if (!commentList) throw "Could not get all comments";
+
+  for (let index = 0; index < commentList.length; index++) {
+    commentList[index]._id = commentList[index]._id.toString();
+  }
+  return commentList;
+}
+
 module.exports = {
   postComment,
   get,
   getUsersComments,
+  getCommentsByIds,
 };

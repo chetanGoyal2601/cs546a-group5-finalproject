@@ -12,13 +12,15 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  if (req.session.user) {
-    try {
-      req.params.id = validation.checkId(inputUserId, "User ID");
-    } catch (e) {}
+  //if (req.session.user) {
+  //   try {
+  //     req.params.id = validation.checkId(inputUserId, "User ID");
+  //   } catch (e) {}
 
   try {
     let comments = await commentData.getUsersComments("123");
+
+    //let allComments = await commentData.getCommentsByIds(commentIds); // To get multiple comments
     console.log(comments);
   } catch (e) {}
 
