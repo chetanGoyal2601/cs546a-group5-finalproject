@@ -1,0 +1,49 @@
+// const validation = require(".../data/validation");
+
+$(function () {
+  const $commentForm = $("#comment-form");
+  const $commentText = $("#comment");
+  const $commentList = $("#commentList");
+
+  function checkComment(comment, varName) {
+    if (!comment) throw `Error: You must provide a ${varName}`;
+    if (typeof comment !== "string") throw `Error:${varName} must be a string`;
+    comment = comment.trim();
+    if (comment.length === 0)
+      throw `Error: ${varName} cannot be an empty string or just spaces`;
+
+    return comment;
+  }
+
+  $commentForm.submit(async function (event) {
+    event.preventDefault();
+    $("#error").hide();
+    let commentTextVal = $commentText.val();
+
+    try {
+      commentTextVal = checkComment(commentTextVal, "Comment");
+
+      var requestConfig = {
+        method: "post",
+        url: "/comments",
+        data: { commentTextVal },
+      };
+
+      $.ajax(requestConfig).then(function (responseMessage) {
+        if (!responseMessage._id) throw "No shows found for the given search";
+        else {
+          const p = `<p class="showLi" id ='${responseMessage._id}'>${responseMessage.text} </p>`;
+          $commentList.append(p);
+        }
+        $commentList.show();
+        // $showDiv.hide();
+        // $homeLink.show();
+        $commentForm.trigger("reset");
+      });
+    } catch (e) {
+      const errorMessage = typeof e === "string" ? e : e.message;
+      $("#error").append("<p>" + errorMessage + "</p");
+      $("#error").show();
+    }
+  });
+});

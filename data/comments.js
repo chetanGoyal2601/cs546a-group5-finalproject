@@ -20,8 +20,30 @@ async function postComment(comment) {
   if (!insertInfo.acknowledged || !insertInfo.insertedId)
     throw "Could not add comment";
 
-  return true;
+  const newId = insertInfo.insertedId.toString();
+  const newComment = await this.get(newId);
+
+  return newComment;
 }
+
+async function get(id) {
+  if (!id) throw "You must provide an id to search for";
+  if (typeof id !== "string") throw "Id must be a string";
+  if (id.trim().length === 0)
+    throw "Id cannot be an empty string or just spaces";
+  id = id.trim();
+  if (!ObjectId.isValid(id)) throw "invalid object ID";
+
+  const commentsCollection = await comments();
+  const comment = await commentsCollection.findOne({ _id: ObjectId(id) });
+  if (comment === null) throw "No comment with that id";
+
+  comment._id = comment._id.toString();
+
+  return comment;
+}
+
 module.exports = {
   postComment,
+  get,
 };

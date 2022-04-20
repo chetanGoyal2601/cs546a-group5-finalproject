@@ -12,15 +12,20 @@ router.get("/", async (req, res) => {
 
   router.post("/", async (req, res) => {
     try {
-      req.body.comment = validation.checkComment(req.body.comment, "Comment");
+      req.body.commentTextVal = validation.checkComment(
+        req.body.commentTextVal,
+        "Comment"
+      );
     } catch (e) {
       res.status(404).json({ error: e });
     }
     try {
-      let insertComment = await commentData.postComment(req.body.comment); // req.session.user to be passed as well
-      if (insertComment) res.json(insertComment);
+      let insertComment = await commentData.postComment(
+        req.body.commentTextVal
+      ); // req.session.user to be passed as well
+      res.json(insertComment);
     } catch (e) {
-      res.status(404).json({ error: e });
+      return e.message;
     }
   });
 });
