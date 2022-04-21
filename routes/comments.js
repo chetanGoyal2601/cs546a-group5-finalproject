@@ -34,13 +34,13 @@ router.post("/", async (req, res) => {
       "Comment"
     );
   } catch (e) {
-    res.status(404).json({ error: e });
+    return res.status(404).json(e);
   }
   try {
     let insertComment = await commentData.postComment(req.body.commentTextVal); // req.session.user to be passed as well
     res.json(insertComment);
   } catch (e) {
-    return e.message;
+    res.status(404).json(e);
   }
 });
 

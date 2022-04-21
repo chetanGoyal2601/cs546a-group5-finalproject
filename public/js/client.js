@@ -30,8 +30,10 @@ $(function () {
       };
 
       $.ajax(requestConfig).then(function (responseMessage) {
-        if (!responseMessage._id) throw "No shows found for the given search";
-        else {
+        if (!responseMessage._id) {
+          $("#error").append("<p>" + responseMessage.message + "</p");
+          $("#error").show();
+        } else {
           const p = `<p class="showLi" id ='${responseMessage._id}'>${responseMessage.text} </p>`;
           $commentList.append(p);
         }

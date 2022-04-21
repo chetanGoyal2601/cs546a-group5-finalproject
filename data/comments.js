@@ -18,7 +18,7 @@ async function postComment(comment) {
 
   const insertInfo = await commentsCollection.insertOne(insertComment);
   if (!insertInfo.acknowledged || !insertInfo.insertedId)
-    throw "Could not add comment";
+    throw { message: "Could not add comment", code: 400 };
 
   const newId = insertInfo.insertedId.toString();
   const newComment = await this.get(newId);
