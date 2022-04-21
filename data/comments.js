@@ -27,16 +27,17 @@ async function postComment(comment) {
 }
 
 async function get(id) {
-  if (!id) throw "You must provide an id to search for";
-  if (typeof id !== "string") throw "Id must be a string";
+  if (!id) throw { message: "You must provide an id to search for", code: 400 };
+  if (typeof id !== "string")
+    throw { message: "Id must be a string", code: 400 };
   if (id.trim().length === 0)
-    throw "Id cannot be an empty string or just spaces";
+    throw { message: "Id cannot be an empty string or just spaces", code: 400 };
   id = id.trim();
-  if (!ObjectId.isValid(id)) throw "invalid object ID";
+  if (!ObjectId.isValid(id)) throw { message: "invalid object ID", code: 400 };
 
   const commentsCollection = await comments();
   const comment = await commentsCollection.findOne({ _id: ObjectId(id) });
-  if (comment === null) throw "No comment with that id";
+  if (comment === null) throw { message: "No comment with that id", code: 400 };
 
   comment._id = comment._id.toString();
 
@@ -50,7 +51,7 @@ async function getUsersComments(inputUserId) {
     .find({ userId: inputUserId })
     .toArray();
 
-  if (!commentList) throw "Could not get all comments";
+  if (!commentList) throw { message: "Could not get all comments", code: 400 };
 
   for (let index = 0; index < commentList.length; index++) {
     commentList[index]._id = commentList[index]._id.toString();
@@ -73,7 +74,7 @@ async function getCommentsByIds(inputCommentIds) {
     .find({ _id: { $in: inputCommentIds } })
     .toArray();
 
-  if (!commentList) throw "Could not get all comments";
+  if (!commentList) throw { message: "Could not get all comments", code: 400 };
 
   for (let index = 0; index < commentList.length; index++) {
     commentList[index]._id = commentList[index]._id.toString();
