@@ -55,11 +55,58 @@ async function getUsersComments(inputUserId) {
 
   for (let index = 0; index < commentList.length; index++) {
     commentList[index]._id = commentList[index]._id.toString();
+    commentList[index]._id = commentList[index].userId.toString();
   }
   return commentList;
 }
 
 async function getCommentsByIds(inputCommentIds) {
+  for (let index = 0; index < inputCommentIds.length; index++) {
+    inputCommentIds[index] = validation.checkId(
+      inputCommentIds[index],
+      "Comment ID"
+    );
+    inputCommentIds[index] = ObjectId(inputCommentIds[index]);
+  }
+
+  const commentsCollection = await comments();
+
+  let commentList = await commentsCollection
+    .find({ _id: { $in: inputCommentIds } })
+    .toArray();
+
+  if (!commentList) throw { message: "Could not get all comments", code: 400 };
+
+  for (let index = 0; index < commentList.length; index++) {
+    commentList[index]._id = commentList[index]._id.toString();
+  }
+  return commentList;
+}
+
+async function getCommentsByIds(inputCommentIds) {
+  for (let index = 0; index < inputCommentIds.length; index++) {
+    inputCommentIds[index] = validation.checkId(
+      inputCommentIds[index],
+      "Comment ID"
+    );
+    inputCommentIds[index] = ObjectId(inputCommentIds[index]);
+  }
+
+  const commentsCollection = await comments();
+
+  let commentList = await commentsCollection
+    .find({ _id: { $in: inputCommentIds } })
+    .toArray();
+
+  if (!commentList) throw { message: "Could not get all comments", code: 400 };
+
+  for (let index = 0; index < commentList.length; index++) {
+    commentList[index]._id = commentList[index]._id.toString();
+  }
+  return commentList;
+}
+
+async function deleteCommentsByIds(inputCommentIds) {
   for (let index = 0; index < inputCommentIds.length; index++) {
     inputCommentIds[index] = validation.checkId(
       inputCommentIds[index],
@@ -88,3 +135,5 @@ module.exports = {
   getUsersComments,
   getCommentsByIds,
 };
+
+// Delete comments for given array of comments
