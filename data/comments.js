@@ -117,15 +117,14 @@ async function deleteCommentsByIds(inputCommentIds) {
 
   const commentsCollection = await comments();
 
-  let commentList = await commentsCollection
-    .find({ _id: { $in: inputCommentIds } })
-    .toArray();
+  let deletionInfo = await commentsCollection.deleteMany({
+    _id: { $in: inputCommentIds },
+  });
 
-  if (!commentList) throw { message: "Could not get all comments", code: 400 };
-
-  for (let index = 0; index < commentList.length; index++) {
-    commentList[index]._id = commentList[index]._id.toString();
+  if (deletionInfo.deletedCount === 0) {
+    throw { message: `Could not delete band with id of ${id}`, code: 400 };
   }
+
   return commentList;
 }
 
@@ -134,6 +133,7 @@ module.exports = {
   get,
   getUsersComments,
   getCommentsByIds,
+  deleteCommentsByIds,
 };
 
 // Delete comments for given array of comments
