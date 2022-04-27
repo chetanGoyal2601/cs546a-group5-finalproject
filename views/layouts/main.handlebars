@@ -17,11 +17,13 @@
         <li class="nav-item"><a class="navbar-brand" href="/university">University-Finder</a></li>
         </ul>
         <ul class="navbar-nav ml-auto" style="list-style: none;">
-      <li class="nav-item" hidden><a class="navbar-brand" href="#">Sign Up</a></li>
-      <li class="nav-item" ><a class="navbar-brand" href="#">Login</a></li>
-      <li class="nav-item" ><a class="navbar-brand" href="/profile">User-Profile</a></li>
-        </ul>
-        
+        {{#if userAuth}}
+            <li class="nav-item" ><a class="navbar-brand" href="#">Sign Up</a></li>
+            <li class="nav-item" ><a class="navbar-brand" href="#">Login</a></li>
+        {{else}}
+            <li class="nav-item" ><a class="navbar-brand" href="/profile">User-Profile</a></li>
+        {{/if}}
+        </ul>        
         </div>
     </nav>
   </header>

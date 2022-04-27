@@ -5,7 +5,7 @@ const router = express.Router();
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
     //if (req.session.user) {
-    res.render("pages/intro");
+    res.render("pages/intro", { userAuth: false });
     // } else {
     //   res.render("posts/login");
     // }
