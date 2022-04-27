@@ -122,10 +122,10 @@ async function deleteCommentsByIds(inputCommentIds) {
   });
 
   if (deletionInfo.deletedCount === 0) {
-    throw { message: `Could not delete band with id of ${id}`, code: 400 };
+    throw { message: `Could not delete comments`, code: 400 };
   }
-
-  return commentList;
+  let answer = { deleted: "true" };
+  return answer;
 }
 
 module.exports = {
