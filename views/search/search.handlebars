@@ -1,0 +1,22 @@
+<h1 class="text-center py-4">{{title}}</h1>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <input class="form-control col-sm-8 mx-2" placeholder="Search..." type="text" id="uniSearchTerm">
+        <select id="locList" class="form-control col-sm-3 mx-2">
+            <option value="" selected='selected'>United States</option>
+        </select>
+
+    </div>
+</div>
+<div class="container my-4" id="emptyResponse">
+    <div class="row justify-content-center">
+        <img src="/public/no_result_found.png" alt="">
+
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center my-4" id="uniList"></div>
+    <div class="row justify-content-center my-4">
+        <ul class="pagination my-4" id="pagination"></ul>
+    </div>
+</div>

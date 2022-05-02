@@ -1,21 +1,19 @@
 const commentsRoutes = require("./comments");
+const universityFinderRoutes = require("./universityFinder");
 const express = require("express");
 const router = express.Router();
 
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
-    //if (req.session.user) {
     res.render("pages/intro", { userAuth: false });
-    // } else {
-    //   res.render("posts/login");
-    // }
   });
-
-  app.use("/comments", commentsRoutes);
+  app.use("/", universityFinderRoutes);
 
   app.use("*", (req, res) => {
     res.sendStatus(404);
   });
+
+  app.use("/comments", commentsRoutes);
 };
 
 module.exports = constructorMethod;
