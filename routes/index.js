@@ -1,11 +1,7 @@
-// const profileRoutes = require("./profile");
-// const universityRoutes = require("./university");
-// const postsRoutes = require("./posts");
-// const commentsRoutes = require("./comments");
+const universityRoutes =  require('./universityList')
 
 const constructorMethod = (app) => {
-  //   app.use("/", userRoutes);
-  //   app.use("/private", privateRoutes);
+  app.use('/', universityRoutes);
 
   app.use("*", (req, res) => {
     res.sendStatus(404);
