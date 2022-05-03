@@ -5,14 +5,12 @@ const posts = mongoCollections.posts;
 const { ObjectId } = require("mongodb");
 const validation = require("./validationComment");
 
-async function postComment(comment) {
-  //inputUserId will be passed as well
+async function postComment(comment, inputUserId) {
   comment = validation.checkComment(comment, "Comment");
-  inputUserId = 123;
-  const userId = inputUserId.toString();
+  inputUserId = validation.checkId(inputUserId, "User ID");
 
   let insertComment = {
-    userId,
+    inputUserId,
     text: comment,
   };
 
@@ -23,9 +21,7 @@ async function postComment(comment) {
     throw { message: "Could not add comment", code: 400 };
 
   const newId = insertInfo.insertedId.toString();
-  const newComment = await this.get(newId);
-
-  return newComment;
+  return newId;
 }
 
 async function get(id) {
