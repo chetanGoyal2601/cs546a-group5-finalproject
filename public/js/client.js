@@ -1,5 +1,3 @@
-// const validation = require(".../data/validation");
-
 $(function () {
   const $commentForm = $("#comment-form");
   const $commentText = $("#comment");

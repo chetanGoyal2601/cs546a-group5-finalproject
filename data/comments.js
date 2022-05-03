@@ -1,7 +1,9 @@
 const mongoCollections = require("../config/mongoCollections");
 const comments = mongoCollections.comments;
+const users = mongoCollections.profile;
+const posts = mongoCollections.posts;
 const { ObjectId } = require("mongodb");
-const validation = require("./validation");
+const validation = require("./validationComment");
 
 async function postComment(comment) {
   //inputUserId will be passed as well
@@ -70,6 +72,7 @@ async function getCommentsByIds(inputCommentIds) {
   }
 
   const commentsCollection = await comments();
+  const userCollection = await users();
 
   let commentList = await commentsCollection
     .find({ _id: { $in: inputCommentIds } })
@@ -78,6 +81,13 @@ async function getCommentsByIds(inputCommentIds) {
   if (!commentList) throw { message: "Could not get all comments", code: 400 };
 
   for (let index = 0; index < commentList.length; index++) {
+    commentList[index].userId = commentList[index].userId.toString();
+    const user = await userCollection.findOne({
+      _id: ObjectId(commentList[index].userId),
+    });
+    if (!user) throw { message: "User does not exist", code: 400 };
+    commentList[index].userName = "";
+    commentList[index].userName = user.name;
     commentList[index]._id = commentList[index]._id.toString();
   }
   return commentList;
@@ -105,12 +115,40 @@ async function deleteCommentsByIds(inputCommentIds) {
   return answer;
 }
 
+async function postCommentInPost(inputPostId, inputCommentId) {
+  inputCommentId = validation.checkId(inputCommentId, "Comment ID");
+  inputPostId = validation.checkId(inputPostId, "Post ID");
+
+  const commentsCollection = await comments();
+  const postCollection = await posts();
+
+  let comment = await this.get(inputCommentId);
+
+  const post = await postCollection.findOne({
+    _id: ObjectId(inputPostId),
+  });
+  if (!post) throw { message: "Post does not exist", code: 400 };
+
+  post.commentOnPost.append(inputCommentId);
+
+  const updatedInfo = await postCollection.updateOne(
+    { _id: ObjectId(inputPostId) },
+    { $set: post }
+  );
+  if (updatedInfo.modifiedCount === 0) {
+    throw { message: "could not update Post successfully", code: 400 };
+  }
+
+  return true;
+}
+
 module.exports = {
   postComment,
   get,
   getUsersComments,
   getCommentsByIds,
   deleteCommentsByIds,
+  postCommentInPost,
 };
 
 // Delete comments for given array of comments

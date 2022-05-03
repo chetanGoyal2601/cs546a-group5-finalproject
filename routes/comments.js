@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const validation = require("../data/validation");
+const validation = require("../data/validationComment");
 const data = require("../data");
 const commentData = data.comments;
 
@@ -38,6 +38,10 @@ router.post("/", async (req, res) => {
   }
   try {
     let insertComment = await commentData.postComment(req.body.commentTextVal); // req.session.user to be passed as well
+    let insertCommentProfile = await commentData.postCommentInPost(
+      req.body.postId,
+      insertComment._id
+    );
     res.json(insertComment);
   } catch (e) {
     res.status(e.code).json(e);
