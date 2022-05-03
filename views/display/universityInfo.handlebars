@@ -12,7 +12,7 @@
         <p>{{universityData.description}}</p>
     </div>
     <div>
-        <form method="POST" action="/university/{{universityData._id}}" id="comment-form" >
+        <form method="POST" action="/university/{{universityData._id}}" id="comment-form">
             <div>
                 <label for="comments" id="comment-label">Enter Comment</label>
                 <input type="text" name="comments" id="comment">
@@ -23,8 +23,9 @@
         <br>
         <div class="error" id="error" hidden></div>
         <div id="commentList"></div>
-        {{!-- <button type="submit" id="fav_university">Add to Fav</button> --}}
-        {{!-- <button class="favUni" id="favUni" hidden></button> --}}
+       
+        <button type="submit" id="add_to_fav">Add to Fav</button> 
+        <button id="saved_university" hidden>Saved</button> 
     </div>
     <div>
          {{#each universityData.commentsText}}

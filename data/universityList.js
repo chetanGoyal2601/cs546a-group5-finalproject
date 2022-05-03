@@ -171,16 +171,16 @@ async addCommentsToUniversity(id,commentsId) {
       },
 
     //Function to add favorite universities
-    async addFavUniversity(id)
+    async addFavUniversity(id,userID)
     {
         if (!id) throw "You must provide an id";
         if (typeof id != "string") throw "Id is not a string";
         let parsedId = ObjectId(id);
         if (!ObjectId.isValid(parsedId)) throw "Object Id is not valid";
         const profileCollection = await profileMongo();
-        const data = await profileCollection.updateOne({ _id: parsedId }, {
+        const data = await profileCollection.updateOne({ _id: ObjectId(userID) }, {
             $push: {
-                favouriteUniversities: {_id: ObjectId(commentsId)}
+                favouriteUniversities: ObjectId(parsedId)
             }
         });
         if (data === null) throw "No university with that id";

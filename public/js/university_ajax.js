@@ -1,4 +1,3 @@
-$(function () {
 const $commentForm = $("#comment-form");
 const $commentText = $("#comment");
 const $commentList = $("#commentList");
@@ -38,30 +37,29 @@ $commentForm.submit(async function (event) {
   });
 
   //Ajax to add fav universities
-  $favUniversity.submit(async function (event) {
+  $("#add_to_fav").click(async function (event) {
     event.preventDefault();
       var requestConfig = {
         type: "POST",
-        url:"/university/"+universityID,
+        url:"/university/"+universityID+"/fav",
         data: JSON.stringify({
           favUni: "Added to favourites"
         }),
         contentType: "application/json"
       };
-    
       try {
         const uniData = await $.ajax(requestConfig);
-        $("#favUni").hide();
+        $("#saved_university").hide();
         if (!uniData) {
-                $("#favUni").hide();
+                $("#saved_university").hide();
+                $("#add_to_fav").show();
               } else {
-                $("#favUni").show();
+                $("#saved_university").show();
+                $("#add_to_fav").hide();
               }
       } catch (e) {
         const errorMessage = typeof e === "string" ? e : e.message;
-       alert(errorMessage);
-       $("#favUni").hide();
+       $("#saved_university").hide();
       };
 
   });
-});
