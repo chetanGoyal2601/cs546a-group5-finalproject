@@ -18,11 +18,12 @@ router.get("/:id", async (req, res) => {
   //   } catch (e) {}
 
   try {
-    let comments = await commentData.getUsersComments("123");
-
-    //let allComments = await commentData.getCommentsByIds(commentIds); // To get multiple comments
-    console.log(comments);
-  } catch (e) {}
+    //let comments = await commentData.getUsersComments("123");
+    let allComments = await commentData.getCommentsByIds(commentIds); // To get multiple comments
+    //console.log(comments);
+  } catch (e) {
+    res.status(e.code).json(e);
+  }
 
   //}
 });
