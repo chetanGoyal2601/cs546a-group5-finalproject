@@ -5,7 +5,7 @@ const posts = mongoCollections.posts;
 const { ObjectId } = require("mongodb");
 const validation = require("./validationComment");
 
-async function postComment(comment, inputUserId) {
+async function postComment(inputUserId, comment) {
   comment = validation.checkComment(comment, "Comment");
   inputUserId = validation.checkId(inputUserId, "User ID");
 
