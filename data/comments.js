@@ -1,6 +1,6 @@
 const mongoCollections = require("../config/mongoCollections");
 const comments = mongoCollections.comments;
-const users = mongoCollections.profile;
+const users = mongoCollections.profiles;
 const posts = mongoCollections.posts;
 const { ObjectId } = require("mongodb");
 const validation = require("./validationComment");

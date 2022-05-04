@@ -1,5 +1,5 @@
 const mongoCollections = require("../config/mongoCollections");
-const universitiesMongo = mongoCollections.university;
+const universitiesMongo = mongoCollections.universities;
 const { ObjectId } = require("mongodb");
 
 const getUniversities = async function getUniversities() {

@@ -1,9 +1,9 @@
 const mongoConnection = require("../config/mongoConnection");
 const mongoCollections = require("../config/mongoCollections");
-const universitiesMongo = mongoCollections.university;
+const universitiesMongo = mongoCollections.universities;
 const commentsMongo = mongoCollections.comments;
 const postsMongo = mongoCollections.posts;
-const profilesMongo = mongoCollections.profile;
+const profilesMongo = mongoCollections.profiles;
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 

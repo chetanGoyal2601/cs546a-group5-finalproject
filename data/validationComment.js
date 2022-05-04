@@ -4,14 +4,7 @@ module.exports = {
   checkId(id, varName) {
     if (!id)
       throw { message: `Error: You must provide a ${varName}`, code: 400 };
-    // if (typeof id !== "string")
-    //   throw { message: `Error:${varName} must be a string`, code: 400 };
-    id = id.trim();
-    if (id.length === 0)
-      throw {
-        message: `Error: ${varName} cannot be an empty string or just spaces`,
-        code: 400,
-      };
+
     if (!ObjectId.isValid(id))
       throw {
         message: `Error: ${varName} invalid object ID`,
