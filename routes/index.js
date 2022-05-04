@@ -6,7 +6,7 @@ const router = express.Router();
 
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
-    res.render("pages/intro", { userAuth: true });
+    res.render("pages/intro", { userAuth: false });
   });
 
   app.use("/", universityFinderRoutes);
