@@ -1,0 +1,193 @@
+html,
+body {
+  font-size: 14pt;
+}
+
+body {
+  background: silver;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  /* background-image: url("https://images4.alphacoders.com/973/thumb-1920-973967.jpg"); */
+
+  background-position: center;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main {
+  max-width: 75%;
+  margin: auto;
+}
+
+header {
+  border-bottom: 1px solid #afafaf;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 5px;
+  text-align: center;
+  color: white;
+}
+
+.character-return{
+  color: white;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 2;
+  color: white;
+}
+
+/*
+.character-image {
+  /* border: 1px solid #222; 
+  border-radius: 8px;
+  padding: 5px;
+  width: 250px;
+  margin: 3px;
+}
+*/
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+footer {
+  background-color: rgb(139, 90, 0);
+  padding: 25px;
+  height: 80px;
+  margin-top: 20px;
+}
+
+.footer-text {
+  color: white;
+}
+
+
+.item-name {
+  color: #964de8;
+}
+
+.jumbotron {
+  margin-top: 10px;
+  background-color: blueviolet;
+  border-radius: 8px;
+}
+
+.home_top_trending {
+  border-left: 10px solid blue;
+  text-align: start;
+  background-color: #6363f5;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.categories {
+  border-left: 10px solid blue;
+  text-align: start;
+  background-color: #6363f5;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-top: 5%;
+}
+
+a {
+  display: inline-block;
+  transition: 0.3s;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.1);
+}
+
+#avatar-details {
+  text-align: start;
+}
+
+.category-cateloge {
+  text-align: center;
+  padding-left: 10%;
+  padding-bottom: 10px;
+}
+
+#orderTwo {
+  margin-top: 30px;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+.btn {
+  margin-right: 10px;
+  color: white !important;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home_top_rated{
+  border-left: 10px solid blue;
+  text-align: start;
+  background-color: #6363f5;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* #comedy{
+  width: 100px;
+} */
+
+.demographic {
+  border-left: 10px solid blue;
+  text-align: start;
+  background-color: #6363f5;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.ongoin_series{
+  border-left: 10px solid blue;
+  text-align: start;
+  background-color: #6363f5;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.details{
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.login-link{
+  text-align: center;
+  color: purple;
+}
+
+#ageCategoryRating{
+  margin-bottom: 20px;
+}
+
+#error-line{
+  color: black;
+  font-weight: bold;
+}
+
+.alert-heading{
+  color: black;
+  font-weight: bold;
+}
+
