@@ -106,21 +106,6 @@ async function main() {
     await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['4'] }, { $push: { favouriteUniversities: uniInsertInfo.insertedIds['38'] } });
     await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['4'] }, { $push: { favouriteUniversities: uniInsertInfo.insertedIds['11'] } });
 
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['0'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['0'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['1'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['1'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['2'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['2'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['3'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['3'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['4'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['11'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['0'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['10'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['1'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['9'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['2'] }, { $push: { commentOnPost: commentsInsertInfo.insertedIds['8'] } });
-
-
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['3'] }, { $push: { commentOnUniversity: commentsInsertInfo.insertedIds['4'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['4'] }, { $push: { commentOnUniversity: commentsInsertInfo.insertedIds['5'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['0'] }, { $push: { commentOnUniversity: commentsInsertInfo.insertedIds['6'] } });
-    await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['1'] }, { $push: { commentOnUniversity: commentsInsertInfo.insertedIds['7'] } });
-
     let hash = await bcrypt.hash('group5@123', 16);
 
     await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['0'] }, { $set: { hashedPassword: hash } });
