@@ -90,6 +90,14 @@ async function getCommentsByIds(inputCommentIds) {
 }
 
 async function deleteCommentsByIds(inputCommentIds) {
+  if (!inputCommentIds) {
+    throw { message: `No Comment Ids passed`, code: 400 };
+  }
+
+  if (inputCommentIds.length === 0) {
+    return;
+  }
+
   for (let index = 0; index < inputCommentIds.length; index++) {
     inputCommentIds[index] = validation.checkId(
       inputCommentIds[index],
