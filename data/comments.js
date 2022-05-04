@@ -10,7 +10,7 @@ async function postComment(inputUserId, comment) {
   inputUserId = validation.checkId(inputUserId, "User ID");
 
   let insertComment = {
-    inputUserId,
+    userId: inputUserId,
     text: comment,
   };
 
