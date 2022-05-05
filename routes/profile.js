@@ -151,7 +151,7 @@ router.post("/signup", async function (req, res) {
     } else if (schema.validate(password) == false) {
       throw "Please Enter Valid Password: Password Should be Minumum of length 8, Must have uppercase letters,Must have lowercase letters,Must have at least 2 digits,Should not have spaces";
     } else if ((password == confirm_password) == false) {
-      console.log(password == confirm_password);
+     
       errorMessage = "Password and Confrim Password must be same";
     } else if (password.length < 8 || password.length > 20) {
       errorMessage =
@@ -165,8 +165,7 @@ router.post("/signup", async function (req, res) {
     } else if (email == undefined) {
       errorMessage = "email not defined";
     } else if (!validateEmail(email)) {
-      console.log("Validate Email")
-      console.log(validateEmail(email))
+     
       errorMessage = "Enter email only with valid characters";
     } else if (!workex || workex == null || workex == undefined) {
       errorMessage = "Invalid workex parameters";
@@ -221,7 +220,7 @@ router.get("/login", function (req, res) {
 });
 
 router.post("/login", async function (req, res) {
-  console.log(req.body);
+ 
   const email = xss(req.body.email.toLowerCase().trim());
 
   const password = xss(req.body.password);
@@ -252,7 +251,7 @@ router.post("/login", async function (req, res) {
     const user = await checkvalid(req);
 
     if (user) {
-      console.log(user);
+
       req.session.user = user._id;
       //return res.redirect('/profile');
       return res.send({ status: true, error: null });
@@ -434,10 +433,6 @@ router.post("/update_password", async function (req, res) {
     const Curr_password = xss(req.body.password);
     const password = xss(req.body.new_password);
     const confirm_password = xss(req.body.confirm);
-    console.log(Curr_password)
-    console.log(password)
-    console.log(confirm_password)
-    console.log(schema.validate(password))
   
       if (!Curr_password) {
       errorMessage = "You must provide a Current password";
