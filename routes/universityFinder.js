@@ -17,7 +17,7 @@ router.get("/search/universities", async (req, res) => {
     res.status(404).json({ error: e });
   }
 });
-
+/*
 router.get("/university/:id", async (req, res) => {
   try {
     const uni = await searchData.getUniById(req.params.id);
@@ -29,48 +29,71 @@ router.get("/university/:id", async (req, res) => {
   } catch (e) {
     res.status(404).json({ error: e });
   }
+}); */
+
+//Route to display university data
+router.get("/university/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const uniData = await universityList.getUniversityById(id);
+    let userID = "6272bb0b56f3a87e7f457541";
+    // const favUniversityCheck = await universityList.checkFavUni(userID,id);
+    // console.log(favUniversityCheck);
+    res.status(201).render("display/universityInfo", {
+      layout: false,
+      universityData: uniData,
+    });
+  } catch (e) {
+    res.status(404).send(e);
+  }
 });
+
 //Route for posting comments on university page
 router.post("/university/:id", async (req, res) => {
-  let universityId = req.params.id;
-  let comment = req.body["comments"];
-  let array = [];
-  if (!comment) {
-    array.push("You must enter a comment");
-  }
-  if (comment == null) {
-    array.push("You must enter a comment");
-  }
-  comment = comment.trim();
-  if (comment.length === 0) {
-    array.push("You must enter a comment");
-  }
-  if (array.length > 0) {
-    return res.status(400).json({
-      errors: array,
-      hasErrors: true,
-    });
-  }
-  const userComment = await universityList.postCommentOnUniversity(
-    comment,
-    universityId
-  );
-  try {
-    if (userComment._id) {
-      res.json(userComment);
-    } else {
+  if (!req.session.user) {
+    res.redirect("/");
+  } else {
+    let universityId = req.params.id;
+    let comment = req.body["comments"];
+    let array = [];
+    if (!comment) {
+      array.push("You must enter a comment");
+    }
+    if (comment == null) {
+      array.push("You must enter a comment");
+    }
+    comment = comment.trim();
+    if (comment.length === 0) {
+      array.push("You must enter a comment");
+    }
+    if (array.length > 0) {
       return res.status(400).json({
         errors: array,
         hasErrors: true,
       });
     }
-  } catch (e) {
-    res.status(e.code).json(e);
+    const userComment = await universityList.postCommentOnUniversity(
+      comment,
+      universityId
+    );
+    try {
+      if (userComment._id) {
+        res.json(userComment);
+      } else {
+        return res.status(400).json({
+          errors: array,
+          hasErrors: true,
+        });
+      }
+    } catch (e) {
+      res.status(e.code).json(e);
+    }
   }
 });
 
 //Route to add favourite universities
 router.post("/university/:id/fav", async (req, res) => {
+  if (!req.session.user) res.redirect("/login");
   let universityId = req.params.id;
   let array = [];
   if (!universityId) {

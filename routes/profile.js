@@ -3,7 +3,7 @@ const xss = require("xss");
 const router = express.Router();
 const data = require("../data");
 const bcrypt = require("bcryptjs");
-const profileFetch = data.profiles;
+const profileFetch = data.profile;
 var passwordValidator = require("password-validator");
 var schema = new passwordValidator();
 
@@ -193,10 +193,7 @@ router.post("/signup", async function (req, res) {
         errorMessage = "User already exists";
       }
     }
-  } catch (e) {
-    errorMessage = e;
-  }
-  try {
+
     if (errorMessage == null) {
       const adduser = await profileFetch.createUser(
         name,
