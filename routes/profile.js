@@ -115,7 +115,7 @@ router.get("/signup", function (req, res, next) {
 
 
 router.post("/signup", async function (req, res) {
-  try {
+ 
     const name = xss(req.body.name);
     const password = xss(req.body.password);
     const confirm_password = xss(req.body.confirm);
@@ -123,6 +123,7 @@ router.post("/signup", async function (req, res) {
     const email = xss(req.body.email);
     const aspUni = xss(req.body.uni);
     let errorMessage = null;
+    try {
     if (!name) {
       errorMessage = "Name must be present";
     } else if (name == null) {
@@ -167,6 +168,8 @@ router.post("/signup", async function (req, res) {
     } else if (email == undefined) {
       errorMessage = "email not defined";
     } else if (!validateEmail(email)) {
+      console.log("Validate Email")
+      console.log(validateEmail(email))
       errorMessage = "Enter email only with valid characters";
     } else if (!workex || workex == null || workex == undefined) {
       errorMessage = "Invalid workex parameters";
@@ -422,29 +425,36 @@ router.get("/update_password", async function (req, res) {
 });
 
 router.post("/update_password", async function (req, res) {
-  try {
+
     const getuser = await profileFetch.getUserById(req.session.user);
     const email = getuser.email;
     const Curr_password = xss(req.body.password);
     const password = xss(req.body.new_password);
     const confirm_password = xss(req.body.confirm);
-
-    if (!Curr_password) {
+    console.log(Curr_password)
+    console.log(password)
+    console.log(confirm_password)
+    console.log(schema.validate(password))
+  
+      if (!Curr_password) {
       errorMessage = "You must provide a Current password";
     } else if (Curr_password == null) {
       errorMessage = "Current password cannot be null";
     } else if (Curr_password == undefined) {
       errorMessage = "Current password not defined";
     }
-
-    if (!password) {
+    else if(Curr_password===password){
+    errorMessage = "Please enter new password which is other than old password";
+    }
+    else if (!password) {
       errorMessage = "You must provide a New password";
     } else if (password == null) {
       errorMessage = "New password cannot be null";
     } else if (password == undefined) {
       errorMessage = "New password not defined";
     } else if (schema.validate(password) == false) {
-      throw "Please Enter Valid Password: Password Should be Minumum of length 8, Must have uppercase letters,Must have lowercase letters,Must have at least 2 digits,Should not have spaces";
+     
+      errorMessage = "Please Enter Valid Password: Password Should be Minumum of length 8, Must have uppercase letters,Must have lowercase letters,Must have at least 2 digits,Should not have spaces";
     } else if (!confirm_password) {
       errorMessage = "Please enter confirm passowrd";
     } else if (confirm_password == null) {
@@ -452,7 +462,7 @@ router.post("/update_password", async function (req, res) {
     } else if (confirm_password == undefined) {
       errorMessage = "Please enter confirm passowrd";
     } else if ((password == confirm_password) == false) {
-      console.log(password == confirm_password);
+   
       errorMessage = "Password and Confrim Password must be same";
     } else if (password.length < 6 || password.length > 20) {
       errorMessage =
@@ -464,7 +474,7 @@ router.post("/update_password", async function (req, res) {
     } else {
       errorMessage = null;
     }
-
+    try {
     if (errorMessage == null) {
       let updatedUser = { password };
 
@@ -488,7 +498,6 @@ router.post("/update_password", async function (req, res) {
     errorMessage = e;
   }
 
-  const getuser = await profileFetch.getUserById(req.session.user);
   //console.log(errorMessage);
   res.render("profile/change_password", {
     title: "Error",
