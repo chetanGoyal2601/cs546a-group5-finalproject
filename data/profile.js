@@ -92,9 +92,8 @@ async function createUser(name, email, aspiringUniversity, workEx, password) {
     email: email,
     aspiringUniversity: aspiringUniversity,
     workEx: workEx,
-    password: hashPassword,
+    hashedPassword: hashPassword,
     favouriteUniversities: [],
-  
   };
 
   try {
@@ -175,7 +174,7 @@ async function checkUser(emailLower, password) {
   for (var i = 0; i < getuser.length; i++) {
     if (
       getuser[i].email == email &&
-      bcrypt.compareSync(password, getuser[i].password)
+      bcrypt.compareSync(password, getuser[i].hashedPassword)
     )
       return true;
   }
@@ -185,8 +184,11 @@ async function checkUser(emailLower, password) {
 
 async function updateUser(id, newUserData) {
   try {
-    if (newUserData.password) {
-      newUserData.password = bcrypt.hashSync(newUserData.password, 16);
+    if (newUserData.hashedPassword) {
+      newUserData.hashedPassword = bcrypt.hashSync(
+        newUserData.hashedPassword,
+        16
+      );
     }
     const profileUpdate = await profile();
     let uu = await profileUpdate.updateOne(

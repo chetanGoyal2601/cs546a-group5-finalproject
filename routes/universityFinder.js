@@ -51,7 +51,7 @@ router.get("/university/:id", async (req, res) => {
 //Route for posting comments on university page
 router.post("/university/:id", async (req, res) => {
   if (!req.session.user) {
-    res.redirect("/");
+    return res.json({ result: "redirect", url: "http://localhost:3000/login" });
   } else {
     let universityId = req.params.id;
     let comment = req.body["comments"];
@@ -93,7 +93,8 @@ router.post("/university/:id", async (req, res) => {
 
 //Route to add favourite universities
 router.post("/university/:id/fav", async (req, res) => {
-  if (!req.session.user) res.redirect("/login");
+  if (!req.session.user)
+    return res.json({ result: "redirect", url: "http://localhost:3000/login" });
   let universityId = req.params.id;
   let array = [];
   if (!universityId) {
