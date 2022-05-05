@@ -86,30 +86,20 @@ var checkvalid = async function (req) {
   return false;
 };
 
-router.get("/", async (req, res) => {
-  try {
-    //   if(req.session.user){
-    //     res.redirect('/profile');
-    //   }
 
-    res.render("profile/Intro", {});
-  } catch (e) {
-    res.status(400).render("profile/Intro", {});
-    return;
-  }
-});
-// Get login page
-router.get("/login", function (req, res) {
-  if (req.session.user) {
-    res.redirect("/");
-  } else {
-    res.render("profile/login", {
-      title: "Login",
-      msg: req.query.msg,
-      isUserLoggedIn: req.session.user != null ? true : false,
-    });
-  }
-});
+// router.get("/", async (req, res) => {
+//   try {
+//     //   if(req.session.user){
+//     //     res.redirect('/profile');
+//     //   }
+
+//     res.render("profile/Intro", {});
+//   } catch (e) {
+//     res.status(400).render("profile/Intro", {});
+//     return;
+//   }
+// });
+
 
 // Get signup page
 router.get("/signup", function (req, res, next) {
@@ -122,6 +112,7 @@ router.get("/signup", function (req, res, next) {
     });
   }
 });
+
 
 router.post("/signup", async function (req, res) {
   try {
@@ -193,18 +184,9 @@ router.post("/signup", async function (req, res) {
         errorMessage = "User already exists";
       }
     }
-  } catch (e) {
-    errorMessage = e;
-  }
-  try {
+
     if (errorMessage == null) {
-      const adduser = await profileFetch.createUser(
-        name,
-        email,
-        aspUni,
-        workex,
-        password
-      );
+      const adduser = await profileFetch.createUser(name,email,aspUni,workex,password);
       return res.redirect("/login?msg=Congratulations, you are user now");
     }
   } catch (e) {
@@ -217,6 +199,19 @@ router.post("/signup", async function (req, res) {
     error: errorMessage,
     isUserLoggedIn: req.session.user != null ? true : false,
   });
+});
+
+// Get login page
+router.get("/login", function (req, res) {
+  if (req.session.user) {
+    res.redirect("/");
+  } else {
+    res.render("profile/login", {
+      title: "Login",
+      msg: req.query.msg,
+      isUserLoggedIn: req.session.user != null ? true : false,
+    });
+  }
 });
 
 router.post("/login", async function (req, res) {

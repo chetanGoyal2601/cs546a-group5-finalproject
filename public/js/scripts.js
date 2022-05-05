@@ -1,5 +1,5 @@
 
-function validateSignupInputs(e) {
+async function validateSignupInputs(e) {
     const name = document.getElementById("name").value;
     const password = document.getElementById("password").value;
     const workEx = Number(document.getElementById("work").value);
@@ -167,7 +167,7 @@ function confirmAccountDeletion() {
     }
 }
 
-function validateUpdateProfileInputs(e) {
+async function validateUpdateProfileInputs(e) {
     // const password = document.getElementById("password").value;
     // const confirm_pass = document.getElementById("confirm-password").value;
     const name = document.getElementById("name").value;

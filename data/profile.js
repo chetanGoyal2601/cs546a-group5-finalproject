@@ -94,8 +94,7 @@ async function createUser(name, email, aspiringUniversity, workEx, password) {
     workEx: workEx,
     password: hashPassword,
     favouriteUniversities: [],
-    commentOnPost: [],
-    commentOnUniversity: [],
+  
   };
 
   try {

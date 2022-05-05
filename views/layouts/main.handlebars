@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+          <script src="/public/js/scripts.js"></script>
 </head>
 <body>
 <h1>Educapedia</h1>
@@ -29,7 +30,7 @@
         <li class="nav-item"><a class="navbar-brand" href="/search">University-Finder</a></li>
         </ul>
         <ul class="navbar-nav ml-auto" style="list-style: none;">
-        {{#if userAuth}}
+        {{#if isUserLoggedIn}}
             <li class="nav-item" ><a class="navbar-brand" href="/profile">User-Profile</a></li>
         {{else}}
             <li class="nav-item" ><a class="navbar-brand" href="/signup">Sign Up</a></li>
