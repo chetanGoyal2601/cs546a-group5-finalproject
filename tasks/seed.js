@@ -204,23 +204,6 @@ async function main() {
     { $push: { commentOnPost: commentsInsertInfo.insertedIds["8"] } }
   );
 
-  await profilesCollection.updateOne(
-    { _id: profilesInsertInfo.insertedIds["3"] },
-    { $push: { commentOnUniversity: commentsInsertInfo.insertedIds["4"] } }
-  );
-  await profilesCollection.updateOne(
-    { _id: profilesInsertInfo.insertedIds["4"] },
-    { $push: { commentOnUniversity: commentsInsertInfo.insertedIds["5"] } }
-  );
-  await profilesCollection.updateOne(
-    { _id: profilesInsertInfo.insertedIds["0"] },
-    { $push: { commentOnUniversity: commentsInsertInfo.insertedIds["6"] } }
-  );
-  await profilesCollection.updateOne(
-    { _id: profilesInsertInfo.insertedIds["1"] },
-    { $push: { commentOnUniversity: commentsInsertInfo.insertedIds["7"] } }
-  );
-
   let hash = await bcrypt.hash("group5@123", 16);
 
   await profilesCollection.updateOne(

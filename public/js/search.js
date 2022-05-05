@@ -20,7 +20,7 @@ $(document).ready(function () {
                 }
                 let select = document.getElementById('locList');
                 header = document.createElement('option');
-                header.appendChild(document.createElement('h1').appendChild(document.createTextNode('States')));
+                header.appendChild(document.createElement('h1').appendChild(document.createTextNode('STATES')));
                 header.setAttribute('disabled', '');
                 select.appendChild(header);
                 locations.states.forEach(state => {
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 });
                 header = document.createElement('option');
                 header.setAttribute('disabled', '');
-                header.appendChild(document.createTextNode('Cities'));
+                header.appendChild(document.createTextNode('CITIES'));
                 select.appendChild(header);
                 locations.cities.forEach(city => {
                     option = document.createElement('option');
@@ -135,6 +135,7 @@ $(document).ready(function () {
             ul.className = 'list-group list-group-flush';
             let rank = document.createElement('li');
             rank.className = 'list-group-item';
+            rank.id = "rank1";
             rank.appendChild(document.createTextNode('Rank: ' + paginationArray[i].ranking));
             ul.appendChild(rank);
             body.appendChild(ul);
@@ -157,6 +158,7 @@ $(document).ready(function () {
             paginationBar();
         }
     })
+
     $('#uniSearchTerm').keyup(function () {
         if ($(this).val() === '') {
             uniArray = allUniversities;

@@ -6,9 +6,7 @@
             "hashedPassword": "",
             "aspiringUniversity": "Princeton University",
             "workEx": 2,
-            "favouriteUniversities": [],
-            "commentOnPost": [],
-            "commentOnUniversity": []
+            "favouriteUniversities": []
         },
         {
             "name": "Jefferson Dias",
@@ -16,9 +14,7 @@
             "hashedPassword": "",
             "aspiringUniversity": "Rutgers, The State University of New Jersey",
             "workEx": 3,
-            "favouriteUniversities": [],
-            "commentOnPost": [],
-            "commentOnUniversity": []
+            "favouriteUniversities": []
         },
         {
             "name": "Riya Kale",
@@ -26,9 +22,7 @@
             "hashedPassword": "",
             "aspiringUniversity": "University of Southern California",
             "workEx": 0,
-            "favouriteUniversities": [],
-            "commentOnPost": [],
-            "commentOnUniversity": []
+            "favouriteUniversities": []
         },
         {
             "name": "Devshree Parikh",
@@ -36,9 +30,7 @@
             "hashedPassword": "",
             "aspiringUniversity": "University of California, San Diego",
             "workEx": 2,
-            "favouriteUniversities": [],
-            "commentOnPost": [],
-            "commentOnUniversity": []
+            "favouriteUniversities": []
         },
         {
             "name": "Sangram Thorat",
@@ -46,9 +38,7 @@
             "hashedPassword": "",
             "aspiringUniversity": "Boston University",
             "workEx": 5,
-            "favouriteUniversities": [],
-            "commentOnPost": [],
-            "commentOnUniversity": []
+            "favouriteUniversities": []
         }
     ]
 }
