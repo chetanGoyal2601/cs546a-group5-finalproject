@@ -3,7 +3,7 @@ const xss = require("xss");
 const router = express.Router();
 const data = require("../data");
 const bcrypt = require("bcryptjs");
-const profileFetch = data.profiles;
+const profileFetch = data.profile;
 var passwordValidator = require("password-validator");
 var schema = new passwordValidator();
 

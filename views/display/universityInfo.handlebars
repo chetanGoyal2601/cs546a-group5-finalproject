@@ -1,0 +1,72 @@
+<main>
+    <div>
+       <img src="{{universityData.image}}">
+    </div>
+    <div>
+        <p>{{universityData.name}}</p>
+    </div>
+     <div>
+        <p>{{universityData.introduction}}</p>
+    </div>
+    <div>
+        <p>{{universityData.description}}</p>
+    </div>
+    <div>
+        <form method="POST" action="/university/{{universityData._id}}" id="comment-form">
+            <div>
+                <label for="comments" id="comment-label">Enter Comment</label>
+                <input type="text" name="comments" id="comment">
+                <input type="hidden" value="{{universityData._id}}" id="universityID">
+                <button type="submit">Post</button>
+            </div>
+        </form>
+        <br>
+        <div class="error" id="error" hidden></div>
+        <div id="commentList"></div>
+       
+        <button type="submit" id="add_to_fav">Add to Fav</button> 
+        <button id="saved_university" hidden>Saved</button> 
+    </div>
+    <div>
+         {{#each universityData.commentsText}}
+               <li>{{this.text}}</li> by {{this.userName}}
+        {{/each}}
+        <input value="{{universityData.latitude}}" type="hidden" id="latitude">
+         <input value="{{universityData.longitude}}" type="hidden" id="longitude">
+    </div>
+  
+    {{!-- <h3>My Google Maps Demo</h3> --}}
+    <div id="map"></div>
+</main>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <script>
+         $(document).ready(function () {
+             var latitude = $("#latitude").val();
+             var longitude = $("#longitude").val();
+             initMap(parseFloat(latitude),parseFloat(longitude));
+      });
+        //Map functions
+        // Initialize and add the map
+        function initMap(latitude,longitude) {
+            var uluru = {
+            lat: longitude,
+            lng: latitude
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: {lat: longitude, lng: latitude},
+            });
+            marker = new google.maps.Marker({
+            position: {lat: longitude, lng: latitude},
+            map: map,
+            });
+        }
+           
+    </script>
+    <script src="../../public/js/university_ajax.js"></script>
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJfhV9M_I65scQzvdPfnihk4W1ptpUjeQ&callback=initMap&libraries=places">
+    </script>
