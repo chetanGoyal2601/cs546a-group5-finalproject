@@ -86,7 +86,6 @@ var checkvalid = async function (req) {
   return false;
 };
 
-
 // router.get("/", async (req, res) => {
 //   try {
 //     //   if(req.session.user){
@@ -100,7 +99,6 @@ var checkvalid = async function (req) {
 //   }
 // });
 
-
 // Get signup page
 router.get("/signup", function (req, res, next) {
   if (checkLog(req)) {
@@ -112,7 +110,6 @@ router.get("/signup", function (req, res, next) {
     });
   }
 });
-
 
 router.post("/signup", async function (req, res) {
   try {
@@ -186,7 +183,13 @@ router.post("/signup", async function (req, res) {
     }
 
     if (errorMessage == null) {
-      const adduser = await profileFetch.createUser(name,email,aspUni,workex,password);
+      const adduser = await profileFetch.createUser(
+        name,
+        email,
+        aspUni,
+        workex,
+        password
+      );
       return res.redirect("/login?msg=Congratulations, you are user now");
     }
   } catch (e) {
@@ -466,7 +469,8 @@ router.post("/update_password", async function (req, res) {
     }
 
     if (errorMessage == null) {
-      let updatedUser = { password };
+      let hashedPassword = password;
+      let updatedUser = { hashedPassword };
 
       if (req.session.user) {
         const updateuser = await profileFetch.updateUser(
