@@ -133,11 +133,15 @@ $(document).ready(function () {
             body.appendChild(title);
             let ul = document.createElement('ul');
             ul.className = 'list-group list-group-flush';
+            let intro = document.createElement('li');
             let rank = document.createElement('li');
+            intro.className = 'list-group';
             rank.className = 'list-group-item';
             rank.id = "rank1";
+            intro.appendChild(document.createTextNode(paginationArray[i].introduction));
             rank.appendChild(document.createTextNode('Rank: ' + paginationArray[i].ranking));
             ul.appendChild(rank);
+            ul.appendChild(intro);
             body.appendChild(ul);
             card.appendChild(body);
             document.getElementById('uniList').appendChild(card);
