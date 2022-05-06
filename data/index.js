@@ -6,4 +6,6 @@ module.exports = {
   comments: commentData,
   profile: profileData,
   university: universityData,
+  posts: require("./posts.js"),
+  individualUniversity: require("./individualUniversity.js"),
 };

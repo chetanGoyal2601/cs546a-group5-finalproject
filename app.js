@@ -3,6 +3,8 @@ const app = express();
 const session = require("express-session");
 const configRoutes = require("./routes");
 const static = express.static(__dirname + "/public");
+const configRoutes = require("./routes");
+const exphbs = require("express-handlebars");
 // const dbConnection = require('./config/mongoConnection');
 
 // async function main() {
@@ -11,12 +13,35 @@ const static = express.static(__dirname + "/public");
 
 // main();
 
-const exphbs = require("express-handlebars");
+const hbs = exphbs.create({
+  defaultLayout: "main",
+
+  // create custom helper
+  helpers: {
+    listChecker: function (elementList, v, options) {
+      for (const e of elementList) {
+        if (e.toString() === v) {
+          return options.fn(this);
+        }
+      }
+      return options.inverse(this);
+    },
+    userChecker: function (v1, v2, options) {
+      //console.log(v1);
+      //console.log(v2);
+      if (v1 === v2) {
+        return options.fn(this);
+      }
+    },
+  },
+});
+
 app.use("/public", static);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.engine("handlebars", exphbs.engine({ defaultLayout: "main" }));
+
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 app.use(
@@ -71,6 +96,8 @@ app.use('/login', (req, res, next) => {
 //   res.redirect("/")
 // })
 // })
+
+
 
 configRoutes(app);
 
