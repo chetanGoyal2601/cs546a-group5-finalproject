@@ -1,0 +1,114 @@
+<h2><span>{{pageTitle}}</span></h2>
+<section>
+    <div>
+        <form id="formPosting" action="/post" method="post">
+            <input
+                id="newPost"
+                name="newPost"
+                type="text"
+                placeholder="Ask any question about studying in US or share information with others..."
+                required="required"
+                autocomplete="off"
+            />
+            <input type="submit" value="Submit" class="btn-grad" />
+        </form>
+    </div>
+    {{#if postList.length}}
+        <ul>
+            {{#each postList}}
+                <li>
+                    <p>{{userName}}</p>
+                    <p id = "initialPost{{_id}}">{{text}}</p>
+                    <form id="postEditing{{_id}}" action="/posts/editPost" method="post" hidden>
+                        <input
+                                id="editedPost"
+                                name="editedPost"
+                                type="text"
+                                value = "{{text}}"
+                                placeholder="EditPost"
+                                required="required"
+                                
+                        />
+                        <input name='postId' value = {{_id}} hidden>
+                        <input type="submit" value="Submit" class="btn-grad" />
+                    </form>
+
+                    {{!-- To display total likes on each post --}}
+                    <div>
+                        <p id = "totalLikes">Likes: {{totalLikes}}</p>
+                    </div>
+                    
+
+
+                    {{#if userId}}
+                        {{#userChecker userId postUserId}}
+                            <form id = "MyDeleteForm" action="/posts/deletePost" method="post">
+                                <input name='postId' value = {{_id}} hidden>
+                                <button name="deletePost" value="deletePost">Delete Post</button>
+                            </form>
+                            <button id ="postEditor" onclick="enableEditing('postEditing{{_id}}', 'initialPost{{_id}}')" name="postEditor" value="postEditor">Edit Post</button>
+                        {{/userChecker}}
+
+                        {{#listChecker likes userId}}
+                            <form id = "MyDislikeForm" action="/posts/dislike" method="post">
+                                <input name='postId' value = {{_id}} hidden>
+                                <button name="Unlike" value="Unlike">Unlike</button>
+                            </form>
+                        {{else}}
+                            <form id = "myLikeForm1" action="/posts/like" method="post">
+                                <input name='postId' value = {{_id}} hidden>
+                                <button name="Like" value="Like">Like</button>
+                            </form>
+                        {{/listChecker}}
+                    {{/if}}
+
+                    {{#unless userId}}
+                        <form id = "myLikeForm2" action="" method="post">
+                            <button name="foo" value="upvote">Like</button>
+                        </form>
+                    {{/unless}}
+
+                    
+                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost">{{comments.length}} Comments</button>
+                    {{!-- form to comment --}}
+                    <div id = "commentShow{{_id}}" hidden>
+                        <form id="commentForm{{_id}}"  action="/posts/comment" method="post">
+                            <input
+                                id="newComment{{_id}}"
+                                name="newComment{{_id}}"
+                                type="text"
+                                placeholder="Comment..."
+                                required="required"
+                                autocomplete="off"
+                            />
+                            <input name='postId' value = {{_id}} hidden>
+                            <input name="Submit" type="submit" value="Submit" class="btn-grad" />
+                        </form>
+                    
+                        {{#if comments.length}}
+                            <div>
+                                {{#each comments}}
+                                    <p>{{this.userName}}</p>
+                                    <p>{{this.text}}</p>
+                                {{/each}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+
+    {{#unless postList.length}}
+        <p>Be the first to post a question!</p>
+    {{/unless}}
+
+    <script src="/public/js/posts/script.js"></script>
+    {{!-- <script src="/public/js/posts/scriptPosts.js"></script> --}}
+    
+
+    {{#if error}}
+        <p>{{error}}</p>
+    {{/if}}
+
+</section >
