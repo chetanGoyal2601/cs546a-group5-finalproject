@@ -1,11 +1,12 @@
 
 async function validateSignupInputs(e) {
+   
     const name = document.getElementById("name").value;
     const password = document.getElementById("password").value;
     const workEx = Number(document.getElementById("work").value);
     const email = document.getElementById("email").value;
     const AspUni = document.getElementById("uni").value;
-    const confirm_pass = document.getElementById("confirm-password").value;
+    const confirm_pass = document.getElementById("confirm").value;
     let errorMessage = null;
     if (!name) {
         errorMessage = "name must be present";
@@ -160,14 +161,8 @@ async function postLoginData() {
     return await response.json();
 }
 
-function confirmAccountDeletion() {
-    let r = confirm("Are you sure?");
-    if (r == true) {
-        window.location.href = '/remove_profile';
-    }
-}
-
 async function validateUpdateProfileInputs(e) {
+  
     // const password = document.getElementById("password").value;
     // const confirm_pass = document.getElementById("confirm-password").value;
     const name = document.getElementById("name").value;
@@ -186,7 +181,7 @@ async function validateUpdateProfileInputs(e) {
         errorMessage = "name not defined";
     }
 
-    if (!email) {
+    else if (!email) {
         errorMessage = "You must provide a email post";
     }
     else if (email == null || email.length == 0) {
@@ -199,7 +194,7 @@ async function validateUpdateProfileInputs(e) {
         errorMessage = "Enter email only with valid characters";
     }
 
-    if (!aspuni) {
+    else if (!aspuni) {
         errorMessage = "You must provide a Aspiring University";
     }
     else if (aspuni == null || aspuni.length == 0) {
@@ -215,9 +210,10 @@ async function validateUpdateProfileInputs(e) {
     else if (typeof WorkEx == 'string') {
         errorMessage = "Work Experience should be a number";
     }
-    else if (WorkEx < 1 || WorkEx > 100) {
-        errorMessage = "Invalid Work Experience";
+    else if (WorkEx < 0 || WorkEx > 100) {
+        errorMessage = "Please enter 0 if you dont have work experience";
     }
+
     // else if (password && password.length < 6 || password.length > 20) {
     //     errorMessage = "Enter a password with more than 6 and less than 20 characters";
     // }
@@ -236,6 +232,7 @@ async function validateUpdateProfileInputs(e) {
     // else if (confirm_pass != password) {
     //     errorMessage = "password and confirm password do not match.";
     // }
+    
     else {
         errorMessage = null;
     }

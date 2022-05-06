@@ -112,8 +112,9 @@ router.get("/signup", function (req, res, next) {
 });
 
 router.post("/signup", async function (req, res) {
- 
+    console.log(req.body)
     const name = xss(req.body.name);
+    console.log(req.body)
     const password = xss(req.body.password);
     const confirm_password = xss(req.body.confirm);
     const workex = Number(xss(req.body.work));
