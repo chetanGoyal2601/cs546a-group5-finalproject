@@ -1,6 +1,463 @@
+* {
+	box-sizing: content-box;
+}
+/* media */
+@media only screen and (max-width: 987px){
+    .navbar-brand{
+        padding-left: 0px;
+    }
+}
+html,
+body {
+	font-size: 16px;
+}
+/*
+CSS for signup page
+*/
+.container{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px 16px;
+}
+.welcome{
+    font-size: 20px;
+    font-weight: bold;
+}
+.sign_up_form_btn{
+    background-color: white;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: #545BE8;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    /* left: 76%;
+    top: 4px; */
+    position:absolute;
+    align-items: center;
+}
+.sign_up_form_btn:hover{
+    background-color: #545BE8;
+    color: white;
+    text-decoration: none;
+}
+/*
+------------------end--------------------
+*/
+body {
+	/* background: rgb(214, 226, 225); */
+	font-family: Cambria, "Times New Roman", Times, serif;
+}
+
+main {
+	/* max-width: 75%; */
+	margin: auto;
+}
+/*
+CSS for landing page 
+*/
+.background_div{
+position: absolute;
+width: 100%;
+height: 115%;
+left: -2px;
+top: 55px;
+background: #F5F5F5;
+}
+.background_div2{
+position: absolute;
+width: 1141.5px;
+height: 600px;
+left: 148px;
+top: 90px;
+background: #F5F5F5;;
+}
+.background_div3{
+position: absolute;
+width: 600px;
+height: 600px;
+background: #F5F5F5;;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+padding-left: 10px;
+}
+.intro_div{
+
+    position: absolute;
+    width: 500px;
+    height: 288px;
+    padding-left : 50px;
+    top: 70px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 72px;
+    color: #141E32;
+}
+.background_div4{
+    position: absolute;
+    left:600px;
+    width: 600px;
+    height: 600px;
+    background: #F5F5F5;;
+    }
+    .img_div{
+        position: absolute;
+        height:400px;
+        width:430px;
+        top: 200px;
+        left:800px;
+        /* z-index:-1; */
+    }
+.logo{
+    /* padding: 30px; */
+    /* height: 38px;
+    width: 38px;
+    background-color: #545BE8;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: -35px 0 0 -35px; */
+    position: absolute;
+    left: 4.9%;
+    right: 91.96%;
+    top: 11%;
+    bottom: 13.19%;
+    background: #545BE8
+}
+.square{
+    /* height: 60px;
+    width: 60px; */
+    /* padding-left: 200px; */
+    /* background-color: white; */
+    /* background: #CCCCCC;
+    height: 200px;
+    width: 200px;
+    position: absolute; */
+    position: absolute;
+    width: 145px;
+    height: 33.93px;
+    left: 0px;
+    top: 0px;
+    
+}
+.logo_E
+{
+    position: absolute;
+    width: 16px;
+    height: 32px;
+    left: 86px;
+    top: 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.logo_Educapedia
+{
+    position: absolute;
+    left: 9.9%;
+    right: 85.96%;
+    top: 38%;
+    bottom: 13.19%;
+    /* font-family: 'Roboto'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: center;
+color: #545BE8;
+}
+.nav_bar_custom{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+top: 38%;
+position: absolute;
+height: 24px;
+left: 32.38%;
+    right: 38.89%;
+font-weight: 700;
+font-size: 20px;
+color: #545BE8;
+/* top: calc(50% - 24px/2 - 1801px); */
+}
+.navbar-brand2{
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    color: #545BE8;
+    white-space: nowrap;
+    padding:30px;
+}
+.navbar-brand2:hover{
+    text-decoration: none;
+    color:black; 
+}
+.login_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 40px;
+    width: 140px;
+    height: 40px;
+    top: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 15px;
+}
+/*
+.login_btn:hover{
+    background:  #545BE8; 
+    color:white;
+} */
+.sign_up_btn{
+    background-color: white;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: #545BE8;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    left: 76%;
+    top: 4px;
+    position:absolute;
+    align-items: center;
+}
+.sign_up_btn:hover{
+    background-color: #545BE8;
+    color: white;
+    text-decoration: none;
+}
+.login_up_btn{
+        background-color: #545BE8;
+        border: 2px solid #545BE8;
+        box-sizing: border-box;
+        color: white;
+        padding: 6px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 140px;
+        height: 40px;
+        left: 88%;
+        top: 4px;
+        position:absolute;
+        align-items: center;
+    
+}
+.login_up_btn:hover{
+    background-color: white;
+    color: #545BE8;
+    text-decoration: none;
+   }
+
+.div_circle_1
+{
+    box-sizing: border-box;
+    position: absolute;
+    width: 467.68px;
+    height: 465.68px;
+    left: 10px;
+    top: -1px;
+    border-radius: 50%;
+    border: 2px solid #058FCB;
+}
+.div_circle_2
+{
+
+position: absolute;
+width: 465.68px;
+height: 465.68px;
+/* left: 805px; */
+/* top: 198.32px; */
+border-radius:50%;
+background: #F0C932;
+}
+.div_circle_3{
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    left: 328px;
+    top: -6px;
+    background: #FE753F;
+    border-radius:50%;
+}
+.div_circle_5{
+    position: absolute;
+width: 79px;
+height: 79px;
+left: 10px;
+top:-30px;
+border-radius:50%;
+background: #7253A4;
+}
+.div_circle_6
+{
+position: absolute;
+width: 79px;
+height: 79px;
+left: 380px;
+top: 400px;
+border-radius:50%;
+background: #058FCB;
+}
+.div_circle_7{
+    position: absolute;
+width: 33px;
+height: 33px;
+/* left: 805px; */
+top: 500px;
+border-radius:50%;
+background: #058FCB;
+}
+.div_class_8{
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 265px;
+top: 500px;
+border-radius:50%;
+background: #FE753F;
+}
+.vector
+{
+    width: 250px;
+    height: 87px;
+    border-bottom: 1px dashed red;
+    transform:
+        translateY(-10px)
+        translateX(-80px)
+        rotate(140deg); 
+    position: absolute;
+    top: 300px;
+}
+.vector2
+{
+    width: 250px;
+    height: 87px;
+    border-bottom: 1px solid red;
+    transform:
+        translateY(-5px)
+        translateX(-100px)
+        rotate(140deg);
+    position: absolute;
+    top: 350px;
+}
+.vector3
+{
+    width: 250px;
+    height: 87px;
+    border-bottom: 1px dashed red;
+    transform:
+        translateY(-40px)
+        translateX(-50px)
+        rotate(140deg);
+    position: absolute;
+    top: 400px;
+}
+/*
+-------end------------- 
+*/
+/*
+ CSS for login page
+*/
+.login_div{
+  
+    background: white;
+    /* font-family: Cambria, "Times New Roman", Times, serif; */
+    width: 120%;
+    margin-top:80px;
+    color: white;
+    padding: 30px;
+    font-size: 18px;
+    border-radius: 5%;
+    /* align-self: center; */
+    left: 70%;
+    margin-left: 70%;
+    /* float: right; */
+}
+.login_background{
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0px;
+background: white;
+background: linear-gradient(180deg, #777de6 0%, #272DB0 100%);
+}
 .dropright {
     position: relative;
 }
+.sign_up_form_btn{
+    background-color: #545BE8;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 233px;
+    height: 40px;
+    left: 27%;
+    position:absolute;
+    align-items: center;
+}
+.sign_up_form_btn:hover{
+    background-color: white;
+    color:  #545BE8;
+    text-decoration: none;
+}
+.register_link {
+    margin-top:80px;
+    align-items: center;
+    
+}
+.register_link a{
+color:#545BE8;
+}
+.register_link a:hover{
+    color:black;
+    text-decoration: none;
+}
+/*
+-------end----------
+*/
 
 .dropright .dropdown-menu {
     top: 0;
@@ -55,9 +512,7 @@ li#rank1.list-group-item {
     flex: 1;
 }
 
-.container {
-    padding: 2px 16px;
-}
+
 
 #rank1 {
     position: relative;

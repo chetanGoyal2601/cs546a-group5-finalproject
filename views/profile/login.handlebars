@@ -1,3 +1,4 @@
+<div class="login_background">
 <div class="container col-3 mt-3 text-center">
 
     <div id="error-div" style="display: none;" class="alert alert-danger" role="alert">
@@ -10,27 +11,30 @@
         <p style="color: inherit;">{{msg}}</p>
     </div>
     {{/if}}
-    <h1 class="h3 mb-3 fw-normal">Enter your details to signin!!</h1>
-
+    {{!-- <h1 class="h3 mb-3 fw-normal">LOGIN</h1> --}}
+<div class="login_div">
     <form method="POST" action="/login" id="login-form" onsubmit="return validateSignInInputs(event)">
+        <p style="color: black;float:left;font-size:20px;">Email:</p>
         <label class="sr-only" for="email">email</label>
         <input class="form-control rounded-0" type="text" id="email" name="email" placeholder="email">
+        <p style="color: black;float:left;font-size:20px;padding-top:15px;">Password:</p>
         <label class="sr-only" for="password">Password</label>
         <input class="form-control mb-4 rounded-0" type="password" id="password" name="password" placeholder="Password">
         <div class="invalid-feedback mb-3">
             Username and/or passsword cannot be empty
         </div>
-        <button type="submit" name="submitButton" id="submitButton" class="btn btn-primary w-100">Sign In</button>
-
+        <button type="submit" name="submitButton" id="submitButton" class="sign_up_form_btn">Login</button>
         {{#each errors}}
         <div class="error font-italic" id="errors">{{this}}</div>
         {{/each}}
     </form>
-
-    <a id="No-account" href="/signup">Need to register? Click here to sign-up</a>
-
+<div class="register_link">
+    <a  id="No-account" href="/signup">Need to register? Click here to sign-up</a>
+</div>
+</div>
     {{#if hasErrors}}
     <p>{{errors}}</p>
   {{/if}}
 
+</div>
 </div>
