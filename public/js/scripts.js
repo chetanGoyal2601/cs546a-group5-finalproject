@@ -1,5 +1,5 @@
 
-async function validateSignupInputs(e) {
+function validateSignupInputs(e) {
    
     const name = document.getElementById("name").value;
     const password = document.getElementById("password").value;
@@ -7,6 +7,7 @@ async function validateSignupInputs(e) {
     const email = document.getElementById("email").value;
     const AspUni = document.getElementById("uni").value;
     const confirm_pass = document.getElementById("confirm").value;
+
     let errorMessage = null;
     if (!name) {
         errorMessage = "name must be present";
@@ -161,10 +162,9 @@ async function postLoginData() {
     return await response.json();
 }
 
-async function validateUpdateProfileInputs(e) {
+function validateUpdateProfileInputs(e) {
   
-    // const password = document.getElementById("password").value;
-    // const confirm_pass = document.getElementById("confirm-password").value;
+
     const name = document.getElementById("name").value;
     const WorkEx = Number(document.getElementById("work").value);
     const email = document.getElementById("email").value;
@@ -213,25 +213,58 @@ async function validateUpdateProfileInputs(e) {
     else if (WorkEx < 0 || WorkEx > 100) {
         errorMessage = "Please enter 0 if you dont have work experience";
     }
+    
+    else {
+        errorMessage = null;
+    }
 
-    // else if (password && password.length < 6 || password.length > 20) {
-    //     errorMessage = "Enter a password with more than 6 and less than 20 characters";
-    // }
-    // else if (password && !password.match(/^(?!\s*$).+/)) {
-    //     errorMessage = "Enter password only with valid characters";
-    // }
-    // else if (!confirm_pass) {
-    //     errorMessage = "You must provide a confirm password";
-    // }
-    // else if (confirm_pass == null) {
-    //     errorMessage = "confirm password cannot be null";
-    // }
-    // else if (confirm_pass == undefined) {
-    //     errorMessage = "confirm password not defined";
-    // }
-    // else if (confirm_pass != password) {
-    //     errorMessage = "password and confirm password do not match.";
-    // }
+    if (errorMessage == null) {
+        return true;
+    }
+    else {
+        e.preventDefault();
+        alert(errorMessage);
+        return false;
+    }
+}
+
+function validateUpdatePasswordInputs(e) {
+  
+    const password = document.getElementById("password").value;
+    const new_password = document.getElementById("new_password").value;
+    const confirm_pass = document.getElementById("confirm").value;
+
+    let errorMessage = null;
+
+    if(!password){
+        errorMessage = "Please enter current password";
+    }
+    else if(!new_password){
+        errorMessage = "Please enter new password";
+    }
+    else if(!confirm_pass){
+        errorMessage = "Please enter confirm password";
+    }
+    else if (password && password.length < 6 || password.length > 20) {
+        errorMessage = "Enter a password with more than 6 and less than 20 characters";
+    }
+
+    else if (new_password && new_password.length < 6 || new_password.length > 20) {
+        errorMessage = "Enter a password with more than 6 and less than 20 characters";
+    }
+    else if (password && !password.match(/^(?!\s*$).+/)) {
+        errorMessage = "Enter password only with valid characters";
+    }
+   
+    else if (confirm_pass == null) {
+        errorMessage = "confirm password cannot be null";
+    }
+    else if (confirm_pass == undefined) {
+        errorMessage = "confirm password not defined";
+    }
+    else if (confirm_pass != new_password) {
+        errorMessage = "new password and confirm password do not match.";
+    }
     
     else {
         errorMessage = null;

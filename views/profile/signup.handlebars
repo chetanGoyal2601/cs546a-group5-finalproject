@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8">
-       
+            <p class="welcome">Enter the details to signup!!</p>
         <br/>
         {{#if error}}
         <div class="alert alert-danger col-4 offset-4" role="alert">
@@ -13,9 +13,7 @@
         <div>
         <img src="/public/images/person_think.jpeg" alt="Person" class="img_div">
       </div>
-        <form id="signup-form" method="post" action="/signup" onsubmit="return validateSignupInputs(event);" enctype="multipart/form-data">
-           <p class="welcome">Enter the details to signup!!</p>
-           <br />
+        <form id="signup-form" method="post" action="/signup" onsubmit="validateSignupInputs(event)">
             <div class="form-group">
             <label for="name"></label>
             <p class="noPost">Name:</p>

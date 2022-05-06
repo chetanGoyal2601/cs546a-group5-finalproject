@@ -10,7 +10,7 @@
                 </div>
                 {{/if}}
 
-                <form id="signup-form" method="post" action="/update_profile" onsubmit="return validateUpdateProfileInputs(event);>
+                <form id="update-form" method="post" action="/update_profile" onsubmit="validateUpdateProfileInputs(event)";>
                   
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="id" name="id" value="{{user._id}}" />
