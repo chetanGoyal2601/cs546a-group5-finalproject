@@ -3,7 +3,6 @@ const app = express();
 const session = require("express-session");
 const configRoutes = require("./routes");
 const static = express.static(__dirname + "/public");
-const configRoutes = require("./routes");
 const exphbs = require("express-handlebars");
 // const dbConnection = require('./config/mongoConnection');
 
@@ -40,7 +39,6 @@ app.use("/public", static);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
@@ -54,37 +52,37 @@ app.use(
   })
 );
 
-app.use('/profile', (req, res, next) => {
+app.use("/profile", (req, res, next) => {
   //console.log(req.session.id);
   if (!req.session.user) {
-    return res.redirect('/');
+    return res.redirect("/");
   } else {
     next();
   }
 });
 
-app.use('/update_profile', (req, res, next) => {
+app.use("/update_profile", (req, res, next) => {
   console.log(req.session.user);
   if (!req.session.user) {
-    return res.redirect('/');
+    return res.redirect("/");
   } else {
     next();
   }
 });
 
-app.use('/signup', (req, res, next) => {
- // console.log(req.session.id);
+app.use("/signup", (req, res, next) => {
+  // console.log(req.session.id);
   if (req.session.user) {
-    return res.redirect('/profile');
+    return res.redirect("/profile");
   } else {
     next();
   }
 });
 
-app.use('/login', (req, res, next) => {
+app.use("/login", (req, res, next) => {
   if (req.session.user) {
-    return res.redirect('/profile');
-  } else { 
+    return res.redirect("/profile");
+  } else {
     next();
   }
 });
@@ -96,8 +94,6 @@ app.use('/login', (req, res, next) => {
 //   res.redirect("/")
 // })
 // })
-
-
 
 configRoutes(app);
 
