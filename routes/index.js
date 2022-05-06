@@ -7,7 +7,10 @@ const router = express.Router();
 
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
-    res.render("pages/intro", { userAuth: false });
+    res.render("pages/intro", {
+      userAuth: false,
+      title: "Welcome to Educapedia",
+    });
   });
 
   app.use("/", universityFinderRoutes);
