@@ -5,14 +5,24 @@ const postData = data.posts;
 const { ObjectId } = require("mongodb");
 
 router.route("/posts").get(async (req, res) => {
-  //let userId = req.body.userId;
+  let userId = null;
+  let isUserLoggedIn = false;
   const output = [];
+  console.log(typeof req.session.user);
   try {
+    if (checkUserLoggedIn(req)) {
+      //console.log("Hello");
+      userId = req.session.user;
+      isUserLoggedIn = true;
+      idValidation(userId);
+    }
+    //console.log("Hello");
     const postDataList = await postData.getAllPosts();
+    //console.log(postDataList, userId, isUserLoggedIn);
     for (const i in postDataList) {
       output.push({
         _id: postDataList[i]._id,
-        userId: "62751ace4bc518cf42583d0a",
+        userId: userId,
         userName: postDataList[i].username,
         text: postDataList[i].text,
         totalLikes: postDataList[i].totalLikes,
@@ -22,26 +32,29 @@ router.route("/posts").get(async (req, res) => {
       });
     }
     res.render("posts", {
-      pageTitle: "Posts",
+      title: "Posts",
       postList: output,
-      isUserLoggedIn: req.session.user != null ? true : false,
+      isUserLoggedIn: isUserLoggedIn,
     });
   } catch (e) {
     res.status(e.code || 500).render("posts", {
-      pageTitle: "Posts",
+      title: "Posts",
       postList: output,
       error: e.message || "Internal server error occured while getting posts",
-      isUserLoggedIn: req.session.user != null ? true : false,
+      isUserLoggedIn: isUserLoggedIn,
     });
   }
 });
 
 router.route("/posts/like").post(async (req, res) => {
-  //check user logged in
-  //let userId = req.body.userId;
-  let userId = "62751ace4bc518cf42583d0a";
+  let userId = req.session.user;
   let postId = req.body.postId;
   try {
+    idValidation(postId);
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
+    idValidation(userId);
     await postData.increaseLike(userId, postId);
     res.status(200).redirect("/posts");
   } catch (e) {
@@ -52,41 +65,45 @@ router.route("/posts/like").post(async (req, res) => {
 });
 
 router.route("/posts/disLike").post(async (req, res) => {
-  //check user logged in
-  //let userId = req.body.userId;
-  let userId = "62751ace4bc518cf42583d0a";
+  let userId = req.session.user;
   let postId = req.body.postId;
   try {
-    idValidation(userId);
     idValidation(postId);
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
+    idValidation(userId);
     await postData.decreaseLike(userId, postId);
     res.status(200).redirect("/posts");
   } catch (e) {
-    res
-      .status(e.code || 500)
-      .json(e.message || "Internal server error occured while disliking!");
+    res.status(e.code || 500).json({
+      ErrorMessage:
+        e.message || "Internal server error occured while disliking!",
+    });
   }
 });
 
 router.route("/posts/comment").post(async (req, res) => {
-  //check user logged in
-  //let userId = req.body.userId;
-  let userId = "62751ace4bc518cf42583d0a";
+  let userId = req.session.user;
   let postId = req.body.postId;
   const commentInfo = req.body["newComment" + postId];
-  console.log(req.body);
-  console.log(commentInfo);
+  //console.log(req.body);
+  //console.log(commentInfo);
   try {
-    idValidation(userId);
     idValidation(postId);
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
+    idValidation(userId);
     textValidation(commentInfo);
     //console.log("test", commentInfo);
     await postData.createCommentOnPost(userId, postId, commentInfo);
     res.status(200).redirect("/posts");
   } catch (e) {
-    res
-      .status(e.code || 500)
-      .json(e.message || "Internal server error occured while disliking!");
+    res.status(e.code || 500).json({
+      ErrorMessage:
+        e.message || "Internal server error occured while disliking!",
+    });
   }
 });
 
@@ -94,6 +111,9 @@ router.route("/posts/editPost").post(async (req, res) => {
   const newPostText = req.body.editedPost;
   const postId = req.body.postId;
   try {
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
     textValidation(newPostText);
     idValidation(postId);
     await postData.editPost(postId, newPostText);
@@ -108,6 +128,9 @@ router.route("/posts/editPost").post(async (req, res) => {
 router.route("/posts/deletePost").post(async (req, res) => {
   const postId = req.body.postId;
   try {
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
     idValidation(postId);
     await postData.deletePost(postId);
     res.status(200).redirect("/posts");
@@ -118,12 +141,16 @@ router.route("/posts/deletePost").post(async (req, res) => {
   }
 });
 
-router.route("/post").post(async (req, res) => {
+router.route("/posts").post(async (req, res) => {
   //checkUserId else ask user to login
   //console.log(req.body.createPost);
+  let userId = req.session.user;
   const postInfo = req.body.newPost;
   try {
-    idValidation("62751ace4bc518cf42583d0a"); // ObjectIdValidation and if the user exists in db or not
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
+    idValidation(userId); // ObjectIdValidation and if the user exists in db or not
     textValidation(postInfo);
   } catch (e) {
     return res
@@ -133,7 +160,7 @@ router.route("/post").post(async (req, res) => {
   //console.log("Hello", postInfo);
 
   try {
-    const p = await postData.createPost("62751ace4bc518cf42583d0a", postInfo);
+    const p = await postData.createPost(userId, postInfo);
     // res.status(200).json(p);
     res.status(200).redirect("/posts");
   } catch (e) {
@@ -166,6 +193,16 @@ function idValidation(id) {
   id = id.trim();
   if (!ObjectId.isValid(id)) throw { code: 400, message: "invalid object ID" };
   //console.log("Hello111id1111");
+}
+
+function checkUserLoggedIn(req) {
+  //console.log("Hello2");
+  if (req.session.user) {
+    //console.log("Hello3");
+    return true;
+  }
+  //console.log("Hello4");
+  return false;
 }
 
 module.exports = router;

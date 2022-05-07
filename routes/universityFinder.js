@@ -6,10 +6,17 @@ const universityData = data.individualUniversity;
 const { ObjectId } = require("mongodb");
 
 router.get("/search", async (req, res) => {
+  let userId = null;
+  let isUserLoggedIn = false;
   try {
+    if (checkUserLoggedIn(req)) {
+      userId = req.session.user;
+      isUserLoggedIn = true;
+      idValidation(userId);
+    }
     res.render("search/search", {
       title: "University Finder",
-      isUserLoggedIn: req.session.user != null ? true : false,
+      isUserLoggedIn: isUserLoggedIn,
     });
   } catch (e) {
     res.status(e.code || 500).json(e.message || "Internal Server Error");
@@ -25,16 +32,19 @@ router.get("/search/universities", async (req, res) => {
   }
 });
 
+//routes for individual university
+
 router.route("/university/:id").get(async (req, res) => {
-  // if(req.body.userId) {
-  //     let userId = req.body.userId
-  // } else {
-  //     let userId = "";
-  // };
-  let userId = "62751ace4bc518cf42583d0a";
-  //let userId = "";
+  let userId = null;
+  let isUserLoggedIn = false;
   let output = {};
   try {
+    if (checkUserLoggedIn(req)) {
+      userId = req.session.user;
+      isUserLoggedIn = true;
+      idValidation(userId);
+    }
+    idValidation(req.params.id);
     let favoriteUniversities = [];
     let universityInfo = await universityData.getUniversity(req.params.id);
     let userRating = 0;
@@ -68,21 +78,27 @@ router.route("/university/:id").get(async (req, res) => {
       universityData: output,
       userId: userId,
       userRating: userRating,
+      isUserLoggedIn: isUserLoggedIn,
     });
   } catch (e) {
     res.status(e.code || 500).render("posts", {
       pageTitle: "University Info",
       postList: output,
       error: e.message || "Internal server error occured while getting posts",
+      isUserLoggedIn: isUserLoggedIn,
     });
   }
 });
 
 router.route("/university/editRating").post(async (req, res) => {
-  //check user logged in
+  let userId = req.session.user;
   try {
     let uniId = req.body.uniId;
-    let userId = "62751ace4bc518cf42583d0a";
+    idValidation(uniId);
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
+    idValidation(userId);
     let rating = req.body.rating;
     //console.log(rating);
     if (!rating || !Number(rating)) {
@@ -109,14 +125,15 @@ router.route("/university/editRating").post(async (req, res) => {
 });
 
 router.route("/university/comment").post(async (req, res) => {
-  //check user logged in
-
+  let userId = req.session.user;
+  let uniId = req.body.uniId;
+  let text = req.body.newComment;
   try {
-    idValidation(req.body.uniId);
-    let userId = "62751ace4bc518cf42583d0a";
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
     idValidation(userId);
-    let uniId = req.body.uniId;
-    let text = req.body.newComment;
+    idValidation(uniId);
     textValidation(text);
     await universityData.createCommentOnUniversity(userId, uniId, text);
     res.status(200).redirect("/university/" + uniId);
@@ -128,12 +145,14 @@ router.route("/university/comment").post(async (req, res) => {
 });
 
 router.route("/university/deleteComment").post(async (req, res) => {
-  //check user logged in
+  let commentId = req.body.commentId;
+  let uniId = req.body.uniId;
   try {
-    idValidation(req.body.commentId);
-    idValidation(req.body.uniId);
-    let commentId = req.body.commentId;
-    let uniId = req.body.uniId;
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
+    idValidation(commentId);
+    idValidation(uniId);
     await universityData.deleteCommentOnUniversity(commentId, uniId);
     res.status(200).redirect("/university/" + uniId);
   } catch (e) {
@@ -144,13 +163,14 @@ router.route("/university/deleteComment").post(async (req, res) => {
 });
 
 router.route("/university/favourite").post(async (req, res) => {
-  //check user logged in
-  //let userId = req.params.userId
+  let userId = req.session.user;
+  let uniId = req.body.uniId;
   try {
-    let userId = "62751ace4bc518cf42583d0a";
-    let uniId = req.body.uniId;
-    idValidation(uniId);
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
     idValidation(userId);
+    idValidation(uniId);
     await universityData.addToFavourites(userId, uniId);
     res.status(200).redirect("/university/" + uniId);
   } catch (e) {
@@ -161,13 +181,13 @@ router.route("/university/favourite").post(async (req, res) => {
 });
 
 router.route("/university/unfavourite").post(async (req, res) => {
-  //check user logged in
-  //let userId = req.params.userId
+  let userId = req.session.user;
   try {
-    let userId = "62751ace4bc518cf42583d0a";
+    if (!checkUserLoggedIn(req)) {
+      throw { code: 400, message: "User not logged in!" };
+    }
     let uniId = req.body.uniId;
     idValidation(uniId);
-    idValidation(userId);
     await universityData.unFavourite(userId, uniId);
     res.status(200).redirect("/university/" + uniId);
   } catch (e) {
@@ -196,6 +216,13 @@ function idValidation(id) {
     throw { code: 400, message: "Id cannot be an empty string or just spaces" };
   id = id.trim();
   if (!ObjectId.isValid(id)) throw { code: 400, message: "invalid object ID" };
+}
+
+function checkUserLoggedIn(req) {
+  if (req.session.user) {
+    return true;
+  }
+  return false;
 }
 
 module.exports = router;
