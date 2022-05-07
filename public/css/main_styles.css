@@ -589,7 +589,7 @@ CSS for posts page
     align-self: center;
     position: relative;
     max-width: 45%;
-    height: 200px;
+    height: auto;
     flex-direction: column;
     background-color: white;
     margin-top:20px ;
@@ -657,9 +657,131 @@ CSS for posts page
 }
 .scholar_img
 {
-    position: absolute;
-    height:400px;
-    width:430px;
-    top: 200px;
+    position: fixed;
+    height:100%;
+    width:40%;
+    top: 100px;
     float: left;
+}
+.list_decoration{
+    list-style-type: none;
+}
+.theme_text_color{
+    color: #545BE8;
+    font-weight: bold;
+}
+.delete_posts_btn{
+    /* background-color: #545BE8; */
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.delete_posts_btn:hover{
+    background-color: white;
+    color:black;
+}
+.edit_posts_btn{
+    /* background-color: #545BE8; */
+        /* background-color: #545BE8; */
+        background-color: #545BE8;
+    color: white;
+        border: 2px solid #545BE8;
+        box-sizing: border-box;
+       
+        text-align: center;
+        /* display: inline-block; */
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 127px;
+        margin-top: -36px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100px;
+    height: 35px;
+        position: absolute;
+        align-items: center;
+}
+.edit_posts_btn:hover{
+    background-color: white;
+    color: #545BE8;
+}
+.edit_delete_buttons{
+    position: relative;
+    float:right;
+    margin-right: 100px;
+}
+.like_posts_btn{
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.like_posts_btn:hover{
+    /* border: 2px solid black; */
+   background-color: black;
+   color:white;
+}
+.unlike_posts_btn{
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.unlike_posts_btn:hover{
+    /* border: 2px solid black; */
+   background-color: white;
+   color:black;
+}
+.comment_on_post_btn{
+    border: 2px solid #f7e8ac;
+    box-sizing: border-box;
+    color: black;
+    background-color: #f7e8ac;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.comment_on_post_btn:hover{
+    /* border: 2px solid black; */
+   background-color: rgb(242, 242, 242);
+   border: 2px solid  rgb(242, 242, 242);
+   color:black;
 }
