@@ -8,7 +8,7 @@ router.route("/posts").get(async (req, res) => {
   let userId = null;
   let isUserLoggedIn = false;
   const output = [];
-  console.log(typeof req.session.user);
+  //console.log(typeof req.session.user);
   try {
     if (checkUserLoggedIn(req)) {
       //console.log("Hello");
