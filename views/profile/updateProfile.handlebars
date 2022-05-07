@@ -1,17 +1,20 @@
-    <div class="container">
+  <div class="background_div">
+  <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <p class="welcome">Update your profile</p>
-                <br>
+              
                 {{#if error}}
                 <div class="alert alert-danger col-4 offset-4" role="alert">
                     <h4 class="alert-heading">Error!</h4>
                     <p>{{error}}</p>
                 </div>
                 {{/if}}
-
-                <form id="update-form" method="post" action="/update_profile" onsubmit="validateUpdateProfileInputs(event)">
-                  
+  <div>
+        <img src="/public/images/video_game.jpeg" alt="Person" class="img_div" style="height:50%;width:50%;">
+      </div>
+                <form id="update-form" method="post" action="/update_profile" onsubmit="validateUpdateProfileInputs(event)";>
+                    <p class="welcome" style="padding-top: 20px;">Update your profile</p>
+                    <hr>
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="id" name="id" value="{{user._id}}" />
                         <p class="noPost" >Name:</p>
@@ -32,7 +35,7 @@
                         <br>
                        
                         <div class="form-group">
-                            <input type="submit" class="btn AllButton btn-outline-success" value="Update" />
+                            <input type="submit" class="sign_up_form_btn" value="Update" />
                         </div>
 
                     </div>
@@ -41,7 +44,4 @@
             </div>
         </div>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
+</div>

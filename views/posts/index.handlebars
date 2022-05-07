@@ -1,11 +1,11 @@
 <div class="posts_background">
     <div class="div_center">
-        <div class="scholar_img">
-            <img src="/public/images/scholar.jpeg" />
+        <div >
+            <img src="/public/images/scholar.jpeg" class="scholar_img" />
         </div>
-          <div class="div_circle_6"></div>
-            <div class="div_circle_7"></div>
-            <div class="div_class_8"></div>
+          <div class="div_circle_6" style="position: fixed;"></div>
+            <div class="div_circle_7" style="position: fixed;"></div>
+            <div class="div_class_8" style="position: fixed;"></div>
     <div class="posts_div">
         
     <div class="card bg-light" style="border-radius: 10px;padding-top:10px">
@@ -33,8 +33,9 @@
         <ul class="justify_center">
             {{#each postList}}
             <div class="user_posts">
-                <li>
-                    <p>{{userName}}</p>
+                <li class="list_decoration">
+                    <p class="theme_text_color" style="font-size:23px;font-style:italic;">{{userName}}</p>
+                    <hr>
                     <p id = "initialPost{{_id}}">{{text}}</p>
                     <form id="postEditing{{_id}}" action="/posts/editPost" method="post" hidden>
                         <input 
@@ -52,27 +53,29 @@
 
                     {{!-- To display total likes on each post --}}
                     <div>
-                        <p id = "totalLikes">Likes: {{totalLikes}}</p>
+                        <p id ="totalLikes"  style="font-size:15px;font-style:italic;">Total Likes : {{totalLikes}}</p>
                     </div>
 
                     {{#if userId}}
                         {{#userChecker userId postUserId}}
+                        <div class="edit_delete_buttons">
                             <form id = "MyDeleteForm" action="/posts/deletePost" method="post">
                                 <input name='postId' value = {{_id}} hidden>
-                                <button name="deletePost" value="deletePost">Delete Post</button>
+                                <button name="deletePost" value="deletePost" class="delete_posts_btn">Delete Post</button>
                             </form>
-                            <button id ="postEditor" onclick="enableEditing('postEditing{{_id}}', 'initialPost{{_id}}')" name="postEditor" value="postEditor">Edit Post</button>
+                            <button id ="postEditor" onclick="enableEditing('postEditing{{_id}}', 'initialPost{{_id}}')" name="postEditor" value="postEditor" class="edit_posts_btn">Edit Post</button>
+                        </div>
                         {{/userChecker}}
 
                         {{#listChecker likes userId}}
                             <form id = "MyDislikeForm" action="/posts/dislike" method="post">
                                 <input name='postId' value = {{_id}} hidden>
-                                <button name="Unlike" value="Unlike">Unlike</button>
+                                <button name="Unlike" value="Unlike" class="unlike_posts_btn">Unlike</button>
                             </form>
                         {{else}}
                             <form id = "myLikeForm1" action="/posts/like" method="post">
                                 <input name='postId' value = {{_id}} hidden>
-                                <button name="Like" value="Like">Like</button>
+                                <button name="Like" value="Like" class="like_posts_btn">Like</button>
                             </form>
                         {{/listChecker}}
                     {{/if}}
@@ -83,11 +86,11 @@
                         </form>
                     {{/unless}}
                     
-                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost">{{comments.length}} Comments</button>
+                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost" class="comment_on_post_btn">View Comments :  {{comments.length}}</button>
                     {{!-- form to comment --}}
                     <div id = "commentShow{{_id}}" hidden>
                         <form id="commentForm{{_id}}"  action="/posts/comment" method="post">
-                            <input
+                            <input class="ask_posts_text" style="margin-top: 10px;"
                                 id="newComment{{_id}}"
                                 name="newComment{{_id}}"
                                 type="text"
@@ -96,13 +99,14 @@
                                 autocomplete="off"
                             />
                             <input name='postId' value = {{_id}} hidden>
-                            <input name="Submit" type="submit" value="Submit" class="btn-grad" />
+                            <input name="Submit" type="submit" value="Post" class="btn-grad submit_posts_btn" style=" width: 80px;font-size:15px; height: 35px;"/>
                         </form>
                     
                         {{#if comments.length}}
-                            <div>
+                            <div style="padding-top:10px;">
                                 {{#each comments}}
-                                    <p>{{this.userName}}</p>
+                                    <p class="theme_text_color">{{this.userName}}</p>
+                                    <hr>
                                     <p>{{this.text}}</p>
                                 {{/each}}
                             </div>
