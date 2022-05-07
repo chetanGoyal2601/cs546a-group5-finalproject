@@ -10,7 +10,7 @@ const router = express.Router();
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
     res.render("pages/intro", {
-      userAuth: false,
+      isUserLoggedIn: req.session.user != null ? true : false,
       title: "Welcome to Educapedia",
     });
   });
@@ -29,6 +29,6 @@ const constructorMethod = (app) => {
   app.use("*", (req, res) => {
     res.status(404).json({ error: "Page Not found" });
   });
-}
+};
 
 module.exports = constructorMethod;
