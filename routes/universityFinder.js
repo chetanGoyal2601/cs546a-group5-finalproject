@@ -4,6 +4,7 @@ const router = express.Router();
 const data = require("../data");
 const universityData = data.individualUniversity;
 const { ObjectId } = require("mongodb");
+const { append } = require("express/lib/response");
 
 router.get("/search", async (req, res) => {
   let userId = null;
@@ -96,7 +97,8 @@ router.route("/university/editRating").post(async (req, res) => {
     let uniId = req.body.uniId;
     idValidation(uniId);
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     let rating = req.body.rating;
@@ -130,7 +132,8 @@ router.route("/university/comment").post(async (req, res) => {
   let text = req.body.newComment;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     idValidation(uniId);
@@ -149,7 +152,8 @@ router.route("/university/deleteComment").post(async (req, res) => {
   let uniId = req.body.uniId;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(commentId);
     idValidation(uniId);
@@ -167,7 +171,8 @@ router.route("/university/favourite").post(async (req, res) => {
   let uniId = req.body.uniId;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     idValidation(uniId);
@@ -184,7 +189,8 @@ router.route("/university/unfavourite").post(async (req, res) => {
   let userId = req.session.user;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     let uniId = req.body.uniId;
     idValidation(uniId);

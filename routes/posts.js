@@ -52,7 +52,8 @@ router.route("/posts/like").post(async (req, res) => {
   try {
     idValidation(postId);
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     await postData.increaseLike(userId, postId);
@@ -70,7 +71,8 @@ router.route("/posts/disLike").post(async (req, res) => {
   try {
     idValidation(postId);
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     await postData.decreaseLike(userId, postId);
@@ -92,7 +94,8 @@ router.route("/posts/comment").post(async (req, res) => {
   try {
     idValidation(postId);
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     textValidation(commentInfo);
@@ -112,7 +115,8 @@ router.route("/posts/editPost").post(async (req, res) => {
   const postId = req.body.postId;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     textValidation(newPostText);
     idValidation(postId);
@@ -129,7 +133,8 @@ router.route("/posts/deletePost").post(async (req, res) => {
   const postId = req.body.postId;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(postId);
     await postData.deletePost(postId);
@@ -148,7 +153,8 @@ router.route("/posts").post(async (req, res) => {
   const postInfo = req.body.newPost;
   try {
     if (!checkUserLoggedIn(req)) {
-      throw { code: 400, message: "User not logged in!" };
+      return res.status(200).redirect("/login");
+      //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId); // ObjectIdValidation and if the user exists in db or not
     textValidation(postInfo);
