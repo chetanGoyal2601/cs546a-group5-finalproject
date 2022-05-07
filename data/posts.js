@@ -37,14 +37,18 @@ async function editPost(postId, newPostText) {
   try {
     idValidation(postId);
     textValidation(newPostText);
+    newPostText = newPostText.trim();
     const postsCollection = await posts();
     const post = await postsCollection.findOne({ _id: ObjectId(postId) });
     if (post === null) throw { code: 404, message: "No post with that id" };
+    if (post.text.trim() === newPostText) {
+      return newPostText;
+    }
     const updatedInfo = await postsCollection.updateOne(
       { _id: ObjectId(postId) },
       {
         $set: {
-          text: newPostText.trim(),
+          text: newPostText,
         },
       }
     );
@@ -296,20 +300,6 @@ async function userExistsValidation(userId) {
   }
 }
 
-//to check if post id exists in post collection
-// async function postExistsValidation(postId) {
-//   try {
-//     idValidation(postId);
-//     const postsCollection = await posts();
-//     const post = await postsCollection.findOne({ _id: ObjectId(postId) });
-//     if (post === null) throw { code: 404, message: "No such post found" };
-//   } catch (e) {
-//     throw {
-//       code: e.code || 500,
-//       message: e.message || "Internal Server Error Occured",
-//     };
-//   }
-// }
 module.exports = {
   createPost,
   editPost,
