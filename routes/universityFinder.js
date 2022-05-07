@@ -1,15 +1,19 @@
 const express = require("express");
 const searchData = require("../data/search");
 const router = express.Router();
-
 const data = require("../data");
-const universityList = data.university;
+const universityData = data.individualUniversity;
+const { ObjectId } = require("mongodb");
 
 router.get("/search", async (req, res) => {
-  res.render("search/search", {
-    title: "University Finder",
-    isUserLoggedIn: req.session.user != null ? true : false,
-  });
+  try {
+    res.render("search/search", {
+      title: "University Finder",
+      isUserLoggedIn: req.session.user != null ? true : false,
+    });
+  } catch (e) {
+    res.status(e.code || 500).json(e.message || "Internal Server Error");
+  }
 });
 
 router.get("/search/universities", async (req, res) => {
@@ -17,126 +21,181 @@ router.get("/search/universities", async (req, res) => {
     const unis = await searchData.getUniversities();
     res.json(unis);
   } catch (e) {
-    res.status(404).json({ error: e });
+    res.status(e.code || 500).json(e.message || "Internal Server Error");
   }
 });
-/*
-router.get("/university/:id", async (req, res) => {
+
+router.route("/university/:id").get(async (req, res) => {
+  // if(req.body.userId) {
+  //     let userId = req.body.userId
+  // } else {
+  //     let userId = "";
+  // };
+  let userId = "62751ace4bc518cf42583d0a";
+  //let userId = "";
+  let output = {};
   try {
-    const uni = await searchData.getUniById(req.params.id);
-    res.status(201).render("display/universityInfo", {
-      layout: false,
-      universityData: uni,
+    let favoriteUniversities = [];
+    let universityInfo = await universityData.getUniversity(req.params.id);
+    let userRating = 0;
+    if (userId) {
+      userRating = await universityData.userRated(userId, universityInfo._id);
+    }
+    if (userId) {
+      favoriteUniversities = await universityData.favoriteUniversityList(
+        userId
+      );
+    }
+    output = {
+      _id: universityInfo._id,
+      name: universityInfo.name,
+      description: universityInfo.description,
+      universityPhoto: universityInfo.image,
+      rank: universityInfo.ranking || "Unavailable",
+      city: universityInfo.location.city || "Unavailable",
+      state: universityInfo.location.state || "Unavailable",
+      latitude: universityInfo.latitude,
+      longitude: universityInfo.longitude,
+      totalRating: universityInfo.overallRating,
+      comments: universityInfo.commentListForEachPost,
+      rating: universityInfo.rating,
+      favoriteUniversityList: favoriteUniversities,
+    };
+    //console.log("Hello");
+    //console.log(output);
+    res.render("individualUniversity", {
+      pageTitle: "University Info",
+      universityData: output,
+      userId: userId,
+      userRating: userRating,
     });
-    //res.render("search/search", { title: "University Finder" }); fill params acc to that page
   } catch (e) {
-    res.status(404).json({ error: e });
-  }
-}); */
-
-//Route to display university data
-router.get("/university/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-    const uniData = await universityList.getUniversityById(id);
-    let userID = "6272bb0b56f3a87e7f457541";
-    // const favUniversityCheck = await universityList.checkFavUni(userID,id);
-    // console.log(favUniversityCheck);
-    res.status(201).render("display/universityInfo", {
-      layout: false,
-      universityData: uniData,
-      isUserLoggedIn: req.session.user != null ? true : false,
+    res.status(e.code || 500).render("posts", {
+      pageTitle: "University Info",
+      postList: output,
+      error: e.message || "Internal server error occured while getting posts",
     });
-  } catch (e) {
-    res.status(404).send(e);
   }
 });
 
-//Route for posting comments on university page
-router.post("/university/:id", async (req, res) => {
-  if (!req.session.user) {
-    return res.json({ result: "redirect", url: "http://localhost:3000/login" });
-  } else {
-    let universityId = req.params.id;
-    let comment = req.body["comments"];
-    let array = [];
-    if (!comment) {
-      array.push("You must enter a comment");
-    }
-    if (comment == null) {
-      array.push("You must enter a comment");
-    }
-    comment = comment.trim();
-    if (comment.length === 0) {
-      array.push("You must enter a comment");
-    }
-    if (array.length > 0) {
-      return res.status(400).json({
-        errors: array,
-        hasErrors: true,
-      });
-    }
-    const userComment = await universityList.postCommentOnUniversity(
-      comment,
-      universityId
-    );
-    try {
-      if (userComment._id) {
-        res.json(userComment);
-      } else {
-        return res.status(400).json({
-          errors: array,
-          hasErrors: true,
-        });
-      }
-    } catch (e) {
-      res.status(e.code).json(e);
-    }
-  }
-});
-
-//Route to add favourite universities
-router.post("/university/:id/fav", async (req, res) => {
-  if (!req.session.user)
-    return res.json({ result: "redirect", url: "http://localhost:3000/login" });
-  let universityId = req.params.id;
-  let array = [];
-  if (!universityId) {
-    array.push("You must Provide an ID");
-  }
-  if (typeof universityId != "string") {
-    array.push("Id is not a string");
-  }
-  if (universityId == null) {
-    array.push("You must Provide an ID");
-  }
-  universityId = universityId.trim();
-  if (universityId.length === 0) {
-    array.push("You must Provide an ID");
-  }
-  if (array.length > 0) {
-    return res.status(400).json({
-      errors: array,
-      hasErrors: true,
-    });
-  }
-  let userID = "62702dcda133812c4f7c8060";
-  const favUniversity = await universityList.addFavUniversity(
-    universityId,
-    userID
-  );
+router.route("/university/editRating").post(async (req, res) => {
+  //check user logged in
   try {
-    if (favUniversity._id) {
-      res.json(favUniversity);
+    let uniId = req.body.uniId;
+    let userId = "62751ace4bc518cf42583d0a";
+    let rating = req.body.rating;
+    //console.log(rating);
+    if (!rating || !Number(rating)) {
+      throw { code: 400, message: "Invalid rating given" };
+    }
+    if (
+      rating == "1" ||
+      rating == "2" ||
+      rating == "3" ||
+      rating == "4" ||
+      rating == "5"
+    ) {
+      rating = Number(rating);
+      await universityData.editRating(userId, uniId, rating);
+      res.status(200).redirect("/university/" + uniId);
     } else {
-      return res.status(400).json({
-        errors: array,
-        hasErrors: true,
-      });
+      throw { code: 400, message: "Invalid rating given" };
     }
   } catch (e) {
-    res.status(e.code).json(e);
+    res
+      .status(e.code || 500)
+      .json(e.message || "Internal server error occured while disliking!");
   }
 });
+
+router.route("/university/comment").post(async (req, res) => {
+  //check user logged in
+
+  try {
+    idValidation(req.body.uniId);
+    let userId = "62751ace4bc518cf42583d0a";
+    idValidation(userId);
+    let uniId = req.body.uniId;
+    let text = req.body.newComment;
+    textValidation(text);
+    await universityData.createCommentOnUniversity(userId, uniId, text);
+    res.status(200).redirect("/university/" + uniId);
+  } catch (e) {
+    res
+      .status(e.code || 500)
+      .json(e.message || "Internal server error occured while disliking!");
+  }
+});
+
+router.route("/university/deleteComment").post(async (req, res) => {
+  //check user logged in
+  try {
+    idValidation(req.body.commentId);
+    idValidation(req.body.uniId);
+    let commentId = req.body.commentId;
+    let uniId = req.body.uniId;
+    await universityData.deleteCommentOnUniversity(commentId, uniId);
+    res.status(200).redirect("/university/" + uniId);
+  } catch (e) {
+    res
+      .status(e.code || 500)
+      .json(e.message || "Internal server error occured while disliking!");
+  }
+});
+
+router.route("/university/favourite").post(async (req, res) => {
+  //check user logged in
+  //let userId = req.params.userId
+  try {
+    let userId = "62751ace4bc518cf42583d0a";
+    let uniId = req.body.uniId;
+    idValidation(uniId);
+    idValidation(userId);
+    await universityData.addToFavourites(userId, uniId);
+    res.status(200).redirect("/university/" + uniId);
+  } catch (e) {
+    res
+      .status(e.code || 500)
+      .json(e.message || "Internal server error occured while disliking!");
+  }
+});
+
+router.route("/university/unfavourite").post(async (req, res) => {
+  //check user logged in
+  //let userId = req.params.userId
+  try {
+    let userId = "62751ace4bc518cf42583d0a";
+    let uniId = req.body.uniId;
+    idValidation(uniId);
+    idValidation(userId);
+    await universityData.unFavourite(userId, uniId);
+    res.status(200).redirect("/university/" + uniId);
+  } catch (e) {
+    res
+      .status(e.code || 500)
+      .json(e.message || "Internal server error occured while disliking!");
+  }
+});
+
+//to check if text is string type
+function textValidation(text) {
+  if (!text)
+    throw { code: 400, message: "You must provide a text in the post!" };
+  if (typeof text !== "string")
+    throw { code: 400, message: "post should be a string!" };
+  if (text.trim().length === 0)
+    throw { code: 400, message: "post can not be empty" };
+}
+
+//to check if id is string type and can be converted to object
+function idValidation(id) {
+  if (!id) throw { code: 400, message: "You must provide an id to search for" };
+  if (typeof id !== "string")
+    throw { code: 400, message: "Id must be a string" };
+  if (id.trim().length === 0)
+    throw { code: 400, message: "Id cannot be an empty string or just spaces" };
+  id = id.trim();
+  if (!ObjectId.isValid(id)) throw { code: 400, message: "invalid object ID" };
+}
 
 module.exports = router;

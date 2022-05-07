@@ -12,7 +12,7 @@ router.route("/posts").get(async (req, res) => {
     for (const i in postDataList) {
       output.push({
         _id: postDataList[i]._id,
-        userId: "6272bb0b56f3a87e7f457541",
+        userId: "62751ace4bc518cf42583d0a",
         userName: postDataList[i].username,
         text: postDataList[i].text,
         totalLikes: postDataList[i].totalLikes,
@@ -37,7 +37,7 @@ router.route("/posts").get(async (req, res) => {
 router.route("/posts/like").post(async (req, res) => {
   //check user logged in
   //let userId = req.body.userId;
-  let userId = "6272bb0b56f3a87e7f457541";
+  let userId = "62751ace4bc518cf42583d0a";
   let postId = req.body.postId;
   try {
     await postData.increaseLike(userId, postId);
@@ -52,7 +52,7 @@ router.route("/posts/like").post(async (req, res) => {
 router.route("/posts/disLike").post(async (req, res) => {
   //check user logged in
   //let userId = req.body.userId;
-  let userId = "6272bb0b56f3a87e7f457541";
+  let userId = "62751ace4bc518cf42583d0a";
   let postId = req.body.postId;
   try {
     idValidation(userId);
@@ -69,7 +69,7 @@ router.route("/posts/disLike").post(async (req, res) => {
 router.route("/posts/comment").post(async (req, res) => {
   //check user logged in
   //let userId = req.body.userId;
-  let userId = "6272bb0b56f3a87e7f457541";
+  let userId = "62751ace4bc518cf42583d0a";
   let postId = req.body.postId;
   const commentInfo = req.body["newComment" + postId];
   console.log(req.body);
@@ -121,7 +121,7 @@ router.route("/post").post(async (req, res) => {
   //console.log(req.body.createPost);
   const postInfo = req.body.newPost;
   try {
-    idValidation("6272bb0b56f3a87e7f457541"); // ObjectIdValidation and if the user exists in db or not
+    idValidation("62751ace4bc518cf42583d0a"); // ObjectIdValidation and if the user exists in db or not
     textValidation(postInfo);
   } catch (e) {
     return res
@@ -131,7 +131,7 @@ router.route("/post").post(async (req, res) => {
   //console.log("Hello", postInfo);
 
   try {
-    const p = await postData.createPost("6272bb0b56f3a87e7f457541", postInfo);
+    const p = await postData.createPost("62751ace4bc518cf42583d0a", postInfo);
     // res.status(200).json(p);
     res.status(200).redirect("/posts");
   } catch (e) {
