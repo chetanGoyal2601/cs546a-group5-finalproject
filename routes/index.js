@@ -1,4 +1,3 @@
-const commentsRoutes = require("./comments");
 const profileRoutes = require("./profile");
 const universityFinderRoutes = require("./universityFinder");
 const postRoutes = require("./posts");
@@ -16,8 +15,6 @@ const constructorMethod = (app) => {
   app.use("/", universityFinderRoutes);
 
   app.use("/", profileRoutes);
-
-  app.use("/comments", commentsRoutes);
 
   app.use("/", postRoutes);
 

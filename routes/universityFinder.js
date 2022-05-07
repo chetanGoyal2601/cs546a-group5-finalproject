@@ -1,4 +1,5 @@
 const express = require("express");
+const xss = require("xss");
 const searchData = require("../data/search");
 const router = express.Router();
 const data = require("../data");
@@ -11,7 +12,7 @@ router.get("/search", async (req, res) => {
   let isUserLoggedIn = false;
   try {
     if (checkUserLoggedIn(req)) {
-      userId = req.session.user;
+      userId = xss(req.session.user);
       isUserLoggedIn = true;
       idValidation(userId);
     }
@@ -41,7 +42,7 @@ router.route("/university/:id").get(async (req, res) => {
   let output = {};
   try {
     if (checkUserLoggedIn(req)) {
-      userId = req.session.user;
+      userId = xss(req.session.user);
       isUserLoggedIn = true;
       idValidation(userId);
     }
@@ -92,7 +93,7 @@ router.route("/university/:id").get(async (req, res) => {
 });
 
 router.route("/university/editRating").post(async (req, res) => {
-  let userId = req.session.user;
+  let userId = xss(req.session.user);
   try {
     let uniId = req.body.uniId;
     idValidation(uniId);
@@ -127,9 +128,9 @@ router.route("/university/editRating").post(async (req, res) => {
 });
 
 router.route("/university/comment").post(async (req, res) => {
-  let userId = req.session.user;
-  let uniId = req.body.uniId;
-  let text = req.body.newComment;
+  let userId = xss(req.session.user);
+  let uniId = xss(req.body.uniId);
+  let text = xss(req.body.newComment);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -148,8 +149,8 @@ router.route("/university/comment").post(async (req, res) => {
 });
 
 router.route("/university/deleteComment").post(async (req, res) => {
-  let commentId = req.body.commentId;
-  let uniId = req.body.uniId;
+  let commentId = xss(req.body.commentId);
+  let uniId = xss(req.body.uniId);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -167,8 +168,8 @@ router.route("/university/deleteComment").post(async (req, res) => {
 });
 
 router.route("/university/favourite").post(async (req, res) => {
-  let userId = req.session.user;
-  let uniId = req.body.uniId;
+  let userId = xss(req.session.user);
+  let uniId = xss(req.body.uniId);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -186,7 +187,7 @@ router.route("/university/favourite").post(async (req, res) => {
 });
 
 router.route("/university/unfavourite").post(async (req, res) => {
-  let userId = req.session.user;
+  let userId = xss(req.session.user);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -225,7 +226,7 @@ function idValidation(id) {
 }
 
 function checkUserLoggedIn(req) {
-  if (req.session.user) {
+  if (xss(req.session.user)) {
     return true;
   }
   return false;

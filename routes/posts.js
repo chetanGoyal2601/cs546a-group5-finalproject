@@ -3,6 +3,7 @@ const router = express.Router();
 const data = require("../data");
 const postData = data.posts;
 const { ObjectId } = require("mongodb");
+const xss = require("xss");
 
 router.route("/posts").get(async (req, res) => {
   let userId = null;
@@ -12,7 +13,7 @@ router.route("/posts").get(async (req, res) => {
   try {
     if (checkUserLoggedIn(req)) {
       //console.log("Hello");
-      userId = req.session.user;
+      userId = xss(req.session.user);
       isUserLoggedIn = true;
       idValidation(userId);
     }
@@ -47,8 +48,8 @@ router.route("/posts").get(async (req, res) => {
 });
 
 router.route("/posts/like").post(async (req, res) => {
-  let userId = req.session.user;
-  let postId = req.body.postId;
+  let userId = xss(req.session.user);
+  let postId = xss(req.body.postId);
   try {
     idValidation(postId);
     if (!checkUserLoggedIn(req)) {
@@ -66,8 +67,8 @@ router.route("/posts/like").post(async (req, res) => {
 });
 
 router.route("/posts/disLike").post(async (req, res) => {
-  let userId = req.session.user;
-  let postId = req.body.postId;
+  let userId = xss(req.session.user);
+  let postId = xss(req.body.postId);
   try {
     idValidation(postId);
     if (!checkUserLoggedIn(req)) {
@@ -86,9 +87,9 @@ router.route("/posts/disLike").post(async (req, res) => {
 });
 
 router.route("/posts/comment").post(async (req, res) => {
-  let userId = req.session.user;
-  let postId = req.body.postId;
-  const commentInfo = req.body["newComment" + postId];
+  let userId = xss(req.session.user);
+  let postId = xss(req.body.postId);
+  const commentInfo = xss(req.body["newComment" + postId]);
   //console.log(req.body);
   //console.log(commentInfo);
   try {
@@ -111,8 +112,8 @@ router.route("/posts/comment").post(async (req, res) => {
 });
 
 router.route("/posts/editPost").post(async (req, res) => {
-  const newPostText = req.body.editedPost;
-  const postId = req.body.postId;
+  const newPostText = xss(req.body.editedPost);
+  const postId = xss(req.body.postId);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -130,7 +131,7 @@ router.route("/posts/editPost").post(async (req, res) => {
 });
 
 router.route("/posts/deletePost").post(async (req, res) => {
-  const postId = req.body.postId;
+  const postId = xss(req.body.postId);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -149,8 +150,8 @@ router.route("/posts/deletePost").post(async (req, res) => {
 router.route("/posts").post(async (req, res) => {
   //checkUserId else ask user to login
   //console.log(req.body.createPost);
-  let userId = req.session.user;
-  const postInfo = req.body.newPost;
+  let userId = xss(req.session.user);
+  const postInfo = xss(req.body.newPost);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -203,7 +204,7 @@ function idValidation(id) {
 
 function checkUserLoggedIn(req) {
   //console.log("Hello2");
-  if (req.session.user) {
+  if (xss(req.session.user)) {
     //console.log("Hello3");
     return true;
   }
