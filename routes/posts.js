@@ -24,12 +24,14 @@ router.route("/posts").get(async (req, res) => {
     res.render("posts", {
       pageTitle: "Posts",
       postList: output,
+      isUserLoggedIn: req.session.user != null ? true : false,
     });
   } catch (e) {
     res.status(e.code || 500).render("posts", {
       pageTitle: "Posts",
       postList: output,
       error: e.message || "Internal server error occured while getting posts",
+      isUserLoggedIn: req.session.user != null ? true : false,
     });
   }
 });

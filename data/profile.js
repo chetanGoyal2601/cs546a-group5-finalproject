@@ -49,7 +49,7 @@ const convertObject = (id) => {
 
 async function createUser(name, email, aspiringUniversity, workEx, password) {
   email = email.toLowerCase();
-
+try{
   if (!name) throw "Must Provide name";
   if (name == undefined) throw "User Name not undefined";
   if (name == null || name.trim().length == 0) throw "User Name cannot be null";
@@ -73,8 +73,12 @@ async function createUser(name, email, aspiringUniversity, workEx, password) {
   // if (aspiringUniversity == null || aspiringUniversity.trim().length == 0) throw "aspiringUniversity cannot be null"
   // if (aspiringUniversity === undefined) throw "aspiringUniversity not defined"
 
-  if (workEx == null || workEx == undefined || !workEx)
-    throw "Pleae enter 0 if you dont have work experience";
+  if (workEx !==0){
+    if(!workEx || workEx == null || workEx == undefined)
+     {
+    errorMessage = "Please enter 0 if you dont have work experience";
+}
+}
   if (typeof workEx !== "number") throw "Work Experience should be a number";
   if (workEx < 0 || workEx > 100)
     throw "Please enter 0 if you dont have work experience";
@@ -96,7 +100,7 @@ async function createUser(name, email, aspiringUniversity, workEx, password) {
     favouriteUniversities: [],
   };
 
-  try {
+  
     const profileCollection = await profile();
 
     const insertInfo = await profileCollection.insertOne(newProfile);
@@ -156,6 +160,7 @@ async function getfavUni() {
 async function checkUser(emailLower, password) {
   email = emailLower.toLowerCase();
 
+
   if (email == null) throw "Email cannot be null";
   if (email == undefined) throw "Email not defined";
   if (!email) throw "Provide an email to check";
@@ -165,8 +170,8 @@ async function checkUser(emailLower, password) {
   if (!password) throw "You must provide a password";
   if (password == null) throw "Password cannot be null";
   if (password == undefined) throw "password not defined";
-  if (password.length < 6 || password.length > 20)
-    throw "enter a password with more than 6 characters or less than 20";
+  if (password.length < 8 || password.length > 20)
+    throw "enter a password with more than 8 characters or less than 20";
   if (!password.match(/^(?!\s*$).+/)) throw "Enter a valid password";
 
   const user = await profile();

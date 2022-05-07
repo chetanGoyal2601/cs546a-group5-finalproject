@@ -24,8 +24,10 @@ function validateSignupInputs(e) {
     errorMessage = "email not defined";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter email only with valid characters";
-  } else if (!workEx || workEx == null || workEx == undefined) {
-    errorMessage = "Please enter 0 if you dont have work experience";
+  } else if(workEx!==0){
+      if(!workEx || workEx == null || workEx == undefined){
+        errorMessage = "Please enter 0 if you dont have work experience";
+    }
   } else if (typeof workEx == "string") {
     errorMessage = "Work Experience should be a number";
   } else if (workEx < 0 || workEx > 100) {
@@ -36,9 +38,9 @@ function validateSignupInputs(e) {
     errorMessage = "password cannot be null";
   } else if (password == undefined) {
     errorMessage = "password not defined";
-  } else if (password.length < 6 || password.length > 20) {
+  } else if (password.length < 8 || password.length > 20) {
     errorMessage =
-      "Enter a password with more than 6 and less than 20 characters";
+      "Enter a password with more than 8 and less than 20 characters";
   } else if (!password.match(/^(?!\s*$).+/)) {
     errorMessage = "Enter password only with valid characters";
   } else if (!confirm_pass) {
@@ -91,9 +93,9 @@ async function validateSignInInputs(e) {
     errorMessage = "password cannot be null";
   } else if (password == undefined) {
     errorMessage = "password not defined";
-  } else if (password.length < 6 || password.length > 20) {
+  } else if (password.length < 8 || password.length > 20) {
     errorMessage =
-      "Enter a password with more than 6 and less than 20 characters";
+      "Enter a password with more than 8 and less than 20 characters";
   } else if (!password.match(/^(?!\s*$).+/)) {
     errorMessage = "Enter password only with valid characters";
   } else {
@@ -103,7 +105,7 @@ async function validateSignInInputs(e) {
   if (errorMessage == null) {
     let res = await postLoginData();
     if (res.status == true) {
-      window.location.href = "/profile";
+      window.location.href = "/posts";
     } else {
       document.getElementById("error-div").style.display = "block";
       document.getElementById("error-line").innerText = res.error;
@@ -156,16 +158,17 @@ function validateUpdateProfileInputs(e) {
     errorMessage = "Aspiring University cannot be null";
   } else if (aspuni == undefined) {
     errorMessage = "Aspiring University not defined";
-  } else if (!WorkEx || WorkEx == null || WorkEx == undefined) {
-    errorMessage = "Invalid Work Experience parameters";
-  } else if (typeof WorkEx == "string") {
+  } else if(WorkEx!==0){
+    if(!WorkEx || WorkEx == null || WorkEx == undefined){
+      errorMessage = "Please enter 0 if you dont have work experience";
+    }
+  }   else if (typeof WorkEx == "string") {
     errorMessage = "Work Experience should be a number";
   } else if (WorkEx < 0 || WorkEx > 100) {
     errorMessage = "Please enter 0 if you dont have work experience";
   } else {
     errorMessage = null;
   }
-
   if (errorMessage == null) {
     return true;
   } else {
@@ -190,13 +193,13 @@ function validateUpdatePasswordInputs(e) {
     errorMessage = "Please enter confirm password";
   } else if ((password && password.length < 6) || password.length > 20) {
     errorMessage =
-      "Enter a password with more than 6 and less than 20 characters";
+      "Enter a password with more than 8 and less than 20 characters";
   } else if (
-    (new_password && new_password.length < 6) ||
+    (new_password && new_password.length < 8) ||
     new_password.length > 20
   ) {
     errorMessage =
-      "Enter a password with more than 6 and less than 20 characters";
+      "Enter a password with more than 8 and less than 20 characters";
   } else if (password && !password.match(/^(?!\s*$).+/)) {
     errorMessage = "Enter password only with valid characters";
   } else if (confirm_pass == null) {
