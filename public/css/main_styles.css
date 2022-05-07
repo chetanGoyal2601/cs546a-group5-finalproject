@@ -785,3 +785,10 @@ CSS for posts page
    border: 2px solid  rgb(242, 242, 242);
    color:black;
 }
+/*
+----------end-----------------
+*/
+.user_profile_background{
+    background: linear-gradient(90deg, #F5F5F5 35%, #ffe992 180%);
+    width: 100%;
+}
