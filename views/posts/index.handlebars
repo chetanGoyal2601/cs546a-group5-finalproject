@@ -86,7 +86,7 @@
                         </form>
                     {{/unless}}
                     
-                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost" class="comment_on_post_btn">View Comments :  {{comments.length}}</button>
+                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost" class="comment_on_post_btn">{{comments.length}} Comments</button>
                     {{!-- form to comment --}}
                     <div id = "commentShow{{_id}}" hidden>
                         <form id="commentForm{{_id}}"  action="/posts/comment" method="post">
