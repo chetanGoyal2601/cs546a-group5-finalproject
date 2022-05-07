@@ -49,7 +49,7 @@ var checkpassword = async function (email, password) {
   for (var i = 0; i < getuser.length; i++) {
     if (
       getuser[i].email == email &&
-      bcrypt.compareSync(password, getuser[i].password)
+      bcrypt.compareSync(password, getuser[i].hashedPassword)
     ) {
       return true;
     }
@@ -78,7 +78,7 @@ var checkvalid = async function (req) {
   for (var i = 0; i < getuser.length; i++) {
     if (
       getuser[i].email == email &&
-      bcrypt.compareSync(password, getuser[i].password)
+      bcrypt.compareSync(password, getuser[i].hashedPassword)
     ) {
       return getuser[i];
     }
@@ -86,18 +86,7 @@ var checkvalid = async function (req) {
   return false;
 };
 
-// router.get("/", async (req, res) => {
-//   try {
-//     //   if(req.session.user){
-//     //     res.redirect('/profile');
-//     //   }
 
-//     res.render("profile/Intro", {});
-//   } catch (e) {
-//     res.status(400).render("profile/Intro", {});
-//     return;
-//   }
-// });
 
 // Get signup page
 router.get("/signup", function (req, res, next) {
@@ -283,15 +272,6 @@ router.get("/profile", async function (req, res) {
   }
 });
 
-router.get("/remove_profile", async function (req, res) {
-  if (req.session.user) {
-    await profileFetch.deleteUser(req.session.user._id);
-    req.session.destroy();
-    res.redirect("/logout");
-  } else {
-    res.redirect("/login?msg=Please sign in to delete your account");
-  }
-});
 
 router.get("/update_profile", async function (req, res) {
   if (req.session.user) {
@@ -331,35 +311,6 @@ router.post("/update_profile", async function (req, res) {
     errorMessage = "Aspiring University is not defined";
   }
 
-  // else if (!password) {
-  //     errorMessage = "You must provide a password";
-  // }
-  // else if (password == null) {
-  //     errorMessage = "password cannot be null";
-  // }
-  // else if (password == undefined) {
-  //     errorMessage = "password not defined";
-  // }
-
-  // else if (!confirm_password) {
-  //     errorMessage = "Please enter confirm passowrd";
-  // }
-  // else if (confirm_password == null) {
-  //     errorMessage = "Please enter confirm passowrd";
-  // }
-  // else if (confirm_password == undefined) {
-  //     errorMessage = "Please enter confirm passowrd";
-  // }
-
-  //  else if (!password == confirm_password) {
-  //         errorMessage = "Password and Confrim Password must be same";
-  //     }
-  // else if (password.length < 6 || password.length > 20) {
-  //     errorMessage = "Enter a password with more than 6 and less than 20 characters";
-  // }
-  // else if (!password.match(/^(?!\s*$).+/)) {
-  //     errorMessage = "Enter password only with valid characters";
-  // }
   else if (!email) {
     errorMessage = "You must provide a email post";
   } else if (email == null || email.length == 0) {
@@ -507,16 +458,7 @@ router.post("/update_password", async function (req, res) {
   });
 });
 
-// router.get('/remove_profile', async function (req, res) {
-//     if (req.session.user) {
-//         await userFetch.deleteUser(req.session.user._id);
-//         req.session.destroy();
-//         res.redirect('/logout');
-//     }
-//     else {
-//         res.redirect('/login?msg=Please sign in to delete your account');
-//     }
-// });
+
 
 router.get("/logout", function (req, res) {
   req.session.destroy();

@@ -6,7 +6,10 @@ const data = require("../data");
 const universityList = data.university;
 
 router.get("/search", async (req, res) => {
-  res.render("search/search", { title: "University Finder" });
+  res.render("search/search", {
+    title: "University Finder",
+    isUserLoggedIn: req.session.user != null ? true : false,
+  });
 });
 
 router.get("/search/universities", async (req, res) => {
@@ -42,6 +45,7 @@ router.get("/university/:id", async (req, res) => {
     res.status(201).render("display/universityInfo", {
       layout: false,
       universityData: uniData,
+      isUserLoggedIn: req.session.user != null ? true : false,
     });
   } catch (e) {
     res.status(404).send(e);

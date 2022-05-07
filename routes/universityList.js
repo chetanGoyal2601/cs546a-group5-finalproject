@@ -6,9 +6,11 @@ const universityList = data.university;
 router.get("/", async (req, res) => {
   try {
     const unilist = await universityList.universityList();
-    res
-      .status(201)
-      .render("display/index", { layout: false, universityList: unilist });
+    res.status(201).render("display/index", {
+      layout: false,
+      universityList: unilist,
+      isUserLoggedIn: req.session.user != null ? true : false,
+    });
   } catch (e) {
     res.status(404).send(e);
   }
@@ -22,6 +24,7 @@ router.get("/university/:id", async (req, res) => {
     res.status(201).render("display/universityInfo", {
       layout: false,
       universityData: uniData,
+      isUserLoggedIn: req.session.user != null ? true : false,
     });
   } catch (e) {
     res.status(404).send(e);
