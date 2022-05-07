@@ -136,7 +136,7 @@ $(document).ready(function () {
             let intro = document.createElement('li');
             let rank = document.createElement('li');
             intro.className = 'list-group';
-            rank.className = 'list-group-item';
+            rank.className = 'list-group-item2';
             rank.id = "rank1";
             intro.appendChild(document.createTextNode(paginationArray[i].introduction));
             rank.appendChild(document.createTextNode('Rank: ' + paginationArray[i].ranking));

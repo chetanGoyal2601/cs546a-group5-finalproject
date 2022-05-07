@@ -77,7 +77,7 @@ width: 1141.5px;
 height: 600px;
 left: 148px;
 top: 90px;
-background: #F5F5F5;;
+background: #F5F5F5;
 }
 .background_div3{
 position: absolute;
@@ -108,7 +108,7 @@ padding-left: 10px;
     left:600px;
     width: 600px;
     height: 600px;
-    background: #F5F5F5;;
+    background: #F5F5F5;
     }
     .img_div{
         position: absolute;
@@ -299,8 +299,6 @@ color: #545BE8;
 position: absolute;
 width: 465.68px;
 height: 465.68px;
-/* left: 805px; */
-/* top: 198.32px; */
 border-radius:50%;
 background: #F0C932;
 }
@@ -393,6 +391,14 @@ background: #FE753F;
 /*
  CSS for login page
 */
+
+.background_div8{
+    position: absolute;
+    right: 180px;
+    top: 180px;
+    width: 600px;
+    height: 600px;
+    }
 .login_div{
   
     background: white;
@@ -406,6 +412,8 @@ background: #FE753F;
     /* align-self: center; */
     left: 70%;
     margin-left: 70%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+
     /* float: right; */
 }
 .login_background{
@@ -414,7 +422,7 @@ width: 100%;
 height: 100%;
 left: 0px;
 background: white;
-background: linear-gradient(180deg, #777de6 0%, #272DB0 100%);
+ background: linear-gradient(100deg, #ffe992 0%, #777de6 100%);
 }
 .dropright {
     position: relative;
@@ -434,8 +442,7 @@ background: linear-gradient(180deg, #777de6 0%, #272DB0 100%);
     border-radius: 10px;
     width: 233px;
     height: 40px;
-    left: 27%;
-    position:absolute;
+    position:relative;
     align-items: center;
 }
 .sign_up_form_btn:hover{
@@ -444,7 +451,8 @@ background: linear-gradient(180deg, #777de6 0%, #272DB0 100%);
     text-decoration: none;
 }
 .register_link {
-    margin-top:80px;
+    position:relative;
+    margin-top:20px;
     align-items: center;
     
 }
@@ -455,25 +463,35 @@ color:#545BE8;
     color:black;
     text-decoration: none;
 }
+.sign_up_div{
+    height: auto;
+    width: auto;
+    margin-top: -3%;
+}
 /*
 -------end----------
 */
-
+/*
+    CSS for university finder page
+*/
 .dropright .dropdown-menu {
     top: 0;
     left: 100%;
     margin-top: -1px;
 }
 
-li#rank1.list-group-item {
+/* li#rank1.list-group-item {
     padding: 0;
     list-style: none;
     position: absolute;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    background-color: rgb(237, 223, 242);
-}
+    background-color: none;
+} */
+/* li#rank1.list-group-item:hover {
+    background-color: #f5f5f5ea;;
+} */
 
 .list-group {
     padding-top: 29px;
@@ -509,18 +527,139 @@ li#rank1.list-group-item {
     flex-direction: column;
 }
 
+.list-group-item2{
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    background-color:none;
+    list-style-type: none;
+    font-weight: bold;
 
+}
+.card-title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.page-link{
+    color: #545BE8;
+}
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgb(220, 156, 245);
+    background-color: #e9e9e9;
 }
 
 .card-body {
     flex: 1;
 }
-
-
-
 ul {
     align-items: center;
+}
+
+.uni_background_container{
+    /* max-width: 1140px; */
+    background: linear-gradient(100deg, #ffe992 0%, #777de6 100%);
+    align-items: center;
+}
+/*
+-----------end--------------
+*/
+
+/*
+CSS for posts page
+*/
+.posts_background{
+    background: linear-gradient(90deg, #F5F5F5 35%, #ffe992 180%);
+    /* align-items: center; */
+    /* background-color: #F5F5F5;; */
+    margin-top: -3%;
+    /* width:auto; */
+}
+.posts_div{
+    align-self: center;
+    margin-left: 22%;
+    position: relative;
+    width: 56%;
+    height: auto;
+    margin-top: 42px;
+    flex-direction: column;
+    padding-top: 5%;
+    /* background: linear-gradient(180deg, #ffe992 0%, #777de6 100%); */
+}
+.user_posts{
+    align-self: center;
+    position: relative;
+    max-width: 45%;
+    height: 200px;
+    flex-direction: column;
+    background-color: white;
+    margin-top:20px ;
+    justify-content: center;
+    padding: 50px;
+    /* top: 2416.92px; */
+    filter: drop-shadow(0px 18.0585px 18.0585px rgba(0, 0, 0, 0.05));
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.justify_center{
+    align-self: center;
+    margin-left: 25%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+.div_center
+{
+    align-self: center;
+    height:auto;
+    width: 100%;
+    max-width: 100%;
+    /* margin-left: 1%; */
+}
+.submit_posts_btn{
+    background-color: #545BE8;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    position:relative;
+    align-items: center;
+}
+.submit_posts_btn:hover{
+    background-color: white;
+    color: #545BE8;
+    text-decoration: none;    
+}
+
+.ask_posts_text{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.scholar_img
+{
+    position: absolute;
+    height:400px;
+    width:430px;
+    top: 200px;
+    float: left;
 }

@@ -15,8 +15,9 @@
       </div>
         <form id="signup-form" method="post" action="/signup" onsubmit="return validateSignupInputs(event);" enctype="multipart/form-data">
            <p class="welcome">Enter the details to signup!!</p>
-           <br />
+           <hr>
             <div class="form-group">
+              <div class="sign_up_div">
             <label for="name"></label>
             <p class="noPost">Name:</p>
             <input type="text" class="form-control" id="name" name="name"
@@ -49,6 +50,7 @@
             {{#unless status}}
             <p class="wrongMsg">{{message}}</p>
             {{/unless}}
+          </div>
           </div>
         </form>
       </div>
