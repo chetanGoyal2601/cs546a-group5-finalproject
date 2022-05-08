@@ -186,7 +186,7 @@ top: 38%;
 position: absolute;
 height: 24px;
 left: 32.38%;
-    right: 38.89%;
+    /* right: 38.89%; */
 font-weight: 700;
 font-size: 20px;
 color: #545BE8;
@@ -804,6 +804,7 @@ Css for user profile
     font-size: 20px;
     font-weight: bold;
     list-style-type:square;
+    padding: 8px;
 }
 .update_profile_btn{
     display: inline-block;
