@@ -1,22 +1,41 @@
 (function () {
-  let favouriteForm = document.getElementById("favouriteForm");
-  let favouriteUniversitiesLength = document.getElementById(
-    "favouriteUniversitiesLength"
-  );
+  // let favouriteForm = document.getElementById("favouriteForm");
+  // let favouriteUniversitiesLength = document.getElementById(
+  //   "favouriteUniversitiesLength"
+  // );
   //console.log(favouriteUniversitiesLength);
   let commentOnUniversity = document.getElementById("commentOnUniversity");
   let commentText = document.getElementById("newComment");
 
-  if (favouriteForm) {
-    favouriteForm.addEventListener("submit", (event) => {
+  // if (favouriteForm) {
+  //   favouriteForm.addEventListener("submit", (event) => {
+  //     //console.log(typeof favouriteUniversitiesLength.value);
+  //     event.preventDefault();
+  //     if (Number(favouriteUniversitiesLength.value) >= 5) {
+  //       alert(
+  //         "Uh oh! You can add only five universities to your favourite list. Unfavourite any of your favourited ones to add more."
+  //       );
+  //     } else {
+  //       favouriteForm.submit();
+  //     }
+  //   });
+  // }
+
+  let favouriteForm2 = document.getElementById("favouriteForm2");
+  let favouriteUniversitiesLength2 = document.getElementById(
+    "favouriteUniversitiesLength2"
+  );
+
+  if (favouriteForm2) {
+    favouriteForm2.addEventListener("submit", (event) => {
       //console.log(typeof favouriteUniversitiesLength.value);
       event.preventDefault();
-      if (Number(favouriteUniversitiesLength.value) >= 5) {
+      if (Number(favouriteUniversitiesLength2.value) >= 5) {
         alert(
           "Uh oh! You can add only five universities to your favourite list. Unfavourite any of your favourited ones to add more."
         );
       } else {
-        favouriteForm.submit();
+        favouriteForm2.submit();
       }
     });
   }

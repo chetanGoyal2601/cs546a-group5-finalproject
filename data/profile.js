@@ -3,27 +3,20 @@ let profile = mongoCollections.profiles;
 let bcrypt = require("bcrypt");
 let saltRounds = 12;
 let { ObjectId } = require("mongodb");
-var passwordValidator = require("password-validator");
-var schema = new passwordValidator();
 
-// Add properties to it
-schema
-  .is()
-  .min(8) // Minimum length 8
-  .is()
-  .max(20) // Maximum length 20
-  .has()
-  .uppercase() // Must have uppercase letters
-  .has()
-  .lowercase() // Must have lowercase letters
-  .has()
-  .digits(2) // Must have at least 2 digits
-  .has()
-  .not()
-  .spaces() // Should not have spaces
-  .is()
-  .not()
-  .oneOf(["Passw0rd", "Password123"]); // Blacklist these values
+
+//password Validation function
+  function validatePassword(password) {
+    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
+    if(password.match(decimal))
+              {
+                  return true;
+              }
+        else
+              {
+                 return false;
+              }
+  }
 
 // Function to validate email with atleast 5 characters in the name
 function validateEmail(email) {
@@ -62,11 +55,11 @@ async function createUser(name, email, aspiringUniversity, workEx, password) {
 
     //password validation
     if (!password) throw { code: 400, message: "You must provide a password" };
-    if (schema.validate(password) == false) {
+    if (validatePassword(password) == false) {
       throw {
         code: 400,
         message:
-          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 2 digits\n5. Should not have any spaces",
+          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character",
       };
     }
     newProfile.hashedPassword = bcrypt.hashSync(password, saltRounds);
@@ -136,11 +129,11 @@ async function checkUser(email, password) {
 
     //password validation
     if (!password) throw { code: 400, message: "You must provide a password" };
-    if (schema.validate(password) === false) {
+    if (validatePassword(password) === false) {
       throw {
         code: 400,
         message:
-          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 2 digits\n5. Should not have any spaces",
+          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character",
       };
     }
 
@@ -177,16 +170,15 @@ async function updatePassword(id, newPassword) {
     }
     if (!newPassword)
       throw { code: 400, message: "You must provide a password" };
-    console.log(newPassword, "test123445");
-    console.log(schema.validate(newPassword), "Helloooo");
-    if (schema.validate(newPassword) == false) {
+
+    if (validatePassword(newPassword) == false) {
       throw {
         code: 400,
         message:
-          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 2 digits\n5. Should not have any spaces",
+          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character",
       };
     }
-    console.log(schema.validate(newPassword), "Helloooo");
+    //console.log(schema.validate(newPassword), "Helloooo");
     let hashedPassword = bcrypt.hashSync(newPassword, saltRounds);
     if (bcrypt.compareSync(hashedPassword, getuser.hashedPassword)) {
       return true;

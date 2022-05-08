@@ -122,15 +122,21 @@ async function editRating(userId, uniId, rating) {
       university.rating.push({ userId: ObjectId(userId), givenRating: rating });
       university.overallRating =
         (ratingSum + rating) / university.rating.length;
-      university.overallRating.toFixed(2);
+      university.overallRating = university.overallRating.toFixed(2);
+      //console.log(university.overallRating);
       university.overallRating = Number(university.overallRating);
+      //console.log(university.overallRating, "test1");
     } else if (!sameRatingGiven) {
       let ratingSum = university.overallRating * university.rating.length;
       university.overallRating =
         (ratingSum - prevRating + rating) / university.rating.length;
-      university.overallRating.toFixed(2);
+      university.overallRating = university.overallRating.toFixed(2);
+      //console.log(university.overallRating);
       university.overallRating = Number(university.overallRating);
+      //console.log(university.overallRating, "test2");
     }
+    //console.log(university.overallRating);
+    //console.log(university.overallRating, "test3");
     const updatedInfo = await uniCollection.updateOne(
       { _id: ObjectId(uniId) },
       {

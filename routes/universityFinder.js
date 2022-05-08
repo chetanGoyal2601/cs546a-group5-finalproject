@@ -46,9 +46,10 @@ router.route("/university/:id").get(async (req, res) => {
       isUserLoggedIn = true;
       idValidation(userId);
     }
-    idValidation(req.params.id);
+    //console.log(xss(req.params.id));
+    idValidation(xss(req.params.id));
     let favoriteUniversities = [];
-    let universityInfo = await universityData.getUniversity(req.params.id);
+    let universityInfo = await universityData.getUniversity(xss(req.params.id));
     let userRating = 0;
     if (userId) {
       userRating = await universityData.userRated(userId, universityInfo._id);
@@ -76,17 +77,19 @@ router.route("/university/:id").get(async (req, res) => {
     //console.log("Hello");
     //console.log(output);
     res.render("individualUniversity", {
-      pageTitle: "University Info",
+      title: "University Info",
       universityData: output,
       userId: userId,
       userRating: userRating,
       isUserLoggedIn: isUserLoggedIn,
     });
   } catch (e) {
+    //console.log(e.message);
     res.status(e.code || 500).render("posts", {
-      pageTitle: "University Info",
+      title: "University Info",
       postList: output,
-      error: e.message || "Internal server error occured while getting posts",
+      error:
+        e.message || "Internal server error occured while getting universities",
       isUserLoggedIn: isUserLoggedIn,
     });
   }
@@ -95,7 +98,7 @@ router.route("/university/:id").get(async (req, res) => {
 router.route("/university/editRating").post(async (req, res) => {
   let userId = xss(req.session.user);
   try {
-    let uniId = req.body.uniId;
+    let uniId = xss(req.body.uniId);
     idValidation(uniId);
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -173,19 +176,23 @@ router.route("/university/favourite").post(async (req, res) => {
 
   //console.log(userId);
   try {
+    //console.log(req.body, userId, uniId, req.body.favouriteUniversitiesLength);
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
       //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     idValidation(uniId);
-    let favUniLength = xss(req.body.favouriteUniversitiesLength);
-    if (favUniLength === 5) {
-      throw { code: 400, message: "Maximum Universities added" };
+    favouriteUniversitiesLength = Number(req.body.favouriteUniversitiesLength);
+    //console.log(favouriteUniversitiesLength);
+    if (favouriteUniversitiesLength === 5) {
+      return res.status(200).json({ result: false });
+      //throw { code: 400, message: "Maximum Universities added" };
     }
 
     await universityData.addToFavourites(userId, uniId);
-    res.status(200).redirect("/university/" + uniId);
+    res.status(200).json({ result: true });
+    //res.status(200).redirect("/university/" + uniId);
   } catch (e) {
     res
       .status(e.code || 500)
@@ -200,7 +207,7 @@ router.route("/university/unfavourite").post(async (req, res) => {
       return res.status(200).redirect("/login");
       //throw { code: 400, message: "User not logged in!" };
     }
-    let uniId = req.body.uniId;
+    let uniId = xss(req.body.uniId);
     idValidation(uniId);
     await universityData.unFavourite(userId, uniId);
     res.status(200).redirect("/university/" + uniId);

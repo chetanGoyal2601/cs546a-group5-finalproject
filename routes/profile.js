@@ -4,26 +4,20 @@ let router = express.Router();
 let data = require("../data");
 let bcrypt = require("bcryptjs");
 let profileFetch = data.profile;
-var passwordValidator = require("password-validator");
-var schema = new passwordValidator();
 
-schema
-  .is()
-  .min(8) // Minimum length 8
-  .is()
-  .max(20) // Maximum length 20
-  .has()
-  .uppercase() // Must have uppercase letters
-  .has()
-  .lowercase() // Must have lowercase letters
-  .has()
-  .digits(2) // Must have at least 2 digits
-  .has()
-  .not()
-  .spaces() // Should not have spaces
-  .is()
-  .not()
-  .oneOf(["Passw0rd", "Password123"]); // Blacklist these values
+
+//password validation
+  function validatePassword(password) {
+    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
+    if(password.match(decimal))
+              {
+                  return true;
+              }
+        else
+              {
+                 return false;
+              }
+  }
 
 // Get signup page
 router.get("/signup", function (req, res, next) {
@@ -65,11 +59,11 @@ router.post("/signup", async function (req, res) {
     if (!password) {
       throw { code: 400, message: "You must provide a password" };
     }
-    if (schema.validate(password) == false) {
+    if (validatePassword(password) == false) {
       throw {
         code: 400,
         message:
-          "Please Enter Valid Password: Password Should be Minumum of length 8, Must have uppercase letters,Must have lowercase letters,Must have at least 2 digits,Should not have spaces",
+          "Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character",
       };
     }
     if (!email) {
@@ -101,9 +95,9 @@ router.post("/signup", async function (req, res) {
     if (usercheck) {
       throw { code: 400, message: "User already exists" };
     }
-    console.log("Hello1");
+
     await profileFetch.createUser(name, email, aspUni, workex, password);
-    console.log("Hello1");
+   
     return res.redirect("/login?msg=Congratulations, you are user now");
   } catch (e) {
     res.status(e.code || 500).render("profile/signup", {
@@ -153,7 +147,7 @@ router.post("/login", async function (req, res) {
     if (!password) {
       throw { code: 400, message: "You must provide a password" };
     }
-    if (!schema.validate(password)) {
+    if (!validatePassword(password)) {
       throw { code: 400, message: "Enter password only with valid characters" };
     }
     let user = await checkvalid(req);
@@ -167,7 +161,8 @@ router.post("/login", async function (req, res) {
   } catch (e) {
     res
       .status(e.code || 500)
-      .json({ ErrorMessage: e.message || "Error Ocurred while logging!" });
+      .send({status: false, error: e.message || "Error Ocurred while logging!"})
+      //.json({ ErrorMessage: e.message || "Error Ocurred while logging!" });
   }
 });
 
@@ -319,29 +314,29 @@ router.post("/update_password", async function (req, res) {
   try {
     //console.log(email, Curr_password, password, "test1111");
     if (!Curr_password) {
-      throw "You must provide a Current password";
+      throw {code: 400, message:"You must provide a Current password"};
     }
     if (Curr_password === password) {
-      throw "Please enter new password which is other than old password";
+      throw {code: 400, message:"Please enter new password which is other than old password"};
     }
     if (!password) {
-      throw "You must provide a New password";
+      throw {code: 400, message:"You must provide a New password"};
     }
-    if (schema.validate(password) === false) {
-      throw "Please Enter Valid Password: Password Should be Minumum of length 8, Must have uppercase letters,Must have lowercase letters,Must have at least 2 digits,Should not have spaces";
+    if (validatePassword(password) === false) {
+      throw {code: 400, message:"Please Enter Valid Password: 1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character"};
     }
     if (!confirm_password) {
-      throw "Please enter confirm passowrd";
+      throw {code: 400, message:"Please enter confirm passowrd"};
     }
     if (password !== confirm_password) {
-      throw "Password and Confrim Password must be same";
+      throw {code: 400, message:"Password and Confrim Password must be same"};
     }
-    if (!schema.validate(password)) {
-      throw "Enter password only with valid characters";
+    if (!validatePassword(password)) {
+      throw {code: 400, message:"Enter password only with valid characters"};
     }
     //console.log(email, Curr_password, password, "test2222");
     if ((await checkpassword(email, Curr_password)) === false) {
-      throw "Invalid Current Password";
+      throw {code: 400, message:"Invalid Current Password"};
     }
 
     if (req.session.user) {
@@ -445,9 +440,9 @@ var checkvalid = async function (req) {
     if (password.length < 8 || password.length > 20)
       throw {
         code: 400,
-        message: "enter a password with more than 6 characters or less than 20",
+        message: "enter a password with more than 8 characters or less than 20",
       };
-    if (!schema.validate(password))
+    if (!validatePassword(password))
       throw {
         code: 400,
         message: "Enter a valid password",
