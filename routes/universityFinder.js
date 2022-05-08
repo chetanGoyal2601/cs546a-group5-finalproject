@@ -176,19 +176,23 @@ router.route("/university/favourite").post(async (req, res) => {
 
   //console.log(userId);
   try {
+    //console.log(req.body, userId, uniId, req.body.favouriteUniversitiesLength);
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
       //throw { code: 400, message: "User not logged in!" };
     }
     idValidation(userId);
     idValidation(uniId);
-    let favUniLength = xss(req.body.favouriteUniversitiesLength);
-    if (favUniLength === 5) {
-      throw { code: 400, message: "Maximum Universities added" };
+    favouriteUniversitiesLength = Number(req.body.favouriteUniversitiesLength);
+    //console.log(favouriteUniversitiesLength);
+    if (favouriteUniversitiesLength === 5) {
+      return res.status(200).json({ result: false });
+      //throw { code: 400, message: "Maximum Universities added" };
     }
 
     await universityData.addToFavourites(userId, uniId);
-    res.status(200).redirect("/university/" + uniId);
+    res.status(200).json({ result: true });
+    //res.status(200).redirect("/university/" + uniId);
   } catch (e) {
     res
       .status(e.code || 500)

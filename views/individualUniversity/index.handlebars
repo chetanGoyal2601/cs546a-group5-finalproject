@@ -27,12 +27,12 @@
                     {{#if userId }}
                         {{#listChecker universityData.favoriteUniversityList universityData.name}}
                             <form id = "unfavouriteForm" action="/university/unfavourite" method="post">
-                                <input name='uniId' value = {{universityData._id}} hidden>
+                                <input id='uniId2' name='uniId' value = {{universityData._id}} hidden>
                                 <button name="Unfavourite" value="Unfavourite"  class="add_to_fav_btn" style="float: right;">Unfavourite</button>
                             </form>
                         {{else}}
                             <form id = "favouriteForm" action="/university/favourite" method="post">
-                                <input name='uniId' value = {{universityData._id}} hidden>
+                                <input id='uniIdFav' name='uniId' value = {{universityData._id}} hidden>
                                 <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
                                 <button name="Favourite" value="Favourite"  class="add_to_fav_btn" style="float: right;">Add to Favourites</button>
                             </form>
@@ -166,6 +166,7 @@
        
       
     <script src="/public/js/individualUniversity/individualUniversity.js"></script>
+    <script src="/public/js/individualUniversity/ajaxScript.js"></script>
     
 </div>
 
