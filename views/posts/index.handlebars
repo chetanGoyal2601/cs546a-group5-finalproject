@@ -10,7 +10,7 @@
         
     <div class="card bg-light" style="border-radius: 10px;padding-top:10px">
       <div class="card-body text-center">
-        <p class="card-text" style="font-size: larger;font-weight:bold">Ask anything about studying in US!!!!!</p>
+        <p class="card-text" style="font-size: larger;font-weight:bold">Ask anything about studying in US</p>
      
         {{!-- <h2><span>{{pageTitle}}</span></h2> --}}
         <form id="formPosting" action="/posts" method="post">
@@ -86,7 +86,7 @@
                         </form>
                     {{/unless}}
                     
-                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost" class="comment_on_post_btn">View Comments :  {{comments.length}}</button>
+                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost" class="comment_on_post_btn">{{comments.length}} Comments</button>
                     {{!-- form to comment --}}
                     <div id = "commentShow{{_id}}" hidden>
                         <form id="commentForm{{_id}}"  action="/posts/comment" method="post">
@@ -99,7 +99,7 @@
                                 autocomplete="off"
                             />
                             <input name='postId' value = {{_id}} hidden>
-                            <input name="Submit" type="submit" value="Post" class="btn-grad submit_posts_btn" style=" width: 80px;font-size:15px; height: 35px;"/>
+                            <input name="Submit" type="submit" value="Submit" class="btn-grad submit_posts_btn" style=" width: 80px;font-size:15px; height: 35px;"/>
                         </form>
                     
                         {{#if comments.length}}

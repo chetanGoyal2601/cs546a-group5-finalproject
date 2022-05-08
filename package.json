@@ -1,7 +1,7 @@
 {
-  "name": "postmodulenewattempt",
+  "name": "educapedia",
   "version": "1.0.0",
-  "description": "",
+  "description": "project for CS 546 A - web programming- submission to Prof. Patrick Hill",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "dev": "nodemon app.js",
     "seed": "node ./tasks/seed.js"
   },
-  "author": "",
+  "author": "Chetan Goyal (20005334), Devshree Parikh (10476941), Jefferson Dias (10458869), Riya Kale (20008491), Sangram Thorat (20007345)",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
