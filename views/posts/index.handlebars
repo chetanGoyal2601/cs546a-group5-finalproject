@@ -48,9 +48,9 @@
                                 
                         />
                         <input name='postId' value = {{_id}} hidden>
-                        <input type="submit" value="Submit" class="btn-grad" />
+                        
                     </form>
-
+                    <button id="editPostsubmitButton{{_id}}" onclick="submitEditPost('postEditing{{_id}}', 'editedPost{{_id}}')" name="editPostsubmitButton" value="editPostsubmitButton" hidden>Submit</button>
                     {{!-- To display total likes on each post --}}
                     <div>
                         <p id ="totalLikes"  style="font-size:15px;font-style:italic;">Total Likes : {{totalLikes}}</p>
@@ -63,7 +63,7 @@
                                 <input name='postId' value = {{_id}} hidden>
                                 <button name="deletePost" value="deletePost" class="delete_posts_btn">Delete Post</button>
                             </form>
-                            <button id ="postEditor" onclick="enableEditing('postEditing{{_id}}', 'initialPost{{_id}}')" name="postEditor" value="postEditor" class="edit_posts_btn">Edit Post</button>
+                            <button id ="postEditor" onclick="enableEditing('postEditing{{_id}}', 'initialPost{{_id}}', 'editPostsubmitButton{{_id}}')" name="postEditor" value="postEditor" class="edit_posts_btn">Edit Post</button>
                         </div>
                         {{/userChecker}}
 
@@ -86,7 +86,7 @@
                         </form>
                     {{/unless}}
                     
-                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}')" name="commentOnPost" class="comment_on_post_btn">{{comments.length}} Comments</button>
+                    <button id="commentOnPost" onclick="enableComment('commentShow{{_id}}', 'editCommentButton{{_id}}')" name="commentOnPost" class="comment_on_post_btn">{{comments.length}} Comments</button>
                     {{!-- form to comment --}}
                     <div id = "commentShow{{_id}}" hidden>
                         <form id="commentForm{{_id}}"  action="/posts/comment" method="post">
@@ -99,8 +99,9 @@
                                 autocomplete="off"
                             />
                             <input name='postId' value = {{_id}} hidden>
-                            <input name="Submit" type="submit" value="Submit" class="btn-grad submit_posts_btn" style=" width: 80px;font-size:15px; height: 35px;"/>
+                            {{!-- <input name="Submit" type="submit" value="Submit" class="btn-grad submit_posts_btn" style=" width: 80px;font-size:15px; height: 35px;"/> --}}
                         </form>
+                        <button id="editCommentButton{{_id}}" onclick="submitEditPost('commentForm{{_id}}', 'newComment{{_id}}')" name="editCommentButton" value="editCommentButton" hidden>Submit</button>
                     
                         {{#if comments.length}}
                             <div style="padding-top:10px;">
