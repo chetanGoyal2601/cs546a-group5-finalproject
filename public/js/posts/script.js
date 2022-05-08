@@ -4,7 +4,7 @@
   if (postForm) {
     postForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      console.log(newPost.value);
+      //console.log(newPost.value);
       if (textValidation(newPost.value)) {
         postForm.submit();
       } else {
@@ -26,7 +26,7 @@ function submitEditPost(form, text) {
     editForm.focus();
     return false;
   } else {
-    console.log("Hello");
+    //console.log("Hello");
     editForm.submit();
     return true;
   }

@@ -21,6 +21,25 @@
     });
   }
 
+  let favouriteForm2 = document.getElementById("favouriteForm2");
+  let favouriteUniversitiesLength2 = document.getElementById(
+    "favouriteUniversitiesLength2"
+  );
+
+  if (favouriteForm2) {
+    favouriteForm2.addEventListener("submit", (event) => {
+      //console.log(typeof favouriteUniversitiesLength.value);
+      event.preventDefault();
+      if (Number(favouriteUniversitiesLength2.value) >= 5) {
+        alert(
+          "Uh oh! You can add only five universities to your favourite list. Unfavourite any of your favourited ones to add more."
+        );
+      } else {
+        favouriteForm2.submit();
+      }
+    });
+  }
+
   if (commentOnUniversity) {
     commentOnUniversity.addEventListener("submit", (event) => {
       event.preventDefault();

@@ -39,9 +39,9 @@
                         {{/listChecker}}
                     {{/if}}
                     {{#unless userId}}
-                        <form id = "favouriteForm" action="/university/favourite" method="post">
+                        <form id = "favouriteForm2" action="/university/favourite" method="post">
                             <input name='uniId' value = {{universityData._id}} hidden>
-                            <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
+                            <input id = "favouriteUniversitiesLength2" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
                             <button name="Favourite" value="Favourite" class="add_to_fav_btn" style="float: right;">Add to Favourites</button>
                         </form>
                     {{/unless}}
@@ -83,9 +83,9 @@
             {{/if}}
             {{#unless userRating}}
              <div class="mb-3">
-            <form id="ratingForm" action="/university/editRating" method="post">
-                <label for="rating">Give a rating:</label>
-                <select id="rating" name="rating">
+            <form id="ratingForm2" action="/university/editRating" method="post">
+                <label for="rating2">Give a rating:</label>
+                <select class="dropdown" id="rating2" name="rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -100,9 +100,9 @@
         {{/if}}
         {{#unless userId}}
             <div class="mb-3">
-                <form id="ratingForm" action="/university/editRating" method="post">
-                        <label for="rating">Give a rating:</label>
-                        <select id="rating" name="rating">
+                <form id="ratingForm3" action="/university/editRating" method="post">
+                        <label for="rating3">Give a rating:</label>
+                        <select id="rating3" name="rating">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -137,7 +137,7 @@
                     <hr>
                      <p>{{this.text}}</p>
                     {{#userChecker ../userId this.userId}}
-                        <form id = "commentDeleteForm" action="/university/deleteComment" method="post">
+                        <form id = "commentDeleteForm{{this._id}}" action="/university/deleteComment" method="post">
                             <input name='commentId' value = {{this._id}} hidden>
                             <input name='uniId' value = {{../universityData._id}} hidden>
                             <button name="deleteComment" value="deleteComment" class="unlike_posts_btn">Delete</button>

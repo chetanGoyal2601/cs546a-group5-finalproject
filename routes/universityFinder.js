@@ -46,7 +46,7 @@ router.route("/university/:id").get(async (req, res) => {
       isUserLoggedIn = true;
       idValidation(userId);
     }
-    console.log(xss(req.params.id));
+    //console.log(xss(req.params.id));
     idValidation(xss(req.params.id));
     let favoriteUniversities = [];
     let universityInfo = await universityData.getUniversity(xss(req.params.id));
@@ -84,7 +84,7 @@ router.route("/university/:id").get(async (req, res) => {
       isUserLoggedIn: isUserLoggedIn,
     });
   } catch (e) {
-    console.log(e.message);
+    //console.log(e.message);
     res.status(e.code || 500).render("posts", {
       title: "University Info",
       postList: output,
