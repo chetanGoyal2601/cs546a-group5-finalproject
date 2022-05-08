@@ -17,10 +17,10 @@
 
     <div class="card bg-light card-size" style="border-radius:20px;width:60%;float:right;margin-left:20%;margin-top:0%;">
         <ul class="bg-light">
-            <p ><li class="user_profile_details">Work Experience: {{user.workEx}} Years</li></p>
-            <p><li class="user_profile_details">Email: {{user.email}}</li></p>
-            <p><li class="user_profile_details">Aspiring University: {{user.aspiringUniversity}}</li></p>
-            <p><li class="user_profile_details">Favorite Universities:
+            <li class="user_profile_details">Work Experience: {{user.workEx}} Years</li>
+            <li class="user_profile_details">Email: {{user.email}}</li>
+            <li class="user_profile_details">Aspiring University: {{user.aspiringUniversity}}</li>
+            <li class="user_profile_details">Favorite Universities:
                 {{#if uniArr}}
                 <ol>
                     {{#each uniArr}}
@@ -33,7 +33,7 @@
                 <p>No favorite Universities yet</p>
                 {{/if}}          
             </li>
-            </p>
+          
 
         </ul>
         <div class="card-footer">
@@ -43,7 +43,7 @@
         
                 <button class="change_password" onclick="window.location.href='/update_password'"
                     type="button">Change Password</button>
-                    <div class="d-grid gap-2" style="float: right;"><a id="No-account"  href="/logout"><button class="logout_btn">Logout</button></a></div>
+                    <div class="d-grid gap-2" style="float: right;"><button class="logout_btn"  onclick="window.location.href='/logout'" id="No-account">Logout</button></div>
             </div>
             
             <br>

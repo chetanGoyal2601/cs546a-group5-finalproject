@@ -1,7 +1,7 @@
 <div class="posts_background">
     <div class="div_center">
         <div >
-            <img src="/public/images/scholar.jpeg" class="scholar_img" />
+            <img src="/public/images/scholar.jpeg" class="scholar_img" alt="scholar"/>
         </div>
           <div class="div_circle_6" style="position: fixed;"></div>
             <div class="div_circle_7" style="position: fixed;"></div>
@@ -30,9 +30,9 @@
      
      </div>
     {{#if postList.length}}
-        <ul class="justify_center">
             {{#each postList}}
-            <div class="user_posts">
+            <div class="user_posts justify_center">
+                <ul>
                 <li class="list_decoration">
                     <p class="theme_text_color" style="font-size:23px;font-style:italic;">{{userName}}</p>
                     <hr>
@@ -81,7 +81,7 @@
                     {{/if}}
 
                     {{#unless userId}}
-                        <form id = "myLikeForm2" action="" method="post">
+                        <form id = "myLikeForm2"  method="post">
                             <button name="foo" value="upvote">Like</button>
                         </form>
                     {{/unless}}
@@ -113,9 +113,9 @@
                         {{/if}}
                     </div>
                 </li>
+                </ul>
             </div>
             {{/each}}
-        </ul>
     {{/if}}
  
     {{#unless postList.length}}
