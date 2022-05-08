@@ -1,14 +1,11 @@
-
 function validatePassword(password) {
-  var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
-  if(password.match(decimal))
-            {
-                return true;
-            }
-			else
-            {
-               return false;
-            }
+  var decimal =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
+  if (password.match(decimal)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function validateSignupInputs(e) {
@@ -16,7 +13,7 @@ function validateSignupInputs(e) {
   const password = document.getElementById("password").value;
   const workEx = Number(document.getElementById("work").value);
   const email = document.getElementById("email").value;
-  const AspUni = document.getElementById("uni").value;
+  //const AspUni = document.getElementById("uni").value;
   const confirm_pass = document.getElementById("confirm").value;
 
   let errorMessage = null;
@@ -47,14 +44,14 @@ function validateSignupInputs(e) {
     errorMessage = "Please enter 0 if you dont have work experience";
   } else if (!password) {
     errorMessage = "You must provide a password";
-  }  else if (password.length < 8 || password.length > 20) {
+  } else if (password.length < 8 || password.length > 20) {
     errorMessage =
       "Enter a password with more than 8 and less than 20 characters";
-  } else if(validatePassword(password)===false){
+  } else if (validatePassword(password) === false) {
     //   8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character
-         errorMessage = "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character";
-       }
-  else if (!password.match()) {
+    errorMessage =
+      "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special character";
+  } else if (!password.match()) {
     errorMessage = "Enter password only with valid characters";
   } else if (!confirm_pass) {
     errorMessage = "You must provide a confirm password";
@@ -109,10 +106,11 @@ async function validateSignInInputs(e) {
   } else if (password.length < 8 || password.length > 20) {
     errorMessage =
       "Enter a password with more than 8 and less than 20 characters";
-  } else if(validatePassword(password)===false){
+  } else if (validatePassword(password) === false) {
     //   8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character
-         errorMessage = "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special characterer";
-       } else {
+    errorMessage =
+      "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special characterer";
+  } else {
     errorMessage = null;
   }
 
@@ -169,15 +167,13 @@ function validateUpdateProfileInputs(e) {
     errorMessage = "email not defined";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter email only with valid characters";
-  } 
-  else if (!aspuni) {
+  } else if (!aspuni) {
     errorMessage = "You must provide a Aspiring University";
   } else if (aspuni == null || aspuni.length == 0) {
     errorMessage = "Aspiring University cannot be null";
   } else if (aspuni == undefined) {
     errorMessage = "Aspiring University not defined";
-  } 
-  else if (WorkEx !== 0) {
+  } else if (WorkEx !== 0) {
     if (!WorkEx || WorkEx == null || WorkEx == undefined) {
       errorMessage = "Please enter 0 if you dont have work experience";
     }
@@ -198,7 +194,7 @@ function validateUpdateProfileInputs(e) {
 }
 
 function validateUpdatePasswordInputs(e) {
- const password_form = document.getElementById("change-form")
+  //const password_form = document.getElementById("change-form")
   const password = document.getElementById("password").value;
   const new_password = document.getElementById("new_password").value;
   const confirm_pass = document.getElementById("confirm").value;
@@ -209,11 +205,11 @@ function validateUpdatePasswordInputs(e) {
     errorMessage = "Please enter current password";
   } else if (!new_password) {
     errorMessage = "Please enter new password";
-   } else if(validatePassword(new_password)===false){
- //   8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character
-      errorMessage = "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special characterer";
-    }
-    else if (!confirm_pass) {
+  } else if (validatePassword(new_password) === false) {
+    //   8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character
+    errorMessage =
+      "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special characterer";
+  } else if (!confirm_pass) {
     errorMessage = "Please enter confirm password";
   } else if (confirm_pass != new_password) {
     errorMessage = "new password and confirm password do not match.";
