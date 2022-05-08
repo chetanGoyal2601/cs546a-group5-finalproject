@@ -13,9 +13,9 @@ function validateSignupInputs(e) {
     errorMessage = "name cannot be null";
   } else if (name == undefined) {
     errorMessage = "name not defined";
-  } else if (name.length < 5 || name.length > 15) {
+  } else if (name.length < 5 || name.length > 100) {
     errorMessage =
-      "Enter a User Name with more than 4 and less than 15 characters";
+      "Enter a User Name with more than 4 and less than 100 characters";
   } else if (!email) {
     errorMessage = "You must provide a email";
   } else if (email == null || email.length == 0) {
@@ -24,9 +24,9 @@ function validateSignupInputs(e) {
     errorMessage = "email not defined";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter email only with valid characters";
-  } else if(workEx!==0){
-      if(!workEx || workEx == null || workEx == undefined){
-        errorMessage = "Please enter 0 if you dont have work experience";
+  } else if (workEx !== 0) {
+    if (!workEx || workEx == null || workEx == undefined) {
+      errorMessage = "Please enter 0 if you dont have work experience";
     }
   } else if (typeof workEx == "string") {
     errorMessage = "Work Experience should be a number";
@@ -65,7 +65,8 @@ function validateSignupInputs(e) {
 }
 
 function validateEmail(email) {
-  const regexEmail = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+  const regexEmail =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (email.match(regexEmail)) {
     return true;
   } else {
@@ -144,6 +145,9 @@ function validateUpdateProfileInputs(e) {
     errorMessage = "name cannot be null";
   } else if (name == undefined) {
     errorMessage = "name not defined";
+  } else if (name.length < 5 || name.length > 100) {
+    errorMessage =
+      "Enter a User Name with more than 4 and less than 100 characters";
   } else if (!email) {
     errorMessage = "You must provide a email post";
   } else if (email == null || email.length == 0) {
@@ -158,11 +162,11 @@ function validateUpdateProfileInputs(e) {
     errorMessage = "Aspiring University cannot be null";
   } else if (aspuni == undefined) {
     errorMessage = "Aspiring University not defined";
-  } else if(WorkEx!==0){
-    if(!WorkEx || WorkEx == null || WorkEx == undefined){
+  } else if (WorkEx !== 0) {
+    if (!WorkEx || WorkEx == null || WorkEx == undefined) {
       errorMessage = "Please enter 0 if you dont have work experience";
     }
-  }   else if (typeof WorkEx == "string") {
+  } else if (typeof WorkEx == "string") {
     errorMessage = "Work Experience should be a number";
   } else if (WorkEx < 0 || WorkEx > 100) {
     errorMessage = "Please enter 0 if you dont have work experience";

@@ -39,8 +39,8 @@
                     <p id = "initialPost{{_id}}">{{text}}</p>
                     <form id="postEditing{{_id}}" action="/posts/editPost" method="post" hidden>
                         <input 
-                                id="editedPost"
-                                name="editedPost"
+                                id="editedPost{{_id}}"
+                                name="editedPost{{_id}}"
                                 type="text"
                                 value = "{{text}}"
                                 placeholder="EditPost"

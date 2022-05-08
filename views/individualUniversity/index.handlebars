@@ -35,9 +35,9 @@
             {{/listChecker}}
         {{/if}}
         {{#unless userId}}
-            <form id = "favouriteForm" action="/university/favourite" method="post">
-                <input name='uniId' value = {{universityData._id}} hidden>
-                <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
+            <form id = "favouriteFormIfNotLogged" action="/university/favourite" method="post">
+                <input name='uniIdifNotLogged' value = {{universityData._id}} hidden>
+                <input id = "favouriteUniversitiesLengthIfNotLogged" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
                 <button name="Favourite" value="Favourite">Add to Favourites</button>
             </form>
         {{/unless}}
@@ -82,17 +82,17 @@
             {{/unless}}
         {{/if}}
         {{#unless userId}}
-        <form id="ratingForm" action="/university/editRating" method="post">
-                <label for="rating">Give a rating:</label>
-                <select id="rating" name="rating">
+        <form id="ratingForm2" action="/university/editRating" method="post">
+                <label for="rating2">Give a rating:</label>
+                <select id="rating2" name="rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <input name='uniId' value = {{universityData._id}} hidden>
-                <input type="submit" value="Rate" class="btn-grad">
+                <input name='uniId2' value = {{universityData._id}} hidden>
+                <input type="submit2" value="Rate" class="btn-grad">
             </form>
         {{/unless}}
 

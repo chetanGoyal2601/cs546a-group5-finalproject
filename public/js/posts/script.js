@@ -14,6 +14,58 @@
       }
     });
   }
+  /////
+  let postEditing = document.getElementById("postEditing");
+  let editedPost = document.getElementById("editedPost");
+  if (postEditing) {
+    postEditing.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (textValidation(editedPost.value)) {
+        postEditing.submit();
+      } else {
+        alert("Please enter a valid text in the post!");
+        postEditing.reset();
+        newPost.focus();
+      }
+    });
+  }
+  /////
+  /////
+  let f = document.getElementsByTagName("form");
+  //console.log(f[1], f[1].id.substring(0, 11), f[1].length);
+  //let count = 0;
+  //let k = {};
+  for (let i = 0; i < f.length; i++) {
+    //console.log(f[i]);
+    if (f[i].id.substring(0, 11) === "postEditing") {
+      //let postId = formId.substring(11);
+      //k[count] = postId;
+      //let editedPost = document.getElementById("editedPost" + f[i].substring(11));
+      f[i].addEventListener("submit", (event) => {
+        console.log(f[i].substring(11));
+        event.preventDefault();
+        console.log(
+          document.getElementById("editedPost" + f[i].substring(11)).value
+        );
+        if (
+          textValidation(
+            document.getElementById("editedPost" + f[i].substring(11)).value
+          )
+        ) {
+          f[i].submit();
+        } else {
+          alert("Please enter a valid text in the post!");
+          f[i].reset();
+          document.getElementById("editedPost" + f[i].substring(11)).focus();
+        }
+      });
+    }
+  }
+  // let f = document.getElementsByTagName('form')
+  // for (let i of f) {
+  //   if (i) {i.id}
+  // }
 })();
 
 function enableEditing(v1, v2) {
