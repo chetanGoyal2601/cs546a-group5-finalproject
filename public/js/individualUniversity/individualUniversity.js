@@ -6,7 +6,7 @@
   //console.log(favouriteUniversitiesLength);
   let commentOnUniversity = document.getElementById("commentOnUniversity");
   let commentText = document.getElementById("newComment");
-
+  //coooo
   // if (favouriteForm) {
   //   favouriteForm.addEventListener("submit", (event) => {
   //     //console.log(typeof favouriteUniversitiesLength.value);
