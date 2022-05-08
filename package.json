@@ -20,7 +20,6 @@
     "express-session": "^1.17.2",
     "mongodb": "^4.5.0",
     "nodemon": "^2.0.15",
-    "password-validator": "^5.2.1",
     "xss": "^1.0.11"
   }
 }

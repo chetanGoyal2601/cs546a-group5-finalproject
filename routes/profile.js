@@ -4,26 +4,7 @@ let router = express.Router();
 let data = require("../data");
 let bcrypt = require("bcryptjs");
 let profileFetch = data.profile;
-var passwordValidator = require("password-validator");
-var schema = new passwordValidator();
 
-schema
-  .is()
-  .min(8) // Minimum length 8
-  .is()
-  .max(20) // Maximum length 20
-  .has()
-  .uppercase() // Must have uppercase letters
-  .has()
-  .lowercase() // Must have lowercase letters
-  .has()
-  .digits(2) // Must have at least 2 digits
-  .has()
-  .not()
-  .spaces() // Should not have spaces
-  .is()
-  .not()
-  .oneOf(["Passw0rd", "Password123"]); // Blacklist these values
 
 //password validation
   function validatePassword(password) {
@@ -114,9 +95,9 @@ router.post("/signup", async function (req, res) {
     if (usercheck) {
       throw { code: 400, message: "User already exists" };
     }
-    console.log("Hello1");
+
     await profileFetch.createUser(name, email, aspUni, workex, password);
-    console.log("Hello1");
+   
     return res.redirect("/login?msg=Congratulations, you are user now");
   } catch (e) {
     res.status(e.code || 500).render("profile/signup", {

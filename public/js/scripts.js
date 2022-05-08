@@ -109,9 +109,10 @@ async function validateSignInInputs(e) {
   } else if (password.length < 8 || password.length > 20) {
     errorMessage =
       "Enter a password with more than 8 and less than 20 characters";
-  } else if (!password.match(/^(?!\s*$).+/)) {
-    errorMessage = "Enter password only with valid characters";
-  } else {
+  } else if(validatePassword(password)===false){
+    //   8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character
+         errorMessage = "Please Enter Valid Password: \n1. Password Should be between 8 to 20 characters\n2. Have at least one uppercase letter\n3. Have at least one lowercase letter\n4. Must have at least 1 digits\n5. and one special characterer";
+       } else {
     errorMessage = null;
   }
 
