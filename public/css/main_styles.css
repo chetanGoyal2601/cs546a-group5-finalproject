@@ -130,6 +130,10 @@ padding-left: 10px;
     bottom: 9.19%;
     background: #545BE8
 }
+.eduLogo {
+    display: block;
+    height: 100%;
+}
 .square{
     /* height: 60px;
     width: 60px; */
