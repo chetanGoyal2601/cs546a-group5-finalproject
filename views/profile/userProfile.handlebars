@@ -1,45 +1,57 @@
-{{#if msg}}
-<div class="alert alert-success col-4 offset-4" role="alert">
-    <h4 class="alert-heading">Message!</h4>
-    <p>{{msg}}</p>
-</div>
-{{else}}
+<div class="user_profile_background">
 
-<h1>My Profile</h1>
-<div class="card mb-4 bg-dark col-4 offset-4">
-    <ul class="list-group bg-dark list-group-flush">
-       
-        <li class="list-group-item bg-dark" style="color: white;">Name: {{user.name}}</li>
-        <li class="list-group-item bg-dark" style="color: white;">Work Experience: {{user.workEx}} Years</li>
-        <li class="list-group-item bg-dark" style="color: white;">Email: {{user.email}}</li>
-        <li class="list-group-item bg-dark" style="color: white;">Aspiring University: {{user.aspiringUniversity}}</li>
-        <li class="list-group-item bg-dark" style="color: white;">Favorite Universities:
-            {{#if uniArr}}
-            <ol>
-                {{#each uniArr}}
-                <li>
-                    {{this}}
-                </li>
-                {{/each}}
-            </ol>
-            {{else}}
-            <p>No favorite Universities yet</p>
-            {{/if}}          
-        </li>
-
-    </ul>
-    <div class="card-footer">
-        <div class="d-grid gap-2">
-            <button class="btn btn-outline-primary" onclick="window.location.href='/update_profile'"
-                type="button">Update Profile</button>
-        </div>
-        <br>
-        <div class="d-grid gap-2">
-            <button class="btn btn-outline-primary" onclick="window.location.href='/update_password'"
-                type="button">Change Password</button>
-        </div>
-        <br>
-       
-         <a id="No-account" href="/logout">logout</a>
+    {{#if msg}}
+    <div class="alert alert-success col-4 offset-4" role="alert">
+        <p>{{msg}}</p>
     </div>
-{{/if}}
+    {{else}}
+
+    <div class="card bg-light card-size" style="border-radius:20px;">
+    <div class="card-header" style="background-color: #545BE8;height:100px;"></div>
+    <div class="card-body">
+        <h1 class="card-title" style="font-size:33px;font-style:italic;">{{user.name}}</h1>
+        <p class="card-text" style="font-size:20px;"> {{user.email}}</p>
+    </div>
+    </div>
+                      <img src="/public/images/chemistry.jpeg" alt="Person" class="img_div_chemistry">
+
+    <div class="card bg-light card-size" style="border-radius:20px;width:60%;float:right;margin-left:20%;margin-top:0%;">
+        <ul class="bg-light">
+            <p ><li class="user_profile_details">Work Experience: {{user.workEx}} Years</li></p>
+            <p><li class="user_profile_details">Email: {{user.email}}</li></p>
+            <p><li class="user_profile_details">Aspiring University: {{user.aspiringUniversity}}</li></p>
+            <p><li class="user_profile_details">Favorite Universities:
+                {{#if uniArr}}
+                <ol>
+                    {{#each uniArr}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ol>
+                {{else}}
+                <p>No favorite Universities yet</p>
+                {{/if}}          
+            </li>
+            </p>
+
+        </ul>
+        <div class="card-footer">
+            <div class="d-grid gap-2">
+                <button class="update_profile_btn" onclick="window.location.href='/update_profile'"
+                    type="button">Update Profile</button>
+        
+                <button class="change_password" onclick="window.location.href='/update_password'"
+                    type="button">Change Password</button>
+                    <div class="d-grid gap-2" style="float: right;"><a id="No-account"  href="/logout"><button class="logout_btn">Logout</button></a></div>
+            </div>
+            
+            <br>
+        
+            
+            </div>
+        {{/if}}
+    </div>
+      
+</div>
+
