@@ -106,7 +106,7 @@ async function main() {
   await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['4'] }, { $push: { favouriteUniversities: "University of Southern California" } });
   await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['4'] }, { $push: { favouriteUniversities: "University of California, Santa Barbara" } });
 
-  let hash = await bcrypt.hash('group5@123', 16);
+  let hash = await bcrypt.hash('Group5@123', 16);
 
   await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['0'] }, { $set: { hashedPassword: hash } });
   await profilesCollection.updateOne({ _id: profilesInsertInfo.insertedIds['1'] }, { $set: { hashedPassword: hash } });
