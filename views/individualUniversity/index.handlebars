@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid" style=" background: linear-gradient(180deg, #F5F5F5 15%, #ffe992 180%);" >
     {{#if universityData}}
-      <div class="row" style="margin-top:3%">
-       <div class="col-xl-4" >
+      <div class="row" >
+       <div class="col-xl-4" style="margin-top:3%">
             <div class="card mb-4 mb-xl-0" >
                 <div class="card-header text-center"><h4>{{universityData.name}}</h4></div>
                 <div class="card-body text-center">
@@ -10,15 +10,43 @@
                 </div>
             </div>
         </div>
-    <div class="col-xl-8">
+    <div class="col-xl-8" style="margin-top:3%">
             <div class="card mb-4">
-                <div class="card-header "><h5>About University:</h5></div>
+               
+                <div class="card-header"><h5>About University:</h5>
+                </div>
+                
                 <div class="card-body">
-                    <form>
-                        <div class="mb-3">
+                          <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
                             <h5 class="card-text font-italic theme_text_color">CITY : {{universityData.city}}</h5>
                         <h5 class="card-text font-italic theme_text_color">STATE : {{universityData.state}}</h5>
                         </div>
+                        {{!-- Add to favourite --}}
+               <div class="col-md-6" >
+                    {{#if userId }}
+                        {{#listChecker universityData.favoriteUniversityList universityData.name}}
+                            <form id = "unfavouriteForm" action="/university/unfavourite" method="post">
+                                <input name='uniId' value = {{universityData._id}} hidden>
+                                <button name="Unfavourite" value="Unfavourite"  class="add_to_fav_btn" style="float: right;">Unfavourite</button>
+                            </form>
+                        {{else}}
+                            <form id = "favouriteForm" action="/university/favourite" method="post">
+                                <input name='uniId' value = {{universityData._id}} hidden>
+                                <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
+                                <button name="Favourite" value="Favourite"  class="add_to_fav_btn" style="float: right;">Add to Favourites</button>
+                            </form>
+                        {{/listChecker}}
+                    {{/if}}
+                    {{#unless userId}}
+                        <form id = "favouriteForm" action="/university/favourite" method="post">
+                            <input name='uniId' value = {{universityData._id}} hidden>
+                            <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
+                            <button name="Favourite" value="Favourite" class="add_to_fav_btn" style="float: right;">Add to Favourites</button>
+                        </form>
+                    {{/unless}}
+                    </div>
+                    </div>
                         <div class="mb-3">
                             <p>{{universityData.description}}</p>
                         </div>
@@ -28,92 +56,20 @@
                             <div class="col-md-6">
                                 <h5 class="card-text font-italic theme_text_color">Rating - {{universityData.totalRating}}</h5>
                                 <div>
-                                    <p>Real time status of users that have rated until now: {{universityData.rating.length}}</p>
+                                    <p class="h6">Real time status of users that have rated until now: {{universityData.rating.length}}</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Form Row        -->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (organization name)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
-                            </div>
-                            <!-- Form Group (location)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputLocation">Location</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
-                            </div>
-                        </div>
-                        <!-- Form Group (email address)-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
-                        </div>
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (phone number)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputPhone">Phone number</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
-                            </div>
-                            <!-- Form Group (birthday)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-                            </div>
-                        </div>
-                        <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Save changes</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div>
-<div class="row">
-    {{!-- <div class="col-sm-8">
-    <div>
-    <img src="{{universityData.universityPhoto}}" alt="{{universityData.name}}" >
-    </div>
-  </div> --}}
-       
-        {{!-- Add to favourite --}}
-        {{#if userId }}
-            {{#listChecker universityData.favoriteUniversityList universityData.name}}
-                <form id = "unfavouriteForm" action="/university/unfavourite" method="post">
-                    <input name='uniId' value = {{universityData._id}} hidden>
-                    <button name="Unfavourite" value="Unfavourite">Unfavourite</button>
-                </form>
-            {{else}}
-                <form id = "favouriteForm" action="/university/favourite" method="post">
-                    <input name='uniId' value = {{universityData._id}} hidden>
-                    <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
-                    <button name="Favourite" value="Favourite">Add to Favourites</button>
-                </form>
-            {{/listChecker}}
-        {{/if}}
-        {{#unless userId}}
-            <form id = "favouriteFormIfNotLogged" action="/university/favourite" method="post">
-                <input name='uniIdifNotLogged' value = {{universityData._id}} hidden>
-                <input id = "favouriteUniversitiesLengthIfNotLogged" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
-                <button name="Favourite" value="Favourite">Add to Favourites</button>
-            </form>
-        {{/unless}}
-        <div>
-            <p><h5>Rating - </h5>{{universityData.totalRating}}</p>
-        </div>
-        <div>
-            <p>Real time status of users that have rated until now: {{universityData.rating.length}}</p>
-        </div>
-        {{!-- To give rating remaining --}}
+                     {{!-- To give rating remaining --}}
         {{#if userId}}
             {{#if userRating}}
-                <div>
-                    <p>You have rated: {{userRating}}</p>
+                  <div class="mb-3">
+                 <h6 class="card-text font-italic theme_text_color">You have rated: {{userRating}}</h6>
                 </div>
+                 <div class="mb-3 h5">
                 <form id="ratingForm" action="/university/editRating" method="post">
                     <label for="rating">Change rating:</label>
-                    <select id="rating" name="rating">
+                    <select class="dropdown" id="rating" name="rating">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -121,10 +77,12 @@
                         <option value="5">5</option>
                     </select>
                     <input name='uniId' value = {{universityData._id}} hidden>
-                    <input type="submit" value="Rate" class="btn-grad">
+                    <input type="submit" value="Rate" class="unlike_posts_btn">
                 </form>
+                </div>
             {{/if}}
             {{#unless userRating}}
+             <div class="mb-3">
             <form id="ratingForm" action="/university/editRating" method="post">
                 <label for="rating">Give a rating:</label>
                 <select id="rating" name="rating">
@@ -135,29 +93,31 @@
                     <option value="5">5</option>
                 </select>
                 <input name='uniId' value = {{universityData._id}} hidden>
-                <input type="submit" value="Rate" class="btn-grad">
+                <input type="submit" value="Rate" class="unlike_posts_btn">
             </form>
+            </div>
             {{/unless}}
         {{/if}}
         {{#unless userId}}
-        <form id="ratingForm2" action="/university/editRating" method="post">
-                <label for="rating2">Give a rating:</label>
-                <select id="rating2" name="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <input name='uniId2' value = {{universityData._id}} hidden>
-                <input type="submit2" value="Rate" class="btn-grad">
-            </form>
-        {{/unless}}
-
-        {{!-- Form to create a new comment --}}
-        <div>
+            <div class="mb-3">
+                <form id="ratingForm" action="/university/editRating" method="post">
+                        <label for="rating">Give a rating:</label>
+                        <select id="rating" name="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input name='uniId' value = {{universityData._id}} hidden>
+                        <input type="submit" value="Rate" class="unlike_posts_btn">
+                </form>
+                </div>
+            {{/unless}}
+ {{!-- Form to create a new comment --}}
+        <div class="mb-3">
             <form id="commentOnUniversity" action="/university/comment" method="post">
-                <input
+                <input class="ask_posts_text"
                     id="newComment"
                     name="newComment"
                     type="text"
@@ -166,29 +126,44 @@
                     autocomplete="off"
                 />
                 <input name='uniId' value = {{universityData._id}} hidden>
-                <input type="submit" value="Submit" class="btn-grad" />
+                <input type="submit" value="Post" class="btn-grad submit_posts_btn" />
             </form>
         </div>
-        {{!-- To display comments --}}
+                  {{!-- To display comments --}}
         {{#if universityData.comments}}
             {{#each universityData.comments}}
-                <div>
-                    <p>{{this.userName}}</p>
+                <div class="user_posts_2">
+                    <p class="theme_text_color">{{this.userName}}</p>
+                    <hr>
+                     <p>{{this.text}}</p>
                     {{#userChecker ../userId this.userId}}
                         <form id = "commentDeleteForm" action="/university/deleteComment" method="post">
                             <input name='commentId' value = {{this._id}} hidden>
                             <input name='uniId' value = {{../universityData._id}} hidden>
-                            <button name="deleteComment" value="deleteComment">Delete</button>
+                            <button name="deleteComment" value="deleteComment" class="unlike_posts_btn">Delete</button>
                         </form>
                     {{/userChecker}}
-                    <p>{{this.text}}</p>
                 </div>
             {{/each}}
         {{/if}}
         {{#unless universityData.comments}}
             No Comments yet!
         {{/unless}}
-    {{/if}}
+    {{/if}}       
+                   
+                </div>
+            </div>
+        </div>
+        </div>
+
+   
+       
+        
+        
+       
+
+       
+      
     <script src="/public/js/individualUniversity/individualUniversity.js"></script>
 </div>
 

@@ -2,7 +2,7 @@ const profileRoutes = require("./profile");
 const universityFinderRoutes = require("./universityFinder");
 const postRoutes = require("./posts");
 const express = require("express");
-const router = express.Router();
+const path = require("path");
 
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
@@ -18,8 +18,14 @@ const constructorMethod = (app) => {
 
   app.use("/", postRoutes);
 
-  app.use("*", (req, res) => {
-    res.status(404).json({ error: "Page Not found" });
+  //for accessing unknown routes
+  app.use("*", (request, response) => {
+    response.status(404).sendFile(path.resolve("static/page-not-found.html"));
+  });
+
+  //for invalid URL
+  app.use(function (error, request, response, next) {
+    response.status(404).sendFile(path.resolve("static/page-not-found.html"));
   });
 };
 
