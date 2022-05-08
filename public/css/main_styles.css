@@ -1,12 +1,7 @@
 * {
 	box-sizing: content-box;
 }
-/* media */
-@media only screen and (max-width: 987px){
-    .navbar-brand{
-        padding-left: 0px;
-    }
-}
+
 html,
 body {
 	font-size: 16px;
@@ -17,7 +12,7 @@ CSS for signup page
 .container{
     font-size: 18px;
     font-weight: bold;
-    padding: 2px 16px;
+    /* padding: 2px 16px; */
 }
 .welcome{
     font-size: 20px;
@@ -48,6 +43,7 @@ CSS for signup page
     color: white;
     text-decoration: none;
 }
+
 /*
 ------------------end--------------------
 */
@@ -131,7 +127,7 @@ padding-left: 10px;
     left: 4.9%;
     right: 91.96%;
     top: 11%;
-    bottom: 13.19%;
+    bottom: 9.19%;
     background: #545BE8
 }
 .square{
@@ -145,18 +141,18 @@ padding-left: 10px;
     position: absolute; */
     position: absolute;
     width: 145px;
-    height: 33.93px;
+    height: 150px;
     left: 0px;
     top: 0px;
     
 }
 .logo_E
 {
-    position: absolute;
+    position: relative;
     width: 16px;
     height: 32px;
-    left: 86px;
-    top: 13px;
+    left: 66px;
+    margin: 5px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -168,9 +164,9 @@ padding-left: 10px;
 .logo_Educapedia
 {
     position: absolute;
-    left: 9.9%;
+    left: 9.5%;
     right: 85.96%;
-    top: 38%;
+    top: 36%;
     bottom: 13.19%;
     /* font-family: 'Roboto'; */
     font-style: normal;
@@ -255,6 +251,7 @@ color: #545BE8;
     color: white;
     text-decoration: none;
 }
+
 .login_up_btn{
         background-color: #545BE8;
         border: 2px solid #545BE8;
@@ -422,7 +419,7 @@ width: 100%;
 height: 100%;
 left: 0px;
 background: white;
- background: linear-gradient(100deg, #ffe992 0%, #777de6 100%);
+ background: linear-gradient(100deg, #ffe992 0%, #777de6 130%);
 }
 .dropright {
     position: relative;
@@ -557,7 +554,7 @@ ul {
 
 .uni_background_container{
     /* max-width: 1140px; */
-    background: linear-gradient(100deg, #ffe992 0%, #777de6 100%);
+    background: linear-gradient(100deg, #F5F5F5 0%, #ffe992 180%);
     align-items: center;
 }
 /*
@@ -788,6 +785,9 @@ CSS for posts page
 /*
 ----------end-----------------
 */
+/*
+Css for user profile
+*/
 .user_profile_background{
     background: linear-gradient(90deg, #F5F5F5 35%, #ffe992 180%);
     width: 100%;
@@ -882,4 +882,43 @@ CSS for posts page
     width:430px;
     top: 330px;
     right:68%;
+}
+/*
+----------end-----------------
+*/
+.add_to_fav_btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-color: #545BE8;
+    color: white;
+    border: 2px solid #545BE8;
+
+}
+.add_to_fav_btn:hover{
+    background-color:white;
+    color: #545BE8;
+}
+.user_posts_2{
+    align-self: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background-color: white;
+    margin-top:10px ;
+    justify-content: center;
+    padding: 20px;
+    font-size: 18px;
+    /* top: 2416.92px; */
+    filter: drop-shadow(0px 18.0585px 18.0585px rgba(0, 0, 0, 0.05));
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
