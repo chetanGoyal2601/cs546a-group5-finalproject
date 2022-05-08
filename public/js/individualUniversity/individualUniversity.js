@@ -3,13 +3,15 @@
   let favouriteUniversitiesLength = document.getElementById(
     "favouriteUniversitiesLength"
   );
+  //console.log(favouriteUniversitiesLength);
   let commentOnUniversity = document.getElementById("commentOnUniversity");
   let commentText = document.getElementById("newComment");
 
   if (favouriteForm) {
     favouriteForm.addEventListener("submit", (event) => {
+      //console.log(typeof favouriteUniversitiesLength.value);
       event.preventDefault();
-      if (favouriteUniversitiesLength === 5) {
+      if (Number(favouriteUniversitiesLength.value) >= 5) {
         alert(
           "Uh oh! You can add only five universities to your favourite list. Unfavourite any of your favourited ones to add more."
         );
@@ -25,6 +27,8 @@
       //console.log(commentText.value);
       if (!textValidation(commentText.value)) {
         alert("Please provide a valid text to submit!");
+        commentOnUniversity.reset();
+        //commentOnUniversity.target();
       } else {
         commentOnUniversity.submit();
       }

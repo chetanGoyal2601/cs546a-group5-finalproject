@@ -181,7 +181,7 @@ async function addToFavourites(userId, uniId) {
     const university = await uniCollection.findOne({ _id: ObjectId(uniId) });
     if (university === null)
       throw { code: 404, message: "No university found" };
-    if (user.favouriteUniversities.length === 0) {
+    if (user.favouriteUniversities.length >= 5) {
       throw { code: 400, message: "Maximum Universities already added" };
     }
     user.favouriteUniversities.push(university.name.trim());

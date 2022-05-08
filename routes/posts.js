@@ -112,13 +112,13 @@ router.route("/posts/comment").post(async (req, res) => {
 });
 
 router.route("/posts/editPost").post(async (req, res) => {
-  const newPostText = xss(req.body.editedPost);
-  const postId = xss(req.body.postId);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
       //throw { code: 400, message: "User not logged in!" };
     }
+    const newPostText = xss(req.body["editedPost" + req.body.postId]);
+    const postId = xss(req.body.postId);
     textValidation(newPostText);
     idValidation(postId);
     await postData.editPost(postId, newPostText);

@@ -170,6 +170,8 @@ router.route("/university/deleteComment").post(async (req, res) => {
 router.route("/university/favourite").post(async (req, res) => {
   let userId = xss(req.session.user);
   let uniId = xss(req.body.uniId);
+
+  //console.log(userId);
   try {
     if (!checkUserLoggedIn(req)) {
       return res.status(200).redirect("/login");
@@ -177,6 +179,11 @@ router.route("/university/favourite").post(async (req, res) => {
     }
     idValidation(userId);
     idValidation(uniId);
+    let favUniLength = xss(req.body.favouriteUniversitiesLength);
+    if (favUniLength === 5) {
+      throw { code: 400, message: "Maximum Universities added" };
+    }
+
     await universityData.addToFavourites(userId, uniId);
     res.status(200).redirect("/university/" + uniId);
   } catch (e) {
