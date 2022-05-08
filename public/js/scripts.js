@@ -1,3 +1,22 @@
+
+function validatePassword(password) {
+      errors = [];
+  if (password.length < 8) {
+      errors.push("Your password must be at least 8 characters"); 
+  }
+  if (password.search(/[a-z]/i) < 0) {
+      errors.push("Your password must contain at least one letter.");
+  }
+  if (password.search(/[0-9]/) < 0) {
+      errors.push("Your password must contain at least one digit."); 
+  }
+  if (errors.length > 0) {
+      alert(errors.join("\n"));
+      return false;
+  }
+  return true;
+}
+
 function validateSignupInputs(e) {
   const name = document.getElementById("name").value;
   const password = document.getElementById("password").value;
@@ -34,14 +53,13 @@ function validateSignupInputs(e) {
     errorMessage = "Please enter 0 if you dont have work experience";
   } else if (!password) {
     errorMessage = "You must provide a password";
-  } else if (password == null) {
-    errorMessage = "password cannot be null";
-  } else if (password == undefined) {
-    errorMessage = "password not defined";
-  } else if (password.length < 8 || password.length > 20) {
+  }  else if (password.length < 8 || password.length > 20) {
     errorMessage =
       "Enter a password with more than 8 and less than 20 characters";
-  } else if (!password.match(/^(?!\s*$).+/)) {
+  }else if(!validatePassword(password)){
+    errorMessage = "Enter password only with valid characters";
+  } 
+  else if (!password.match()) {
     errorMessage = "Enter password only with valid characters";
   } else if (!confirm_pass) {
     errorMessage = "You must provide a confirm password";
@@ -54,7 +72,6 @@ function validateSignupInputs(e) {
   } else {
     errorMessage = null;
   }
-
   if (errorMessage == null) {
     return true;
   } else {
@@ -156,13 +173,15 @@ function validateUpdateProfileInputs(e) {
     errorMessage = "email not defined";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter email only with valid characters";
-  } else if (!aspuni) {
+  } 
+  else if (!aspuni) {
     errorMessage = "You must provide a Aspiring University";
   } else if (aspuni == null || aspuni.length == 0) {
     errorMessage = "Aspiring University cannot be null";
   } else if (aspuni == undefined) {
     errorMessage = "Aspiring University not defined";
-  } else if (WorkEx !== 0) {
+  } 
+  else if (WorkEx !== 0) {
     if (!WorkEx || WorkEx == null || WorkEx == undefined) {
       errorMessage = "Please enter 0 if you dont have work experience";
     }
