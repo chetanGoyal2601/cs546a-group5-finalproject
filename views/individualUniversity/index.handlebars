@@ -1,24 +1,82 @@
-<h2><span>{{pageTitle}}</span></h2>
-
-<section>
+<div class="container-fluid">
     {{#if universityData}}
-        <div>
-            <img src="{{universityData.universityPhoto}}" alt="{{universityData.name}}">
+      <div class="row" style="margin-top:3%">
+       <div class="col-xl-4" >
+            <div class="card mb-4 mb-xl-0" >
+                <div class="card-header text-center"><h4>{{universityData.name}}</h4></div>
+                <div class="card-body text-center">
+                    <img class="img-account-profile rounded-circle mb-2" style="width:100%;" src="{{universityData.universityPhoto}}" alt="{{universityData.name}}">
+                    <h5>US Rank: {{universityData.rank}}</h5>
+                </div>
+            </div>
         </div>
-        <div>
-            <p>{{universityList.name}}</p>
+    <div class="col-xl-8">
+            <div class="card mb-4">
+                <div class="card-header "><h5>About University:</h5></div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <h5 class="card-text font-italic theme_text_color">CITY : {{universityData.city}}</h5>
+                        <h5 class="card-text font-italic theme_text_color">STATE : {{universityData.state}}</h5>
+                        </div>
+                        <div class="mb-3">
+                            <p>{{universityData.description}}</p>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <h5 class="card-text font-italic theme_text_color">Rating - {{universityData.totalRating}}</h5>
+                                <div>
+                                    <p>Real time status of users that have rated until now: {{universityData.rating.length}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Organization name</label>
+                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Location</label>
+                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                            </div>
+                        </div>
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Phone number</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                            </div>
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="button">Save changes</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div>
-            <p>CITY: {{universityData.city}}</p>
-            <p>STATE: {{universityData.state}}</p>
         </div>
-        <div>
-            <h5>US Rank: {{universityData.rank}}</h5>
-        </div>
-        <div>
-            <h5>About University:</h5>
-            <p>{{universityData.description}}</p>
-        </div>
+<div class="row">
+    {{!-- <div class="col-sm-8">
+    <div>
+    <img src="{{universityData.universityPhoto}}" alt="{{universityData.name}}" >
+    </div>
+  </div> --}}
+       
         {{!-- Add to favourite --}}
         {{#if userId }}
             {{#listChecker universityData.favoriteUniversityList universityData.name}}
@@ -34,12 +92,7 @@
                 </form>
             {{/listChecker}}
         {{/if}}
-        <div>
-            <p><h5>Rating - </h5>{{universityData.totalRating}}</p>
-        </div>
-        <div>
-            <p>Real time status of users that have rated until now: {{universityData.rating.length}}</p>
-        </div>
+       
         {{!-- To give rating remaining --}}
         {{#if userId}}
             {{#if userRating}}
@@ -111,4 +164,5 @@
         {{/unless}}
     {{/if}}
     <script src="/public/js/individualUniversity/individualUniversity.js"></script>
-</section>
+</div>
+
