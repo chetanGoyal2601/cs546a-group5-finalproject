@@ -4,19 +4,16 @@ let bcrypt = require("bcrypt");
 let saltRounds = 12;
 let { ObjectId } = require("mongodb");
 
-
 //password Validation function
-  function validatePassword(password) {
-    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
-    if(password.match(decimal))
-              {
-                  return true;
-              }
-        else
-              {
-                 return false;
-              }
+function validatePassword(password) {
+  var decimal =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
+  if (password.match(decimal)) {
+    return true;
+  } else {
+    return false;
   }
+}
 
 // Function to validate email with atleast 5 characters in the name
 function validateEmail(email) {
@@ -281,7 +278,10 @@ function validateUserDetails(name, email, aspiringUniversity, workEx) {
       };
 
     if (!aspiringUniversity) {
-      aspiringUniversity = "";
+      throw {
+        code: 400,
+        message: "Work should be a valid number greater than or equal to zero.",
+      };
     }
 
     return {

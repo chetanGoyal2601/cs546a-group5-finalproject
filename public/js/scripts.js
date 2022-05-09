@@ -34,7 +34,7 @@ function validateSignupInputs(e) {
     errorMessage = "name can not be empty";
   } else if (!email) {
     errorMessage = "You must provide a email";
-  } else if (typeof email !== string) {
+  } else if (typeof email !== "string") {
     errorMessage = "email cannot be null";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter email only with valid characters";
@@ -101,7 +101,7 @@ async function validateSignInInputs(e) {
     errorMessage = "email cannot be null";
   } else if (email == undefined) {
     errorMessage = "email not defined";
-  } else if (typeof email !== string) {
+  } else if (typeof email !== "string") {
     errorMessage = "email cannot be null";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter a email with valid characters";
