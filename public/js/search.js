@@ -140,7 +140,7 @@ $(document).ready(function () {
       card.appendChild(img);
       let body = document.createElement("div");
       body.className = "card-body";
-      let title = document.createElement("h6");
+      let title = document.createElement("h2");
       title.className = "card-title";
       title.appendChild(document.createTextNode(paginationArray[i].name));
       body.appendChild(title);
