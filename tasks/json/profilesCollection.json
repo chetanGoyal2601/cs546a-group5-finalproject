@@ -1,0 +1,44 @@
+{
+    "profiles": [
+        {
+            "name": "Chetan Goyal",
+            "email": "chetan.perfection@gmail.com",
+            "hashedPassword": "",
+            "aspiringUniversity": "Princeton University",
+            "workEx": 2,
+            "favouriteUniversities": []
+        },
+        {
+            "name": "Jefferson Dias",
+            "email": "jdias@stevens.edu",
+            "hashedPassword": "",
+            "aspiringUniversity": "Rutgers, The State University of New Jersey",
+            "workEx": 3,
+            "favouriteUniversities": []
+        },
+        {
+            "name": "Riya Kale",
+            "email": "riya1234kale@gmail.com",
+            "hashedPassword": "",
+            "aspiringUniversity": "University of Southern California",
+            "workEx": 0,
+            "favouriteUniversities": []
+        },
+        {
+            "name": "Devshree Parikh",
+            "email": "devshree.parikh@gmail.com",
+            "hashedPassword": "",
+            "aspiringUniversity": "University of California, San Diego",
+            "workEx": 2,
+            "favouriteUniversities": []
+        },
+        {
+            "name": "Sangram Thorat",
+            "email": "sangramthorat999@gmail.com",
+            "hashedPassword": "",
+            "aspiringUniversity": "Boston University",
+            "workEx": 5,
+            "favouriteUniversities": []
+        }
+    ]
+}

@@ -1,0 +1,854 @@
+{
+    "universities": [
+        {
+            "name": "Texas A&M University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Texas_A%26M_University_seal.svg/800px-Texas_A%26M_University_seal.svg.png",
+            "introduction": "Established in 1876, Texas A&M University is a non-profit public state higher-education institution located in the urban setting of the small city of College Station (population range of 50,000-249,999 inhabitants), Texas.",
+            "description": "Established in 1876, Texas A&M University is a non-profit public state higher-education institution located in the urban setting of the small city of College Station (population range of 50,000-249,999 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, Texas A&M University (TAMU) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. Texas A&M University (TAMU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 144 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. TAMU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1876,
+            "location": {
+                "city": "College Station",
+                "state": "Texas"
+            },
+            "ranking": 37,
+            "latitude": 30.615011,
+            "longitude": -96.342476,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "The University of Texas at Austin",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/University_of_Texas_at_Austin_seal.svg/800px-University_of_Texas_at_Austin_seal.svg.png",
+            "introduction": "Founded in 1883, The University of Texas at Austin is a non-profit public state higher-education institution located in the urban setting of the large city of Austin (population range of 500,000-1,000,000 inhabitants), Texas.",
+            "description": "Founded in 1883, The University of Texas at Austin is a non-profit public state higher-education institution located in the urban setting of the large city of Austin (population range of 500,000-1,000,000 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, The University of Texas at Austin (UT Austin) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. The University of Texas at Austin (UT Austin) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 137 years old US higher-education institution has a selective admission policy based on students' past academic record and grades. The admission rate range is 30-40% making this US higher education organization a very selective institution. International students are welcome to apply for enrollment. UT Austin also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1883,
+            "location": {
+                "city": "Austin",
+                "state": "Texas"
+            },
+            "ranking": 14,
+            "latitude": 30.2849,
+            "longitude": -97.7341,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "The University of Texas at San Antonio",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/University_of_Texas_at_San_Antonio_seal.svg/800px-University_of_Texas_at_San_Antonio_seal.svg.png",
+            "introduction": "Founded in 1969, The University of Texas at San Antonio is a non-profit public state higher-education institution located in the urban setting of the metropolis of San Antonio (population range of 1,000,000-5,000,000 inhabitants), Texas.",
+            "description": "Founded in 1969, The University of Texas at San Antonio is a non-profit public state higher-education institution located in the urban setting of the metropolis of San Antonio (population range of 1,000,000-5,000,000 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, The University of Texas at San Antonio (UTSA) is a very large (uniRank enrollment range: 30,000-34,999 students) coeducational US higher education institution. The University of Texas at San Antonio (UTSA) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 51 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. UTSA also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1969,
+            "location": {
+                "city": "San Antonio",
+                "state": "Texas"
+            },
+            "ranking": 157,
+            "latitude": 29.5827,
+            "longitude": -98.6189,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "William Marsh Rice University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Rice_University_seal.svg/800px-Rice_University_seal.svg.png",
+            "introduction": "Established in 1891, William Marsh Rice University is a non-profit private higher-education institution located in the urban setting of the metropolis of Houston (population range of 1,000,000-5,000,000 inhabitants), Texas.",
+            "description": "Established in 1891, William Marsh Rice University is a non-profit private higher-education institution located in the urban setting of the metropolis of Houston (population range of 1,000,000-5,000,000 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, William Marsh Rice University is a medium-sized (uniRank enrollment range: 7,000-7,999 students) coeducational US higher education institution. William Marsh Rice University offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 129 years old US higher-education institution has a selective admission policy based on students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International applicants are eligible to apply for enrollment. William Marsh Rice University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1876,
+            "location": {
+                "city": "Houston",
+                "state": "Texas"
+            },
+            "ranking": 67,
+            "latitude": 29.7161530018,
+            "longitude": -95.4043018006,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of Houston",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/University_of_Houston_seal.svg/800px-University_of_Houston_seal.svg.png",
+            "introduction": "Established in 1927, University of Houston is a non-profit public state higher-education institution located in the urban setting of the metropolis of Houston (population range of 1,000,000-5,000,000 inhabitants), Texas.",
+            "description": "Established in 1927, University of Houston is a non-profit public state higher-education institution located in the urban setting of the metropolis of Houston (population range of 1,000,000-5,000,000 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, University of Houston (UH) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. University of Houston (UH) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 93 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. UH also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1927,
+            "location": {
+                "city": "Houston",
+                "state": "Texas"
+            },
+            "ranking": 74,
+            "latitude": 29.7199,
+            "longitude": -95.3422,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of North Texas",
+            "image": "https://upload.wikimedia.org/wikipedia/en/b/bc/University_of_North_Texas_seal.png",
+            "introduction": "Founded in 1890, University of North Texas is a non-profit public state higher-education institution located in the urban setting of the small city of Denton (population range of 50,000-249,999 inhabitants), Texas.",
+            "description": "Founded in 1890, University of North Texas is a non-profit public state higher-education institution located in the urban setting of the small city of Denton (population range of 50,000-249,999 inhabitants), Texas. This institution also has a branch campus in Fort Worth. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, University of North Texas (UNT) is a very large (uniRank enrollment range: 40,000-44,999 students) coeducational US higher education institution. University of North Texas (UNT) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 130 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. UNT also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1890,
+            "location": {
+                "city": "Denton",
+                "state": "Texas"
+            },
+            "ranking": 107,
+            "latitude": 33.2075,
+            "longitude": -97.1526,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Southern Methodist University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Southern_Methodist_University_seal.svg/800px-Southern_Methodist_University_seal.svg.png",
+            "introduction": "Established in 1911, Southern Methodist University is a non-profit private higher-education institution located in the suburban setting of the metropolis of Dallas (population range of 1,000,000-5,000,000 inhabitants), Texas.",
+            "description": "Established in 1911, Southern Methodist University is a non-profit private higher-education institution located in the suburban setting of the metropolis of Dallas (population range of 1,000,000-5,000,000 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, Southern Methodist University (SMU) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution formally affiliated with the Christian-Methodist religion. Southern Methodist University (SMU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 109 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 50-60% making this US higher education organization a averagely selective institution. International applicants are eligible to apply for enrollment. SMU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1911,
+            "location": {
+                "city": "Dallas",
+                "state": "Texas"
+            },
+            "ranking": 109,
+            "latitude": 32.8412,
+            "longitude": -96.7845,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Baylor University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Baylor_University_seal.svg/800px-Baylor_University_seal.svg.png",
+            "introduction": "Established in 1845, Baylor University is a non-profit private higher-education institution located in the urban setting of the small city of Waco (population range of 50,000-249,999 inhabitants), Texas.",
+            "description": "Established in 1845, Baylor University is a non-profit private higher-education institution located in the urban setting of the small city of Waco (population range of 50,000-249,999 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, Baylor University is a large (uniRank enrollment range: 15,000-19,999 students) coeducational US higher education institution formally affiliated with the Christian-Baptist religion. Baylor University offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 175 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 30-40% making this US higher education organization a very selective institution. International applicants are eligible to apply for enrollment. Baylor University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1845,
+            "location": {
+                "city": "Waco",
+                "state": "Texas"
+            },
+            "ranking": 122,
+            "latitude": 31.5489,
+            "longitude": -97.1131,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Texas Tech University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Texas_Tech_University_seal.svg/800px-Texas_Tech_University_seal.svg.png",
+            "introduction": "Established in 1923, Texas Tech University is a non-profit public state higher-education institution located in the urban setting of the small city of Lubbock (population range of 50,000-249,999 inhabitants), Texas.",
+            "description": "Established in 1923, Texas Tech University is a non-profit public state higher-education institution located in the urban setting of the small city of Lubbock (population range of 50,000-249,999 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, Texas Tech University (TTU) is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution. Texas Tech University (TTU) offers courses and programs leading to officially recognized higher education degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 97 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. TTU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1923,
+            "location": {
+                "city": "Lubbock",
+                "state": "Texas"
+            },
+            "ranking": 122,
+            "latitude": 33.5843,
+            "longitude": -101.8783,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "The University of Texas at Dallas",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/University_of_Texas_at_Dallas_seal.svg/800px-University_of_Texas_at_Dallas_seal.svg.png",
+            "introduction": "Founded in 1969, The University of Texas at Dallas is a non-profit public state higher-education institution located in the urban setting of the small city of Richardson (population range of 50,000-249,999 inhabitants), Texas.",
+            "description": "Founded in 1969, The University of Texas at Dallas is a non-profit public state higher-education institution located in the urban setting of the small city of Richardson (population range of 50,000-249,999 inhabitants), Texas. Officially accredited by the Southern Association of Colleges and Schools Commission on Colleges, The University of Texas at Dallas (UT Dallas) is a very large (uniRank enrollment range: 30,000-34,999 students) coeducational US higher education institution. The University of Texas at Dallas (UT Dallas) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 51 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. UT Dallas also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1969,
+            "location": {
+                "city": "Richardson",
+                "state": "Texas"
+            },
+            "ranking": 129,
+            "latitude": 32.9858,
+            "longitude": -96.7501,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Cornell University",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cornell_University_seal.svg/800px-Cornell_University_seal.svg.png",
+            "introduction": "Founded in 1865, Cornell University is a non-profit private higher-education institution located in the urban setting of the large town of Ithaca (population range of 10,000-49,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Cornell University is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution.",
+            "description": "Founded in 1865, Cornell University is a non-profit private higher-education institution located in the urban setting of the large town of Ithaca (population range of 10,000-49,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Cornell University is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. Cornell University offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 155 years old US higher-education institution has a selective admission policy based on students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International students are welcome to apply for enrollment. Cornell University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1865,
+            "location": {
+                "city": "Ithaca",
+                "state": "New York"
+            },
+            "ranking": 4,
+            "latitude": 42.454323,
+            "longitude": -76.475266,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Columbia University in the City of New York",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Columbia_University_shield.svg/1024px-Columbia_University_shield.svg.png",
+            "introduction": "Founded in 1754, Columbia University in the City of New York is a non-profit private higher-education institution located in the urban setting of the large metropolis of New York City (population range of over 5,000,000 inhabitants), New York.",
+            "description": "Founded in 1754, Columbia University in the City of New York is a non-profit private higher-education institution located in the urban setting of the large metropolis of New York City (population range of over 5,000,000 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Columbia University in the City of New York is a very large (uniRank enrollment range: 30,000-34,999 students) coeducational US higher education institution. Columbia University in the City of New York offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 266 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 0-10% making this US higher education organization a most selective institution. International students are welcome to apply for enrollment. Columbia University in the City of New York also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1754,
+            "location": {
+                "city": "New York City",
+                "state": "New York"
+            },
+            "ranking": 6,
+            "latitude": 40.807384,
+            "longitude": -73.963036,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "New York University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/New_York_University_Seal.svg/800px-New_York_University_Seal.svg.png",
+            "introduction": "Established in 1831, New York University is a non-profit private higher-education institution located in the urban setting of the large metropolis of New York City (population range of over 5,000,000 inhabitants), New York.",
+            "description": "Established in 1831, New York University is a non-profit private higher-education institution located in the urban setting of the large metropolis of New York City (population range of over 5,000,000 inhabitants), New York. This institution also has branch campuses in the following locations: Abu Dhabi, Shanghai. Officially accredited by the Middle States Commission on Higher Education, New York University (NYU) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. New York University (NYU) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 189 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 20-30% making this US higher education organization a very selective institution. International applicants are eligible to apply for enrollment. NYU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1831,
+            "location": {
+                "city": "New York City",
+                "state": "New York"
+            },
+            "ranking": 15,
+            "latitude": 40.729675,
+            "longitude": -73.996925,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University at Buffalo, State University of New York",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/University_at_Buffalo_seal.svg/800px-University_at_Buffalo_seal.svg.png",
+            "introduction": "Founded in 1846, University at Buffalo, State University of New York is a non-profit public state higher-education institution located in the suburban setting of the medium city of Buffalo (population range of 250,000-499,999 inhabitants), New York.",
+            "description": "Founded in 1846, University at Buffalo, State University of New York is a non-profit public state higher-education institution located in the suburban setting of the medium city of Buffalo (population range of 250,000-499,999 inhabitants), New York. This institution also has a branch campus in Amherst. Officially accredited by the Middle States Commission on Higher Education, University at Buffalo, State University of New York (UB) is a very large (uniRank enrollment range: 30,000-34,999 students) coeducational US higher education institution. University at Buffalo, State University of New York (UB) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 174 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 50-60% making this US higher education organization a averagely selective institution. International students are welcome to apply for enrollment. UB also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1846,
+            "location": {
+                "city": "Buffalo",
+                "state": "New York"
+            },
+            "ranking": 68,
+            "latitude": 43.001784,
+            "longitude": -78.789556,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Syracuse University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Syracuse_University_seal.svg/800px-Syracuse_University_seal.svg.png",
+            "introduction": "Founded in 1870, Syracuse University is a non-profit private higher-education institution located in the urban setting of the small city of Syracuse (population range of 50,000-249,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Syracuse University is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution formally affiliated with the Christian-Protestant religion.",
+            "description": "Founded in 1870, Syracuse University is a non-profit private higher-education institution located in the urban setting of the small city of Syracuse (population range of 50,000-249,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Syracuse University is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution formally affiliated with the Christian-Protestant religion. Syracuse University offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 150 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 50-60% making this US higher education organization a averagely selective institution. International students are welcome to apply for enrollment. Syracuse University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1870,
+            "location": {
+                "city": "Syracuse",
+                "state": "New York"
+            },
+            "ranking": 72,
+            "latitude": 43.03767,
+            "longitude": -76.13399,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Rochester Institute of Technology",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Rochester_Institute_of_Technology_Seal_%282018%29.svg/800px-Rochester_Institute_of_Technology_Seal_%282018%29.svg.png",
+            "introduction": "Established in 1829, Rochester Institute of Technology is a non-profit private higher-education institution located in the suburban setting of the small city of Rochester (population range of 50,000-249,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Rochester Institute of Technology (RIT) is a large (uniRank enrollment range: 15,000-19,999 students) coeducational US higher education institution.",
+            "description": "Established in 1829, Rochester Institute of Technology is a non-profit private higher-education institution located in the suburban setting of the small city of Rochester (population range of 50,000-249,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Rochester Institute of Technology (RIT) is a large (uniRank enrollment range: 15,000-19,999 students) coeducational US higher education institution. Rochester Institute of Technology (RIT) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 191 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. RIT also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1829,
+            "location": {
+                "city": "Rochester",
+                "state": "New York"
+            },
+            "ranking": 93,
+            "latitude": 43.084419,
+            "longitude": -77.675087,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Stony Brook University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Stony_Brook_University_seal.svg/800px-Stony_Brook_University_seal.svg.png",
+            "introduction": "Established in 1957, Stony Brook University is a non-profit public state higher-education institution located in the suburban setting of the large town of Stony Brook (population range of 10,000-49,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Stony Brook University (SUNY Stony Brook) is a very large (uniRank enrollment range: 30,000-34,999 students) coeducational US higher education institution.",
+            "description": "Established in 1957, Stony Brook University is a non-profit public state higher-education institution located in the suburban setting of the large town of Stony Brook (population range of 10,000-49,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, Stony Brook University (SUNY Stony Brook) is a very large (uniRank enrollment range: 30,000-34,999 students) coeducational US higher education institution. Stony Brook University (SUNY Stony Brook) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 63 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 40-50% making this US higher education organization a averagely selective institution. International applicants are eligible to apply for enrollment. SUNY Stony Brook also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1957,
+            "location": {
+                "city": "Stony Brook",
+                "state": "New York"
+            },
+            "ranking": 127,
+            "latitude": 40.914224,
+            "longitude": -73.11623,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of Rochester",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/University_of_Rochester_seal.svg/800px-University_of_Rochester_seal.svg.png",
+            "introduction": "Founded in 1850, University of Rochester is a non-profit private higher-education institution located in the urban setting of the small city of Rochester (population range of 50,000-249,999 inhabitants), New York.",
+            "description": "Founded in 1850, University of Rochester is a non-profit private higher-education institution located in the urban setting of the small city of Rochester (population range of 50,000-249,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, University of Rochester (UR) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution. University of Rochester (UR) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 170 years old US higher-education institution has a selective admission policy based on students' past academic record and grades. The admission rate range is 20-30% making this US higher education organization a very selective institution. International students are welcome to apply for enrollment. UR also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1850,
+            "location": {
+                "city": "Rochester",
+                "state": "New York"
+            },
+            "ranking": 61,
+            "latitude": 43.128333,
+            "longitude": -77.628333,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University at Albany",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/University_at_Albany%2C_SUNY_Seal.svg/800px-University_at_Albany%2C_SUNY_Seal.svg.png",
+            "introduction": "Founded in 1844, University at Albany, State University of New York is a non-profit public state higher-education institution located in the urban setting of the small city of Albany (population range of 50,000-249,999 inhabitants), New York.",
+            "description": "Founded in 1844, University at Albany, State University of New York is a non-profit public state higher-education institution located in the urban setting of the small city of Albany (population range of 50,000-249,999 inhabitants), New York. Officially accredited by the Middle States Commission on Higher Education, University at Albany, State University of New York (UAlbany) is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. University at Albany, State University of New York (UAlbany) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 176 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 50-60% making this US higher education organization a averagely selective institution. International students are welcome to apply for enrollment. UAlbany also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1844,
+            "location": {
+                "city": "Albany",
+                "state": "New York"
+            },
+            "ranking": 145,
+            "latitude": 42.686193,
+            "longitude": -73.823884,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Pace University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Pace_University_seal.svg/800px-Pace_University_seal.svg.png",
+            "introduction": "Founded in 1906, Pace University is a non-profit private higher-education institution located in the urban setting of the large metropolis of New York City (population range of over 5,000,000 inhabitants), New York.",
+            "description": "Founded in 1906, Pace University is a non-profit private higher-education institution located in the urban setting of the large metropolis of New York City (population range of over 5,000,000 inhabitants), New York. This institution also has branch campuses in the following locations: Westchester, New York City. Officially accredited by the Middle States Commission on Higher Education, Pace University (PACE) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution. Pace University (PACE) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 114 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. PACE also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1906,
+            "location": {
+                "city": "New York City",
+                "state": "New York"
+            },
+            "ranking": 207,
+            "latitude": 41.040253,
+            "longitude": -73.764685,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "New Jersey Institute of Technology",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/New_Jersey_IT_seal.svg/800px-New_Jersey_IT_seal.svg.png",
+            "introduction": "Established in 1881, New Jersey Institute of Technology is a non-profit public state higher-education institution located in the urban setting of the medium city of Newark (population range of 250,000-499,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, New Jersey Institute of Technology (NJIT) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution. New Jersey Institute of Technology (NJIT) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 139 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. NJIT also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1881,
+            "location": {
+                "city": "Newark",
+                "state": "New Jersey"
+            },
+            "ranking": 179,
+            "latitude": 40.742491,
+            "longitude": -74.178078,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Stevens Institute of Technology",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Seal_of_Stevens_Institute_of_Technology.svg/800px-Seal_of_Stevens_Institute_of_Technology.svg.png",
+            "introduction": "Founded in 1870, Stevens Institute of Technology is a non-profit private higher-education institution located in the suburban setting of the large town of Hoboken (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, Stevens Institute of Technology (Stevens) is a medium-sized (uniRank enrollment range: 8,000-8,999 students) coeducational US higher education institution. Stevens Institute of Technology (Stevens) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 150 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 40-50% making this US higher education organization a averagely selective institution. International students are welcome to apply for enrollment. Stevens also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1870,
+            "location": {
+                "city": "Hoboken",
+                "state": "New Jersey"
+            },
+            "ranking": 379,
+            "latitude": 40.744838,
+            "longitude": -74.025683,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Princeton University",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/800px-Princeton_seal.svg.png",
+            "introduction": "Founded in 1746, Princeton University is a non-profit private higher-education institution located in the suburban setting of the large town of Princeton (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, Princeton University is a medium-sized (uniRank enrollment range: 8,000-8,999 students) coeducational US higher education institution. Princeton University offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 274 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 0-10% making this US higher education organization a most selective institution. International students are welcome to apply for enrollment. Princeton University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, as well as administrative services.",
+            "founded": 1746,
+            "location": {
+                "city": "Princeton",
+                "state": "New Jersey"
+            },
+            "ranking": 19,
+            "latitude": 40.34873,
+            "longitude": -74.65931,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Rutgers, The State University of New Jersey",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Rutgers_University_seal.svg/800px-Rutgers_University_seal.svg.png",
+            "introduction": "Established in 1766, Rutgers, The State University of New Jersey is a non-profit public state higher-education institution located in the urban setting of the small city of New Brunswick (population range of 50,000-249,999 inhabitants), New Jersey.",
+            "description": "This institution also has branch campuses in the following locations: Newark, Camden. Officially accredited by the Middle States Commission on Higher Education, Rutgers, The State University of New Jersey (Rutgers) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. Rutgers, The State University of New Jersey (Rutgers) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 253 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. Rutgers also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1766,
+            "location": {
+                "city": "New Brunswick",
+                "state": "New Jersey"
+            },
+            "ranking": 34,
+            "latitude": 40.500819,
+            "longitude": -74.447399,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Saint Peter's University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/Saint_Peter%27s_University_Seal.png",
+            "introduction": "Established in 1872, Saint Peter's University is a non-profit private higher-education institution located in the urban setting of the small city of Jersey City (population range of 50,000-249,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, Saint Peter's University (SPU) is a small (uniRank enrollment range: 4,000-4,999 students) coeducational US higher education institution formally affiliated with the Christian-Catholic religion. Saint Peter's University (SPU) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 148 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. SPU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1872,
+            "location": {
+                "city": "Jersey City",
+                "state": "New Jersey"
+            },
+            "ranking": 1067,
+            "latitude": 40.727027,
+            "longitude": -74.071045,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Montclair State University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/68/Montclair_State_University_logo.svg/1920px-Montclair_State_University_logo.svg.png",
+            "introduction": "Established in 1908, Montclair State University is a non-profit public state higher-education institution located in the suburban setting of the large town of Montclair (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, Montclair State University is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. Montclair State University offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 112 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. Montclair State University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1908,
+            "location": {
+                "city": "Montclair",
+                "state": "New Jersey"
+            },
+            "ranking": 254,
+            "latitude": 40.855459,
+            "longitude": -74.192544,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Rowan University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Rowan_University_seal.svg/800px-Rowan_University_seal.svg.png",
+            "introduction": "Founded in 1923, Rowan University is a non-profit public state higher-education institution located in the suburban setting of the large town of Glassboro (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "This institution also has branch campuses in the following locations: Camden, Stratford. Officially accredited by the Middle States Commission on Higher Education, Rowan University (RU) is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. Rowan University (RU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 97 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. RU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1923,
+            "location": {
+                "city": "Glassboro",
+                "state": "New Jersey"
+            },
+            "ranking": 318,
+            "latitude": 39.706547,
+            "longitude": -75.117729,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Seton Hall University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Seton_Hall_University_Seal.svg/800px-Seton_Hall_University_Seal.svg.png",
+            "introduction": "Founded in 1856, Seton Hall University is a non-profit private higher-education institution located in the suburban setting of the large town of South Orange (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, Seton Hall University (SHU) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution formally affiliated with the Christian-Catholic religion. Seton Hall University (SHU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 164 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. SHU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1856,
+            "location": {
+                "city": "South Orange",
+                "state": "New Jersey"
+            },
+            "ranking": 235,
+            "latitude": 40.743144,
+            "longitude": -74.246635,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Drew University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Drew_University_shield.svg/800px-Drew_University_shield.svg.png",
+            "introduction": "Founded in 1928, Drew University is a non-profit private liberal arts higher-education institution located in the suburban setting of the large town of Madison (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "Officially accredited by the Middle States Commission on Higher Education, Drew University is a small (uniRank enrollment range: 2,000-2,999 students) coeducational US higher education institution formally affiliated with the Christian-Methodist religion. Drew University offers courses and programs leading to officially recognized higher education degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 92 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. Drew University also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1928,
+            "location": {
+                "city": "Madison",
+                "state": "New Jersey"
+            },
+            "ranking": 403,
+            "latitude": 40.761,
+            "longitude": -74.427,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Fairleigh Dickinson University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Fairleigh_Dickinson_University_Seal.svg/800px-Fairleigh_Dickinson_University_Seal.svg.png",
+            "introduction": "Established in 1942, Fairleigh Dickinson University is a non-profit private higher-education institution located in the suburban setting of the large town of Teaneck (population range of 10,000-49,999 inhabitants), New Jersey.",
+            "description": "This institution also has a branch campus in Madison. Officially accredited by the Middle States Commission on Higher Education, Fairleigh Dickinson University (FDU) is a medium-sized (uniRank enrollment range: 9,000-9,999 students) coeducational US higher education institution. Fairleigh Dickinson University (FDU) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 78 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 80-90% making this US higher education organization a least selective institution. International applicants are eligible to apply for enrollment. FDU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": 1942,
+            "location": {
+                "city": "Teaneck",
+                "state": "New Jersey"
+            },
+            "ranking": 347,
+            "latitude": 40.897967,
+            "longitude": -74.029278,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Stanford University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Stanford_University_seal_2003.svg/1200px-Stanford_University_seal_2003.svg.png",
+            "introduction": "Founded in 1885, Stanford University is a non-profit private higher-education institution located in the suburban setting of the large town of Stanford (population range of 10,000-49,999 inhabitants), California.",
+            "description": "Founded in 1885, Stanford University is a non-profit private higher-education institution located in the suburban setting of the large town of Stanford (population range of 10,000-49,999 inhabitants), California. This institution also has branch campuses in the following locations: Washington, New York, Monterey. Officially accredited by the WASC Senior College and University Commission, Stanford University (SU) is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. Stanford University (SU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 135 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 0-10% making this US higher education organization a most selective institution. International students are welcome to apply for enrollment. SU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1885",
+            "location": {
+                "city": "Stanford",
+                "state": "California"
+            },
+            "ranking": 3,
+            "latitude": 37.428230,
+            "longitude": -122.168861,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Berkeley",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/1200px-Seal_of_University_of_California%2C_Berkeley.svg.png",
+            "introduction": "Founded in 1868, University of California, Berkeley is a non-profit public state higher-education institution located in the urban setting of the small city of Berkeley (population range of 50,000-249,999 inhabitants), California",
+            "description": "Founded in 1868, University of California, Berkeley is a non-profit public state higher-education institution located in the urban setting of the small city of Berkeley (population range of 50,000-249,999 inhabitants), California. This institution also has branch campuses in the following locations: Davis, Irvine, Los Angeles, Merced, Riverside, San Diego, San Francisco, Santa Barbara, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, Berkeley (UC Berkeley) is a very large (uniRank enrollment range: 40,000-44,999 students) coeducational US higher education institution. University of California, Berkeley (UC Berkeley) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 152 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International students are welcome to apply for enrollment. UC Berkeley also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1868",
+            "location": {
+                "city": "Berkeley",
+                "state": "California"
+            },
+            "ranking": 5,
+            "latitude": 37.871853,
+            "longitude": -122.258423,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Los Angeles",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_University_of_California_UCLA.svg/800px-The_University_of_California_UCLA.svg.png",
+            "introduction": "Founded in 1919, University of California, Los Angeles is a non-profit public state higher-education institution located in the urban setting of the large metropolis of Los Angeles (population range of over 5,000,000 inhabitants), California.",
+            "description": "Founded in 1919, University of California, Los Angeles is a non-profit public state higher-education institution located in the urban setting of the large metropolis of Los Angeles (population range of over 5,000,000 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Davis, Irvine, Merced, Riverside, San Diego, San Francisco, Santa Barbara, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, Los Angeles (UCLA) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. University of California, Los Angeles (UCLA) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 101 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International students are welcome to apply for enrollment. UCLA also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1919",
+            "location": {
+                "city": "Los Angeles",
+                "state": "California"
+            },
+            "ranking": 12,
+            "latitude": 34.074949,
+            "longitude": -118.441318,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of Southern California",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/University_of_Southern_California_seal.svg/800px-University_of_Southern_California_seal.svg.png",
+            "introduction": "Established in 1880, University of Southern California is a non-profit private higher-education institution located in the urban setting of the large metropolis of Los Angeles (population range of over 5,000,000 inhabitants), California",
+            "description": "Established in 1880, University of Southern California is a non-profit private higher-education institution located in the urban setting of the large metropolis of Los Angeles (population range of over 5,000,000 inhabitants), California. Officially accredited by the WASC Senior College and University Commission, University of Southern California (USC) is a very large (uniRank enrollment range: over-45,000 students) coeducational US higher education institution. University of Southern California (USC) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 139 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International applicants are eligible to apply for enrollment. USC also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1880",
+            "location": {
+                "city": "Los Angeles",
+                "state": "California"
+            },
+            "ranking": 21,
+            "latitude": 34.022415,
+            "longitude": -118.285530,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, San Diego",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/University_of_San_Diego_seal.svg/800px-University_of_San_Diego_seal.svg.png",
+            "introduction": "Founded in 1960, University of California, San Diego is a non-profit public state higher-education institution located in the urban setting of the metropolis of San Diego (population range of 1,000,000-5,000,000 inhabitants), California.",
+            "description": "Founded in 1960, University of California, San Diego is a non-profit public state higher-education institution located in the urban setting of the metropolis of San Diego (population range of 1,000,000-5,000,000 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Davis, Irvine, Los Angeles, Merced, Riverside, San Francisco, Santa Barbara, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, San Diego (UCSD) is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution. University of California, San Diego (UCSD) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 59 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 30-40% making this US higher education organization a very selective institution. International students are welcome to apply for enrollment. UCSD also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, as well as administrative services.",
+            "founded": "1960",
+            "location": {
+                "city": "San Diego",
+                "state": "California"
+            },
+            "ranking": 26,
+            "latitude": 32.715736,
+            "longitude": -117.161087,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Davis",
+            "image": "https://nemaplant.org/wp-content/uploads/2019/03/217E3DB7-30E2-4F64-9717-A3523007228E.png",
+            "introduction": "Established in 1905, University of California, Davis is a non-profit public state higher-education institution located in the suburban setting of the small city of Davis (population range of 50,000-249,999 inhabitants), California.",
+            "description": "Established in 1905, University of California, Davis is a non-profit public state higher-education institution located in the suburban setting of the small city of Davis (population range of 50,000-249,999 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Irvine, Los Angeles, Merced, Riverside, San Diego, San Francisco, Santa Barbara, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, Davis (UC Davis) is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution. University of California, Davis (UC Davis) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 115 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 40-50% making this US higher education organization a averagely selective institution. International applicants are eligible to apply for enrollment. UC Davis also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1905",
+            "location": {
+                "city": "Davis",
+                "state": "California"
+            },
+            "ranking": 31,
+            "latitude": 38.544907,
+            "longitude": -121.740517,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Irvine",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/University_of_California%2C_Irvine_seal.svg/1200px-University_of_California%2C_Irvine_seal.svg.png",
+            "introduction": "Established in 1965, University of California, Irvine is a non-profit public state higher-education institution located in the urban setting of the small city of Irvine (population range of 50,000-249,999 inhabitants), California.",
+            "description": "Established in 1965, University of California, Irvine is a non-profit public state higher-education institution located in the urban setting of the small city of Irvine (population range of 50,000-249,999 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Davis, Los Angeles, Merced, Riverside, San Diego, San Francisco, Santa Barbara, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, Irvine (UCI) is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution. University of California, Irvine (UCI) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 55 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 20-30% making this US higher education organization a very selective institution. International applicants are eligible to apply for enrollment. UCI also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1965",
+            "location": {
+                "city": "Irvine",
+                "state": "California"
+            },
+            "ranking": 35,
+            "latitude": 33.669445,
+            "longitude": -117.823059,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Santa Barbara",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/UC_Santa_Barbara_Seal.png",
+            "introduction": "Founded in 1921, University of California, Santa Barbara is a non-profit public state higher-education institution located in the suburban setting of the small city of Santa Barbara (population range of 50,000-249,999 inhabitants), California.",
+            "description": "Founded in 1921, University of California, Santa Barbara is a non-profit public state higher-education institution located in the suburban setting of the small city of Santa Barbara (population range of 50,000-249,999 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Davis, Irvine, Los Angeles, Merced, Riverside, San Diego, San Francisco, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, Santa Barbara (UCSB) is a large (uniRank enrollment range: 25,000-29,999 students) coeducational US higher education institution. University of California, Santa Barbara (UCSB) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 99 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 30-40% making this US higher education organization a very selective institution. International students are welcome to apply for enrollment. UCSB also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1921",
+            "location": {
+                "city": "Santa Barbara",
+                "state": "California"
+            },
+            "ranking": 48,
+            "latitude": 34.413963,
+            "longitude": -119.848946,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Riverside",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/UC_Riverside_seal.svg/800px-UC_Riverside_seal.svg.png",
+            "introduction": "Established in 1954, University of California, Riverside is a non-profit public state higher-education institution located in the urban setting of the medium city of Riverside (population range of 250,000-499,999 inhabitants), California.",
+            "description": "Established in 1954, University of California, Riverside is a non-profit public state higher-education institution located in the urban setting of the medium city of Riverside (population range of 250,000-499,999 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Davis, Irvine, Los Angeles, Merced, San Diego, San Francisco, Santa Barbara, Santa Cruz. Officially accredited by the WASC Senior College and University Commission, University of California, Riverside (UC Riverside) is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. University of California, Riverside (UC Riverside) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 66 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 50-60% making this US higher education organization a averagely selective institution. International applicants are eligible to apply for enrollment. UC Riverside also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1954",
+            "location": {
+                "city": "Riverside",
+                "state": "California"
+            },
+            "ranking": 63,
+            "latitude": 33.953350,
+            "longitude": -117.396156,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of California, Santa Cruz",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_University_of_California_1868_UCSC.svg/800px-The_University_of_California_1868_UCSC.svg.png",
+            "introduction": "Established in 1965, University of California, Santa Cruz is a non-profit public state higher-education institution located in the urban setting of the small city of Santa Cruz (population range of 50,000-249,999 inhabitants), California.",
+            "description": "Established in 1965, University of California, Santa Cruz is a non-profit public state higher-education institution located in the urban setting of the small city of Santa Cruz (population range of 50,000-249,999 inhabitants), California. This institution also has branch campuses in the following locations: Berkeley, Davis, Irvine, Los Angeles, Merced, Riverside, San Diego, San Francisco, Santa Barbara. Officially accredited by the WASC Senior College and University Commission, University of California, Santa Cruz (UC Santa Cruz) is a large (uniRank enrollment range: 20,000-24,999 students) coeducational US higher education institution. University of California, Santa Cruz (UC Santa Cruz) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 55 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 40-50% making this US higher education organization a averagely selective institution. International applicants are eligible to apply for enrollment. UC Santa Cruz also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1965",
+            "location": {
+                "city": "Santa Cruz",
+                "state": "California"
+            },
+            "ranking": 77,
+            "latitude": 36.974117,
+            "longitude": -122.030792,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Massachusetts Institute of Technology",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/MIT_Seal.svg/1200px-MIT_Seal.svg.png",
+            "introduction": "Established in 1861, Massachusetts Institute of Technology is a non-profit private higher-education institution located in the urban setting of the small city of Cambridge (population range of 50,000-249,999 inhabitants), Massachusetts",
+            "description": "Established in 1861, Massachusetts Institute of Technology is a non-profit private higher-education institution located in the urban setting of the small city of Cambridge (population range of 50,000-249,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Massachusetts Institute of Technology (MIT) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution. Massachusetts Institute of Technology (MIT) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 159 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 0-10% making this US higher education organization a most selective institution. International applicants are eligible to apply for enrollment. MIT also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1861",
+            "location": {
+                "city": "Cambridge",
+                "state": "Massachusetts"
+            },
+            "ranking": 1,
+            "latitude": 42.360001,
+            "longitude": -71.092003,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Harvard University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1024px-Harvard_shield_wreath.svg.png",
+            "introduction": "Established in 1636, Harvard University is a non-profit private higher-education institution located in the urban setting of the small city of Cambridge (population range of 50,000-249,999 inhabitants), Massachusetts",
+            "description": "Established in 1636, Harvard University is a non-profit private higher-education institution located in the urban setting of the small city of Cambridge (population range of 50,000-249,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Harvard University (HU) is a very large (uniRank enrollment range: 40,000-44,999 students) coeducational US higher education institution. Harvard University (HU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 384 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 0-10% making this US higher education organization a most selective institution. International applicants are eligible to apply for enrollment. HU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1636",
+            "location": {
+                "city": "Cambridge",
+                "state": "Massachusetts"
+            },
+            "ranking": 2,
+            "latitude": 42.374443,
+            "longitude": -71.116943,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Boston University",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Boston_University_seal.svg/800px-Boston_University_seal.svg.png",
+            "introduction": "Founded in 1869, Boston University is a non-profit private higher-education institution located in the urban setting of the large city of Boston (population range of 500,000-1,000,000 inhabitants), Massachusetts.",
+            "description": "Founded in 1869, Boston University is a non-profit private higher-education institution located in the urban setting of the large city of Boston (population range of 500,000-1,000,000 inhabitants), Massachusetts. This institution also has branch campuses in the following locations: Los Angeles, Washington DC, London, Paris, Sydney. Officially accredited by the New England Commission of Higher Education, Boston University (BU) is a very large (uniRank enrollment range: 40,000-44,999 students) coeducational US higher education institution. Boston University (BU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 151 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 20-30% making this US higher education organization a very selective institution. International students are welcome to apply for enrollment. BU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1869",
+            "location": {
+                "city": "Boston",
+                "state": "Massachusetts"
+            },
+            "ranking": 32,
+            "latitude": 42.350876,
+            "longitude": -71.106918,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Tufts University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Tufts_official_seal.svg/800px-Tufts_official_seal.svg.png",
+            "introduction": "Established in 1852, Tufts University is a non-profit private higher-education institution located in the suburban setting of the small city of Medford (population range of 50,000-249,999 inhabitants), Massachusetts.",
+            "description": "Established in 1852, Tufts University is a non-profit private higher-education institution located in the suburban setting of the small city of Medford (population range of 50,000-249,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Tufts University (TU) is a large (uniRank enrollment range: 10,000-14,999 students) coeducational US higher education institution. Tufts University (TU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 168 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International applicants are eligible to apply for enrollment. TU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1852",
+            "location": {
+                "city": "Medford",
+                "state": "Massachusetts"
+            },
+            "ranking": 50,
+            "latitude": 42.4045408,
+            "longitude": -71.1197752,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Northeastern University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Northeastern_University_seal.svg/1200px-Northeastern_University_seal.svg.png",
+            "introduction": "Established in 1898, Northeastern University is a non-profit private higher-education institution located in the urban setting of the large city of Boston (population range of 500,000-1,000,000 inhabitants), Massachusetts.",
+            "description": "Established in 1898, Northeastern University is a non-profit private higher-education institution located in the urban setting of the large city of Boston (population range of 500,000-1,000,000 inhabitants), Massachusetts. This institution also has branch campuses in the following locations: Burlington, Nahant, Silicon Valley, Seattle, Toronto, Charlotte. Officially accredited by the New England Commission of Higher Education, Northeastern University (NU) is a large (uniRank enrollment range: 25,000-29,999 students) coeducational US higher education institution. Northeastern University (NU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 122 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 10-20% making this US higher education organization a most selective institution. International applicants are eligible to apply for enrollment. NU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1898",
+            "location": {
+                "city": "Boston",
+                "state": "Massachusetts"
+            },
+            "ranking": 26,
+            "latitude": 42.3398198,
+            "longitude": -71.0875516,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "University of Massachusetts Amherst",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/University_of_Massachusetts_Amherst_seal.svg/1200px-University_of_Massachusetts_Amherst_seal.svg.png",
+            "introduction": "Founded in 1863, University of Massachusetts Amherst is a non-profit public state higher-education institution located in the suburban setting of the large town of Amherst (population range of 10,000-49,999 inhabitants), Massachusetts.",
+            "description": "Founded in 1863, University of Massachusetts Amherst is a non-profit public state higher-education institution located in the suburban setting of the large town of Amherst (population range of 10,000-49,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, University of Massachusetts Amherst (UMass Amherst) is a very large (uniRank enrollment range: 35,000-39,999 students) coeducational US higher education institution. University of Massachusetts Amherst (UMass Amherst) offers courses and programs leading to officially recognized higher education degrees such as pre-bachelor degrees (i.e. certificates, diplomas, associate or foundation), bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 157 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 60-70% making this US higher education organization a somewhat selective institution. International students are welcome to apply for enrollment. UMass Amherst also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1863",
+            "location": {
+                "city": "Amherst",
+                "state": "Massachusetts"
+            },
+            "ranking": 56,
+            "latitude": 42.391155,
+            "longitude": -72.526711,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Bentley University",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bentley_Institutional_Seal_Dark_Grey_%281%29.png",
+            "introduction": "Founded in 1917, Bentley University is a non-profit private higher-education institution located in the suburban setting of the small city of Waltham (population range of 50,000-249,999 inhabitants), Massachusetts.",
+            "description": "Founded in 1917, Bentley University is a non-profit private higher-education institution located in the suburban setting of the small city of Waltham (population range of 50,000-249,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Bentley University (Bentley) is a small (uniRank enrollment range: 5,000-5,999 students) coeducational US higher education institution. Bentley University (Bentley) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 103 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 40-50% making this US higher education organization a averagely selective institution. International students are welcome to apply for enrollment. Bentley also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1917",
+            "location": {
+                "city": "Waltham",
+                "state": "Massachusetts"
+            },
+            "ranking": 315,
+            "latitude": 42.387633,
+            "longitude": -71.22061,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Brandeis University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Brandeis_University_seal.svg/800px-Brandeis_University_seal.svg.png",
+            "introduction": "Established in 1948, Brandeis University is a non-profit private higher-education institution located in the urban setting of the small city of Waltham (population range of 50,000-249,999 inhabitants), Massachusetts.",
+            "description": "Established in 1948, Brandeis University is a non-profit private higher-education institution located in the urban setting of the small city of Waltham (population range of 50,000-249,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Brandeis University (BU) is a medium-sized (uniRank enrollment range: 6,000-6,999 students) coeducational US higher education institution formally affiliated with the Jewish religion. Brandeis University (BU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 71 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 30-40% making this US higher education organization a very selective institution. International applicants are eligible to apply for enrollment. BU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1948",
+            "location": {
+                "city": "Waltham",
+                "state": "Massachusetts"
+            },
+            "ranking": 135,
+            "latitude": 42.366763,
+            "longitude": -71.257834,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Simmons University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/3/35/Simmons_University_Logo.png",
+            "introduction": "Established in 1899, Simmons University is a non-profit private higher-education institution located in the urban setting of the large city of Boston (population range of 500,000-1,000,000 inhabitants), Massachusetts.",
+            "description": "Established in 1899, Simmons University is a non-profit private higher-education institution located in the urban setting of the large city of Boston (population range of 500,000-1,000,000 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Simmons University (SU) is a medium-sized (uniRank enrollment range: 8,000-8,999 students) women only US higher education institution. Simmons University (SU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 121 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 70-80% making this US higher education organization a somewhat selective institution. International applicants are eligible to apply for enrollment. SU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1899",
+            "location": {
+                "city": "Boston",
+                "state": "Massachusetts"
+            },
+            "ranking": 341,
+            "latitude": 42.355653,
+            "longitude": -71.0733847,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        },
+        {
+            "name": "Clark University",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Clark_University_seal.svg/800px-Clark_University_seal.svg.png",
+            "introduction": "Founded in 1887, Clark University is a non-profit private higher-education institution located in the urban setting of the small city of Worcester (population range of 50,000-249,999 inhabitants), Massachusetts.",
+            "description": "Founded in 1887, Clark University is a non-profit private higher-education institution located in the urban setting of the small city of Worcester (population range of 50,000-249,999 inhabitants), Massachusetts. Officially accredited by the New England Commission of Higher Education, Clark University (CU) is a small (uniRank enrollment range: 3,000-3,999 students) coeducational US higher education institution. Clark University (CU) offers courses and programs leading to officially recognized higher education degrees such as bachelor degrees, master degrees, doctorate degrees in several areas of study. See the uniRank degree levels and areas of study matrix below for further details. This 133 years old US higher-education institution has a selective admission policy based on entrance examinations and students' past academic record and grades. The admission rate range is 50-60% making this US higher education organization a averagely selective institution. International students are welcome to apply for enrollment. CU also provides several academic and non-academic facilities and services to students including a library, housing, sports facilities, financial aids and/or scholarships, study abroad and exchange programs, online courses and distance learning opportunities, as well as administrative services.",
+            "founded": "1887",
+            "location": {
+                "city": "Worcester",
+                "state": "Massachusetts"
+            },
+            "ranking": 219,
+            "latitude": 42.2520376,
+            "longitude": -71.8225716,
+            "overallRating": 0,
+            "comments": [],
+            "rating": []
+        }
+    ]
+}

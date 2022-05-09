@@ -1,0 +1,135 @@
+<div class="posts_background">
+    <div class="div_center">
+        <div >
+            <img src="/public/images/scholar.jpeg" class="scholar_img" alt="scholar"/>
+        </div>
+          <div class="div_circle_6" style="position: fixed;"></div>
+            <div class="div_circle_7" style="position: fixed;"></div>
+            <div class="div_class_8" style="position: fixed;"></div>
+    <div class="posts_div">
+        
+    <div class="card bg-light" style="border-radius: 10px;padding-top:10px">
+      <div class="card-body text-center">
+        <p class="card-text" style="font-size: larger;font-weight:bold">Ask anything about studying in US</p>
+     
+        {{!-- <h2><span>{{pageTitle}}</span></h2> --}}
+        <form id="formPosting" action="/posts" method="post">
+        <label for="newPost"></label>
+            <input class="ask_posts_text"
+                id="newPost"
+                name="newPost"
+                type="text"
+                placeholder="Ask any question about studying in US or share information with others..."
+                required="required"
+                autocomplete="off"
+            />
+            <input type="submit" value="POST" class="btn-grad submit_posts_btn" />
+        </form>
+    </div>
+  
+    </div>
+     
+     </div>
+    {{#if postList.length}}
+            {{#each postList}}
+            <div class="user_posts justify_center">
+                <ul>
+                <li class="list_decoration">
+                    <p class="theme_text_color" style="font-size:23px;font-style:italic;">{{userName}}</p>
+                    <hr>
+                    <p id = "initialPost{{_id}}">{{text}}</p>
+                    <form id="postEditing{{_id}}" action="/posts/editPost" method="post" hidden>
+                        <input 
+                                id="editedPost{{_id}}"
+                                name="editedPost{{_id}}"
+                                type="text"
+                                value = "{{text}}"
+                                placeholder="EditPost"
+                                required="required"
+                                
+                        />
+                        <input name='postId' value = {{_id}} hidden>
+                        
+                    </form>
+                    <button id="editPostsubmitButton{{_id}}" onclick="submitEditPost('postEditing{{_id}}', 'editedPost{{_id}}')" name="editPostsubmitButton" value="editPostsubmitButton" hidden>Submit</button>
+                    {{!-- To display total likes on each post --}}
+                    <div>
+                        <p id ="totalLikes{{_id}}"  style="font-size:15px;font-style:italic;">Total Likes : {{totalLikes}}</p>
+                    </div>
+
+                    {{#if userId}}
+                        {{#userChecker userId postUserId}}
+                        <div class="edit_delete_buttons">
+                            <form id = "MyDeleteForm{{_id}}" action="/posts/deletePost" method="post">
+                                <input name='postId' value = {{_id}} hidden>
+                                <button name="deletePost" value="deletePost" class="delete_posts_btn">Delete Post</button>
+                            </form>
+                            <button id ="postEditor{{_id}}" onclick="enableEditing('postEditing{{_id}}', 'initialPost{{_id}}', 'editPostsubmitButton{{_id}}')" name="postEditor" value="postEditor" class="edit_posts_btn">Edit Post</button>
+                        </div>
+                        {{/userChecker}}
+
+                        {{#listChecker likes userId}}
+                            <form id = "MyDislikeForm{{_id}}" action="/posts/dislike" method="post">
+                                <input name='postId' value = {{_id}} hidden>
+                                <button name="Unlike" value="Unlike" class="unlike_posts_btn">Unlike</button>
+                            </form>
+                        {{else}}
+                            <form id = "myLikeForm1{{_id}}" action="/posts/like" method="post">
+                                <input name='postId' value = {{_id}} hidden>
+                                <button name="Like" value="Like" class="like_posts_btn">Like</button>
+                            </form>
+                        {{/listChecker}}
+                    {{/if}}
+
+                    {{#unless userId}}
+                        <form id = "myLikeForm2{{_id}}"  method="post">
+                            <button name="foo" value="upvote">Like</button>
+                        </form>
+                    {{/unless}}
+                    
+                    <button id="commentOnPost{{_id}}" onclick="enableComment('commentShow{{_id}}', 'editCommentButton{{_id}}')" name="commentOnPost" class="comment_on_post_btn">{{comments.length}} Comments</button>
+                    {{!-- form to comment --}}
+                    <div id = "commentShow{{_id}}" hidden>
+                        <form id="commentForm{{_id}}"  action="/posts/comment" method="post">
+                            <input class="ask_posts_text" style="margin-top: 10px;"
+                                id="newComment{{_id}}"
+                                name="newComment{{_id}}"
+                                type="text"
+                                placeholder="Comment..."
+                                required="required"
+                                autocomplete="off"
+                            />
+                            <input name='postId' value = {{_id}} hidden>
+                            {{!-- <input name="Submit" type="submit" value="Submit" class="btn-grad submit_posts_btn" style=" width: 80px;font-size:15px; height: 35px;"/> --}}
+                        </form>
+                        <button id="editCommentButton{{_id}}" onclick="submitEditPost('commentForm{{_id}}', 'newComment{{_id}}')" name="editCommentButton" value="editCommentButton" hidden>Submit</button>
+                    
+                        {{#if comments.length}}
+                            <div style="padding-top:10px;">
+                                {{#each comments}}
+                                    <p class="theme_text_color">{{this.userName}}</p>
+                                    <hr>
+                                    <p>{{this.text}}</p>
+                                {{/each}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </li>
+                </ul>
+            </div>
+            {{/each}}
+    {{/if}}
+ 
+    {{#unless postList.length}}
+        <p>Be the first to post a question!</p>
+    {{/unless}}
+
+    <script src="/public/js/posts/script.js"></script>
+    {{!-- <script src="/public/js/posts/scriptPosts.js"></script> --}}
+    
+
+    {{#if error}}
+        <p>{{error}}</p>
+    {{/if}}
+</div>
+</div>

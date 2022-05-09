@@ -1,0 +1,57 @@
+<div class="user_profile_background">
+
+    {{#if msg}}
+    <div class="alert alert-success col-4 offset-4" role="alert">
+        <p>{{msg}}</p>
+    </div>
+    {{else}}
+
+    <div class="card bg-light card-size" style="border-radius:20px;">
+    <div class="card-header" style="background-color: #545BE8;height:100px;"></div>
+    <div class="card-body">
+        <h1 class="card-title" style="font-size:33px;font-style:italic;">{{user.name}}</h1>
+        <p class="card-text" style="font-size:20px;"> {{user.email}}</p>
+    </div>
+    </div>
+                      <img src="/public/images/chemistry.jpeg" alt="Person" class="img_div_chemistry">
+
+    <div class="card bg-light card-size" style="border-radius:20px;width:60%;float:right;margin-left:20%;margin-top:0%;">
+        <ul class="bg-light">
+            <li class="user_profile_details">Work Experience: {{user.workEx}} Years</li>
+            <li class="user_profile_details">Email: {{user.email}}</li>
+            <li class="user_profile_details">Aspiring University: {{user.aspiringUniversity}}</li>
+            <li class="user_profile_details">Favorite Universities:
+                {{#if uniArr}}
+                <ol>
+                    {{#each uniArr}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ol>
+                {{else}}
+                <p>No favorite Universities yet</p>
+                {{/if}}          
+            </li>
+          
+
+        </ul>
+        <div class="card-footer">
+            <div class="d-grid gap-2">
+                <button class="update_profile_btn" onclick="window.location.href='/update_profile'"
+                    type="button">Update Profile</button>
+        
+                <button class="change_password" onclick="window.location.href='/update_password'"
+                    type="button">Change Password</button>
+                    <div class="d-grid gap-2" style="float: right;"><button class="logout_btn"  onclick="window.location.href='/logout'" id="No-account">Logout</button></div>
+            </div>
+            
+            <br>
+        
+            
+            </div>
+        {{/if}}
+    </div>
+      
+</div>
+

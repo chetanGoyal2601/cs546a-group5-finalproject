@@ -1,0 +1,28 @@
+{{!-- <div class="login_background"> --}}
+{{!-- <h1 class="text-center py-4">{{title}}</h1> --}}
+<div class="uni_background_container">
+    <div class="container py-4">
+    <div class="row justify-content-center">
+        <label for="uniSearchTerm"></label>
+        <input class="form-control col-sm-8 mx-2" placeholder="Search..." type="text" id="uniSearchTerm">
+        <select id="locList" class="form-control col-sm-3 mx-2">
+            <option value="" selected='selected'>United States</option>
+        </select>
+
+    </div>
+    </div>
+    <div class="container my-4" id="emptyResponse">
+        <div class="row justify-content-center">
+            <img src="/public/no_result_found.png" alt="">
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center my-4 text-center" id="uniList"></div>
+        <div class="row justify-content-center my-4 text-center">
+            <ul class="pagination my-4" id="pagination"></ul>
+        </div>
+    </div>
+</div>
+{{!-- </div> --}}
+<script src="/public/js/search.js"></script>

@@ -1,0 +1,927 @@
+* {
+	box-sizing: content-box;
+}
+
+html,
+body {
+	font-size: 16px;
+}
+/*
+CSS for signup page
+*/
+.container{
+    font-size: 18px;
+    font-weight: bold;
+    /* padding: 2px 16px; */
+}
+.welcome{
+    font-size: 20px;
+    font-weight: bold;
+}
+.sign_up_form_btn{
+    background-color: white;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: #545BE8;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    /* left: 76%;
+    top: 4px; */
+    position:absolute;
+    align-items: center;
+}
+.sign_up_form_btn:hover{
+    background-color: #545BE8;
+    color: white;
+    text-decoration: none;
+}
+
+/*
+------------------end--------------------
+*/
+body {
+	/* background: rgb(214, 226, 225); */
+	font-family: Cambria, "Times New Roman", Times, serif;
+}
+
+main {
+	/* max-width: 75%; */
+	margin: auto;
+}
+/*
+CSS for landing page 
+*/
+.background_div{
+position: absolute;
+width: 100%;
+height: 115%;
+left: -2px;
+top: 55px;
+background: rgb(245, 245, 245);
+}
+.background_div2{
+position: absolute;
+width: 1141.5px;
+height: 600px;
+left: 148px;
+top: 90px;
+background: #F5F5F5;
+}
+.background_div3{
+position: absolute;
+width: 600px;
+height: 600px;
+background: #F5F5F5;;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+padding-left: 10px;
+}
+.intro_div{
+
+    position: absolute;
+    width: 500px;
+    height: 288px;
+    padding-left : 50px;
+    top: 70px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 72px;
+    color: #141E32;
+}
+.background_div4{
+    position: absolute;
+    left:600px;
+    width: 600px;
+    height: 600px;
+    background: #F5F5F5;
+    }
+    .img_div{
+        position: absolute;
+        height:400px;
+        width:430px;
+        top: 200px;
+        left:800px;
+        /* z-index:-1; */
+    }
+.logo{
+    /* padding: 30px; */
+    /* height: 38px;
+    width: 38px;
+    background-color: #545BE8;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: -35px 0 0 -35px; */
+    position: absolute;
+    left: 4.9%;
+    right: 91.96%;
+    top: 11%;
+    bottom: 9.19%;
+    background: rgb(84, 91, 232);
+}
+.eduLogo {
+    display: block;
+    height: 100%;
+}
+.square{
+    /* height: 60px;
+    width: 60px; */
+    /* padding-left: 200px; */
+    /* background-color: white; */
+    /* background: #CCCCCC;
+    height: 200px;
+    width: 200px;
+    position: absolute; */
+    position: absolute;
+    width: 145px;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+    
+}
+.logo_E
+{
+    position: relative;
+    width: 16px;
+    height: 32px;
+    left: 66px;
+    margin: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32px;
+    text-align: center;
+    color:rgb(242, 242, 242);
+}
+.logo_Educapedia
+{
+    position: absolute;
+    left: 9.5%;
+    right: 85.96%;
+    top: 36%;
+    bottom: 13.19%;
+    /* font-family: 'Roboto'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: center;
+color: rgb(84, 91, 232);
+}
+.nav_bar_custom{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+top: 38%;
+position: absolute;
+height: 24px;
+left: 32.38%;
+    /* right: 38.89%; */
+font-weight: 700;
+font-size: 20px;
+color: #545BE8;
+/* top: calc(50% - 24px/2 - 1801px); */
+}
+.navbar-brand2{
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    color: #545BE8;
+    white-space: nowrap;
+    padding:30px;
+}
+.navbar-brand2:hover{
+    text-decoration: none;
+    color:black; 
+}
+.login_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 40px;
+    width: 140px;
+    height: 40px;
+    top: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 15px;
+}
+/*
+.login_btn:hover{
+    background:  #545BE8; 
+    color:white;
+} */
+.sign_up_btn{
+    background-color: white;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: #545BE8;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    left: 76%;
+    top: 4px;
+    position:absolute;
+    align-items: center;
+}
+.sign_up_btn:hover{
+    background-color: #545BE8;
+    color: white;
+    text-decoration: none;
+}
+
+.login_up_btn{
+        background-color: #545BE8;
+        border: 2px solid #545BE8;
+        box-sizing: border-box;
+        color: white;
+        padding: 6px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 140px;
+        height: 40px;
+        left: 88%;
+        top: 4px;
+        position:absolute;
+        align-items: center;
+    
+}
+.login_up_btn:hover{
+    background-color: white;
+    color: #545BE8;
+    text-decoration: none;
+   }
+
+.div_circle_1
+{
+    box-sizing: border-box;
+    position: absolute;
+    width: 467.68px;
+    height: 465.68px;
+    left: 10px;
+    top: -1px;
+    border-radius: 50%;
+    border: 2px solid #058FCB;
+}
+.div_circle_2
+{
+
+position: absolute;
+width: 465.68px;
+height: 465.68px;
+border-radius:50%;
+background: #F0C932;
+}
+.div_circle_3{
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    left: 328px;
+    top: -6px;
+    background: #FE753F;
+    border-radius:50%;
+}
+.div_circle_5{
+    position: absolute;
+width: 79px;
+height: 79px;
+left: 10px;
+top:-30px;
+border-radius:50%;
+background: #7253A4;
+}
+.div_circle_6
+{
+position: absolute;
+width: 79px;
+height: 79px;
+left: 380px;
+top: 400px;
+border-radius:50%;
+background: #058FCB;
+}
+.div_circle_7{
+    position: absolute;
+width: 33px;
+height: 33px;
+/* left: 805px; */
+top: 500px;
+border-radius:50%;
+background: #058FCB;
+}
+.div_class_8{
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 265px;
+top: 500px;
+border-radius:50%;
+background: #FE753F;
+}
+.vector
+{
+    width: 250px;
+    height: 87px;
+    border-bottom: 1px dashed red;
+    transform:
+        translateY(-10px)
+        translateX(-80px)
+        rotate(140deg); 
+    position: absolute;
+    top: 300px;
+}
+.vector2
+{
+    width: 250px;
+    height: 87px;
+    border-bottom: 1px solid red;
+    transform:
+        translateY(-5px)
+        translateX(-100px)
+        rotate(140deg);
+    position: absolute;
+    top: 350px;
+}
+.vector3
+{
+    width: 250px;
+    height: 87px;
+    border-bottom: 1px dashed red;
+    transform:
+        translateY(-40px)
+        translateX(-50px)
+        rotate(140deg);
+    position: absolute;
+    top: 400px;
+}
+/*
+-------end------------- 
+*/
+/*
+ CSS for login page
+*/
+
+.background_div8{
+    position: absolute;
+    right: 180px;
+    top: 180px;
+    width: 600px;
+    height: 600px;
+    }
+.login_div{
+  
+    background: white;
+    /* font-family: Cambria, "Times New Roman", Times, serif; */
+    width: 120%;
+    margin-top:80px;
+    color: white;
+    padding: 30px;
+    font-size: 18px;
+    border-radius: 5%;
+    /* align-self: center; */
+    left: 70%;
+    margin-left: 70%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+
+    /* float: right; */
+}
+.login_background{
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0px;
+background: white;
+ background: linear-gradient(100deg, #ffe992 0%, #777de6 130%);
+}
+.dropright {
+    position: relative;
+}
+.sign_up_form_btn{
+    background-color: #545BE8;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 233px;
+    height: 40px;
+    position:relative;
+    align-items: center;
+}
+.sign_up_form_btn:hover{
+    background-color: white;
+    color:  #545BE8;
+    text-decoration: none;
+}
+.register_link {
+    position:relative;
+    margin-top:20px;
+    align-items: center;
+    
+}
+.register_link a{
+color:#545BE8;
+}
+.register_link a:hover{
+    color:black;
+    text-decoration: none;
+}
+.sign_up_div{
+    height: auto;
+    width: auto;
+    margin-top: -3%;
+}
+/*
+-------end----------
+*/
+/*
+    CSS for university finder page
+*/
+.dropright .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* li#rank1.list-group-item {
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: none;
+} */
+/* li#rank1.list-group-item:hover {
+    background-color: #f5f5f5ea;;
+} */
+
+.list-group {
+    padding-top: 29px;
+    text-align: justify;
+    font-weight: 400;
+    font-style: oblique;
+}
+
+#locList {
+    color: black;
+    padding: 8px 18px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    line-height: 3;
+    border-radius: .25em;
+    padding-bottom: 10px;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.card,
+.card:link,
+.card:visited,
+.card:hover,
+.card:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item2{
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    background-color:none;
+    list-style-type: none;
+    font-weight: bold;
+
+}
+.card-title{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: #e9e9e9;
+}
+
+.card-body {
+    flex: 1;
+}
+ul {
+    align-items: center;
+}
+
+.uni_background_container{
+    /* max-width: 1140px; */
+    background: linear-gradient(100deg, #F5F5F5 0%, #ffe992 180%);
+    align-items: center;
+}
+/*
+-----------end--------------
+*/
+
+/*
+CSS for posts page
+*/
+.posts_background{
+    background: linear-gradient(90deg, #F5F5F5 35%, #ffe992 180%);
+    /* align-items: center; */
+    /* background-color: #F5F5F5;; */
+    margin-top: -3%;
+    /* width:auto; */
+}
+.posts_div{
+    align-self: center;
+    margin-left: 22%;
+    position: relative;
+    width: 56%;
+    height: auto;
+    margin-top: 42px;
+    flex-direction: column;
+    padding-top: 5%;
+    /* background: linear-gradient(180deg, #ffe992 0%, #777de6 100%); */
+}
+.user_posts{
+    align-self: center;
+    position: relative;
+    max-width: 45%;
+    height: auto;
+    flex-direction: column;
+    background-color: white;
+    margin-top:20px ;
+    justify-content: center;
+    padding: 50px;
+    /* top: 2416.92px; */
+    filter: drop-shadow(0px 18.0585px 18.0585px rgba(0, 0, 0, 0.05));
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.justify_center{
+    align-self: center;
+    margin-left: 25%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+.div_center
+{
+    align-self: center;
+    height:auto;
+    width: 100%;
+    max-width: 100%;
+    /* margin-left: 1%; */
+}
+.submit_posts_btn{
+    background-color: #545BE8;
+    border: 2px solid #545BE8;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    position:relative;
+    align-items: center;
+}
+.submit_posts_btn:hover{
+    background-color: white;
+    color: #545BE8;
+    text-decoration: none;    
+}
+
+.ask_posts_text{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.scholar_img
+{
+    position: fixed;
+    height:100%;
+    width:40%;
+    top: 100px;
+    float: left;
+}
+.list_decoration{
+    list-style-type: none;
+}
+.theme_text_color{
+    color: #545BE8;
+    font-weight: bold;
+}
+.delete_posts_btn{
+    /* background-color: #545BE8; */
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.delete_posts_btn:hover{
+    background-color: white;
+    color:black;
+}
+.edit_posts_btn{
+    /* background-color: #545BE8; */
+        /* background-color: #545BE8; */
+        background-color: #545BE8;
+    color: white;
+        border: 2px solid #545BE8;
+        box-sizing: border-box;
+       
+        text-align: center;
+        /* display: inline-block; */
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 127px;
+        margin-top: -36px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100px;
+    height: 35px;
+        position: absolute;
+        align-items: center;
+}
+.edit_posts_btn:hover{
+    background-color: white;
+    color: #545BE8;
+}
+.edit_delete_buttons{
+    position: relative;
+    float:right;
+    margin-right: 100px;
+}
+.like_posts_btn{
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.like_posts_btn:hover{
+    /* border: 2px solid black; */
+   background-color: black;
+   color:white;
+}
+.unlike_posts_btn{
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.unlike_posts_btn:hover{
+    /* border: 2px solid black; */
+   background-color: white;
+   color:black;
+}
+.comment_on_post_btn{
+    border: 2px solid #f7e8ac;
+    box-sizing: border-box;
+    color: black;
+    background-color: #f7e8ac;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    position:relative;
+    align-items: center;
+}
+.comment_on_post_btn:hover{
+    /* border: 2px solid black; */
+   background-color: rgb(242, 242, 242);
+   border: 2px solid  rgb(242, 242, 242);
+   color:black;
+}
+/*
+----------end-----------------
+*/
+/*
+Css for user profile
+*/
+.user_profile_background{
+    background: linear-gradient(90deg, #F5F5F5 35%, #ffe992 180%);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+.card-size{
+    width: 90%;
+    margin:5%;
+    /* height: 100%; */
+    position:relative;
+}
+.user_profile_details{
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type:square;
+    padding: 8px;
+}
+.update_profile_btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-color: #545BE8;
+    color: white;
+    border: 2px solid #545BE8;
+}
+.update_profile_btn:hover{
+    background-color:white;
+    color: #545BE8;
+}
+.change_password{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-color:#f7e8ac;
+    color: black;
+    border: 2px solid #f7e8ac;
+}
+.change_password:hover{
+    background-color: rgb(242, 242, 242);
+   border: 2px solid  black;
+   color:black;
+}
+.logout_btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+.logout_btn:hover{
+    background-color: rgb(242, 242, 242);
+    border: 2px solid  black;
+    color:black;
+}
+.img_div_chemistry{
+    position: absolute;
+    height:400px;
+    width:430px;
+    top: 330px;
+    right:68%;
+}
+/*
+----------end-----------------
+*/
+.add_to_fav_btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-color: #545BE8;
+    color: white;
+    border: 2px solid #545BE8;
+
+}
+.add_to_fav_btn:hover{
+    background-color:white;
+    color: #545BE8;
+}
+.user_posts_2{
+    align-self: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background-color: white;
+    margin-top:10px ;
+    justify-content: center;
+    padding: 20px;
+    font-size: 18px;
+    /* top: 2416.92px; */
+    filter: drop-shadow(0px 18.0585px 18.0585px rgba(0, 0, 0, 0.05));
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}

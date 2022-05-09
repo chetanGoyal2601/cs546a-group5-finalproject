@@ -1,0 +1,173 @@
+<div class="container-fluid" style=" background: linear-gradient(180deg, #F5F5F5 15%, #ffe992 180%);" >
+    {{#if universityData}}
+      <div class="row" >
+       <div class="col-xl-4" style="margin-top:3%">
+            <div class="card mb-4 mb-xl-0" >
+                <div class="card-header text-center"><h2 class="h5">{{universityData.name}}</h2></div>
+                <div class="card-body text-center">
+                    <img class="img-account-profile rounded-circle mb-2" style="width:100%;" src="{{universityData.universityPhoto}}" alt="{{universityData.name}}">
+                    <h5>US Rank: {{universityData.rank}}</h5>
+                </div>
+            </div>
+        </div>
+    <div class="col-xl-8" style="margin-top:3%">
+            <div class="card mb-4">
+               
+                <div class="card-header"><h5>About University:</h5>
+                </div>
+                
+                <div class="card-body">
+                          <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <h5 class="card-text font-italic theme_text_color">CITY : {{universityData.city}}</h5>
+                        <h5 class="card-text font-italic theme_text_color">STATE : {{universityData.state}}</h5>
+                        </div>
+                        {{!-- Add to favourite --}}
+               <div class="col-md-6" >
+                    {{#if userId }}
+                        {{#listChecker universityData.favoriteUniversityList universityData.name}}
+                            <form id = "unfavouriteForm" action="/university/unfavourite" method="post">
+                                <input id='uniId2' name='uniId' value = {{universityData._id}} hidden>
+                                <button name="Unfavourite" value="Unfavourite"  class="add_to_fav_btn" style="float: right;">Unfavourite</button>
+                            </form>
+                        {{else}}
+                            <form id = "favouriteForm" action="/university/favourite" method="post">
+                                <input id='uniIdFav' name='uniId' value = {{universityData._id}} hidden>
+                                <input id = "favouriteUniversitiesLength" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
+                                <button name="Favourite" value="Favourite"  class="add_to_fav_btn" style="float: right;">Add to Favourites</button>
+                            </form>
+                        {{/listChecker}}
+                    {{/if}}
+                    {{#unless userId}}
+                        <form id = "favouriteForm2" action="/university/favourite" method="post">
+                            <input name='uniId' value = {{universityData._id}} hidden>
+                            <input id = "favouriteUniversitiesLength2" name="favouriteUniversitiesLength" value = {{universityData.favoriteUniversityList.length}} hidden>
+                            <button name="Favourite" value="Favourite" class="add_to_fav_btn" style="float: right;">Add to Favourites</button>
+                        </form>
+                    {{/unless}}
+                    </div>
+                    </div>
+                        <div class="mb-3">
+                            <p>{{universityData.description}}</p>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <h5 class="card-text font-italic theme_text_color">Rating - {{universityData.totalRating}}</h5>
+                                <div>
+                                    <p class="h6">Real time status of users that have rated until now: {{universityData.rating.length}}</p>
+                                </div>
+                            </div>
+                        </div>
+                     {{!-- To give rating remaining --}}
+        {{#if userId}}
+            {{#if userRating}}
+                  <div class="mb-3">
+                 <h6 class="card-text font-italic theme_text_color">You have rated: {{userRating}}</h6>
+                </div>
+                 <div class="mb-3 h5">
+                <form id="ratingForm" action="/university/editRating" method="post">
+                    <label for="rating">Change rating:</label>
+                    <select class="dropdown" id="rating" name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input name='uniId' value = {{universityData._id}} hidden>
+                    <input type="submit" value="Rate" class="unlike_posts_btn">
+                </form>
+                </div>
+            {{/if}}
+            {{#unless userRating}}
+             <div class="mb-3">
+            <form id="ratingForm2" action="/university/editRating" method="post">
+                <label for="rating2">Give a rating:</label>
+                <select class="dropdown" id="rating2" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input name='uniId' value = {{universityData._id}} hidden>
+                <input type="submit" value="Rate" class="unlike_posts_btn">
+            </form>
+            </div>
+            {{/unless}}
+        {{/if}}
+        {{#unless userId}}
+            <div class="mb-3">
+                <form id="ratingForm3" action="/university/editRating" method="post">
+                        <label for="rating3">Give a rating:</label>
+                        <select id="rating3" name="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input name='uniId' value = {{universityData._id}} hidden>
+                        <input type="submit" value="Rate" class="unlike_posts_btn">
+                </form>
+                </div>
+            {{/unless}}
+ {{!-- Form to create a new comment --}}
+        <div class="mb-3">
+            <form id="commentOnUniversity" action="/university/comment" method="post">
+            <label for="newComment"></label>
+                <input class="ask_posts_text"
+                    id="newComment"
+                    name="newComment"
+                    type="text"
+                    placeholder="Post a review or comment on this University..."
+                    required="required"
+                    autocomplete="off"
+                />
+                <input name='uniId' value = {{universityData._id}} hidden>
+                <input type="submit" value="Post" class="btn-grad submit_posts_btn" />
+            </form>
+        </div>
+                  {{!-- To display comments --}}
+        {{#if universityData.comments}}
+            {{#each universityData.comments}}
+                <div class="user_posts_2">
+                    <p class="theme_text_color">{{this.userName}}</p>
+                    <hr>
+                     <p>{{this.text}}</p>
+                    {{#userChecker ../userId this.userId}}
+                        <form id = "commentDeleteForm{{this._id}}" action="/university/deleteComment" method="post">
+                            <input name='commentId' value = {{this._id}} hidden>
+                            <input name='uniId' value = {{../universityData._id}} hidden>
+                            <button name="deleteComment" value="deleteComment" class="unlike_posts_btn">Delete</button>
+                        </form>
+                    {{/userChecker}}
+                </div>
+            {{/each}}
+        {{/if}}
+        {{#unless universityData.comments}}
+            No Comments yet!
+        {{/unless}}
+    {{/if}}
+          
+                   
+                </div>
+            </div>
+        </div>
+        </div>
+
+    
+       
+        
+        
+       
+
+       
+      
+    <script src="/public/js/individualUniversity/individualUniversity.js"></script>
+    <script src="/public/js/individualUniversity/ajaxScript.js"></script>
+    
+</div>
+

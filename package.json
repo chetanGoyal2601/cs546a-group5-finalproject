@@ -1,19 +1,25 @@
 {
-  "name": "project_1",
+  "name": "educapedia",
   "version": "1.0.0",
-  "description": "",
+  "description": "project for CS 546 A - web programming I - submission to Prof. Patrick Hill",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node ./tasks/seed.js"
   },
-  "author": "",
+  "author": "Chetan Goyal (20005334), Devshree Parikh (10476941), Jefferson Dias (10458869), Riya Kale (20008491), Sangram Thorat (20007345)",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "bootstrap-icons": "^1.8.1",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "express-session": "^1.17.2",
-    "mongodb": "^4.5.0"
+    "mongodb": "^4.5.0",
+    "nodemon": "^2.0.15",
+    "xss": "^1.0.11"
   }
 }

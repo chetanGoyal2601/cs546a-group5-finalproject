@@ -1,0 +1,61 @@
+<div class="background_div">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        {{#if error}}
+        <div class="alert alert-danger col-4 offset-4" role="alert">
+          <p class="alert-heading">Error!</p>
+          <p>{{error}}</p>
+        </div>
+        {{/if}}
+        <div>
+        <img src="/public/images/person_think.jpeg" alt="Person" class="img_div">
+      </div>
+        <form id="signup-form" method="post" action="/signup" onsubmit="validateSignupInputs(event)">
+           <p class="welcome" style="padding-top: 20px;">Enter the details to signup!!</p>
+           <hr>
+            <div class="form-group">
+              <div class="sign_up_div">
+            <label for="name"></label>
+            <p class="noPost">Name:</p>
+            <input type="text" class="form-control" id="name" name="name"
+              placeholder="Enter your name here" />
+            <br />
+            <label for="email"> </label>
+            <p class="noPost">Email:</p>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter a valid  email address" />
+            <br />
+            <label for="uni"></label>
+            <p class="noPost" >Aspiring University:</p>
+            <input type="text" class="form-control" id="uni" name="uni" placeholder="Enter your Aspiring University" />
+            <br />
+             <label for="work"></label>
+            <p class="noPost" >Work Experience:</p>
+            <input type="number" class="form-control" id="work" name="work" placeholder="Enter your Work Experience:" />
+            <br />
+            <label for="password"> </label>
+            <p class="noPost" >Password:</p>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Create your password of atleast 6 characters" />
+            <br />
+            <label for="confirm"></label>
+            <p class="noPost" >Confirm Password:</p>
+            <input type="password" class="form-control" id="confirm" name="confirm"
+              placeholder="Confirm your password" />
+            <br />
+            <div class="form-group">
+              <input type="submit" class="sign_up_form_btn" value="Sign Up" />
+            </div>
+            {{#unless status}}
+            <p class="wrongMsg">{{message}}</p>
+            {{/unless}}
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
