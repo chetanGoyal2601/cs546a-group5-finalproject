@@ -3,7 +3,7 @@
       <div class="row" >
        <div class="col-xl-4" style="margin-top:3%">
             <div class="card mb-4 mb-xl-0" >
-                <div class="card-header text-center"><h4>{{universityData.name}}</h4></div>
+                <div class="card-header text-center"><h2 class="h5">{{universityData.name}}</h2></div>
                 <div class="card-body text-center">
                     <img class="img-account-profile rounded-circle mb-2" style="width:100%;" src="{{universityData.universityPhoto}}" alt="{{universityData.name}}">
                     <h5>US Rank: {{universityData.rank}}</h5>
@@ -117,6 +117,7 @@
  {{!-- Form to create a new comment --}}
         <div class="mb-3">
             <form id="commentOnUniversity" action="/university/comment" method="post">
+            <label for="newComment"></label>
                 <input class="ask_posts_text"
                     id="newComment"
                     name="newComment"

@@ -16,19 +16,23 @@
                     <p class="welcome" style="padding-top: 20px;">Update your profile</p>
                     <hr>
                     <div class="form-group">
+                        <label for="name"></label>
                         <input type="hidden" class="form-control" id="id" name="id" value="{{user._id}}" />
                         <p class="noPost" >Name:</p>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
                             value="{{user.name}}" />
                         <br>
+                        <label for="email"></label>
                         <p class="noPost" >Email:</p>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"
                             value="{{user.email}}" />
                         <br>
+                         <label for="work"></label>
                         <p class="noPost" >Work Experience:</p>
                         <input type="number" class="form-control" id="work" name="work" placeholder="Your Work Experience"
                             value="{{user.workEx}}" />
                         <br>
+                         <label for="uni"></label>
                         <p class="noPost" >Aspiring University:</p>
                         <input type="text" class="form-control" id="uni" name="uni" placeholder="Your Aspring University"
                             value="{{user.aspiringUniversity}}" />
