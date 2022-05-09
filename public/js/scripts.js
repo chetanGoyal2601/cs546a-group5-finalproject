@@ -13,25 +13,29 @@ function validateSignupInputs(e) {
   const password = document.getElementById("password").value;
   const workEx = Number(document.getElementById("work").value);
   const email = document.getElementById("email").value;
-  //const AspUni = document.getElementById("uni").value;
+  const aspuni = document.getElementById("uni").value;
   const confirm_pass = document.getElementById("confirm").value;
 
   let errorMessage = null;
   if (!name) {
     errorMessage = "name must be present";
-  } else if (name == null) {
-    errorMessage = "name cannot be null";
-  } else if (name == undefined) {
-    errorMessage = "name not defined";
-  } else if (name.length < 5 || name.length > 100) {
+  } else if (typeof name !== "string") {
+    errorMessage = "name invalid";
+  } else if (name.trim().length === 0) {
+    errorMessage = "name can not be empty";
+  } else if (name.trim().length < 5 || name.trim().length > 100) {
     errorMessage =
       "Enter a User Name with more than 4 and less than 100 characters";
+  } else if (!aspuni) {
+    errorMessage = "You must provide a Aspiring University";
+  } else if (typeof aspuni !== "string") {
+    errorMessage = "name invalid";
+  } else if (aspuni.trim().length === 0) {
+    errorMessage = "name can not be empty";
   } else if (!email) {
     errorMessage = "You must provide a email";
-  } else if (email == null || email.length == 0) {
+  } else if (typeof email !== string) {
     errorMessage = "email cannot be null";
-  } else if (email == undefined) {
-    errorMessage = "email not defined";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter email only with valid characters";
   } else if (workEx !== 0) {
@@ -44,6 +48,8 @@ function validateSignupInputs(e) {
     errorMessage = "Please enter 0 if you dont have work experience";
   } else if (!password) {
     errorMessage = "You must provide a password";
+  } else if (typeof password !== "string") {
+    errorMessage = "You must provide a valid password";
   } else if (password.length < 8 || password.length > 20) {
     errorMessage =
       "Enter a password with more than 8 and less than 20 characters";
@@ -95,6 +101,8 @@ async function validateSignInInputs(e) {
     errorMessage = "email cannot be null";
   } else if (email == undefined) {
     errorMessage = "email not defined";
+  } else if (typeof email !== string) {
+    errorMessage = "email cannot be null";
   } else if (!validateEmail(email)) {
     errorMessage = "Enter a email with valid characters";
   } else if (!password) {
@@ -103,6 +111,8 @@ async function validateSignInInputs(e) {
     errorMessage = "password cannot be null";
   } else if (password == undefined) {
     errorMessage = "password not defined";
+  } else if (typeof password !== "string") {
+    errorMessage = "You must provide a valid password";
   } else if (password.length < 8 || password.length > 20) {
     errorMessage =
       "Enter a password with more than 8 and less than 20 characters";
