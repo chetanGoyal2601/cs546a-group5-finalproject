@@ -5,7 +5,8 @@ Please first seed data to database using following steps and then run-
 1. cd tasks
 2. node seed.js
 3. cd ..
-4. node app.js
+4. npm install
+5. node app.js
 
 To login after seeding -
 
