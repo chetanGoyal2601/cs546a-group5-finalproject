@@ -2,10 +2,10 @@
 Project Members - Chetan Goyal, Jefferson Dias, Riya Kale, Devshree Parikh, Sangram Thorat
 
 Please first seed data to database using following steps and then run-
-1. cd tasks
-2. node seed.js
-3. cd ..
-4. npm install
+1. npm install
+2. cd tasks
+3. node seed.js
+4. cd ..
 5. node app.js
 
 To login after seeding -
